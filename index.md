@@ -31,8 +31,10 @@ Design a deep learning model to recognize human activities (walking, running, si
 </div>
 <br>
 <center><img src="images/GPHAR.jpg"/></center>
-<br>
+Accuracy and loss curves of (a) ANN, (b) CNN, (c) LSTM, (d) CNN-LSTM
+<br><br>
 <center><img src="images/HARResults.jpg"/></center>
+
 <br>
 <center><img src="images/HAR.jpg"/></center>
 <br>

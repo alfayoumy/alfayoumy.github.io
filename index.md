@@ -11,7 +11,7 @@
 _Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · Deep Learning · Feature Engineering · Research Skills · Python (Programming Language) · Pandas · NumPy · SciPy · Matplotlib · Keras · TensorFlow · Flask · Web Applications · Firebase · Cloud Firestore · Convolutional Neural Networks (CNN) · Long Short-term Memory (LSTM) · Google Cloud Platform (GCP)_
 <br>
 <center><img src="images/HARDiagram.png"/></center>
-_HAR system overview_
+<center>_HAR system overview_<center>
 <br>
 <div style="text-align: justify">
 <b>Objective:</b>
@@ -31,12 +31,13 @@ Design a deep learning model to recognize human activities (walking, running, si
 </div>
 <br>
 <center><img src="images/GPHAR.jpg"/></center>
-_Accuracy and loss curves of (a) ANN, (b) CNN, (c) LSTM, (d) CNN-LSTM_
+<center>_Accuracy and loss curves of (a) ANN, (b) CNN, (c) LSTM, (d) CNN-LSTM_<center>
 <br><br>
 <center><img src="images/HARResults.jpg"/></center>
+<center>_Models' performance metrics_<center>
 <br>
 <center><img src="images/HAR.jpg"/></center>
-_Web app dashboard includes the prediction of each HAR model_
+<center>_Web app dashboard includes the prediction of each HAR model_<center>
 <br>
 
 ---

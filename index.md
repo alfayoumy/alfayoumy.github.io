@@ -42,6 +42,7 @@ Design a deep learning model to recognize human activities (walking, running, si
 <br>
 
 ---
+
 ### Supervised Algorithms For The Detection Of COVID-19 From Chest Computed Tomography (CT) & X-ray Scan Images <br>
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alfayoumy/COVID19-Detection)
@@ -107,8 +108,12 @@ Develop a copilot app leveraging a deep learning model to enhance driving safety
 <center><img src="images/copilot3.png"/></center>
 <br>
 <center><img src="images/copilot5.png"/></center>
+<br>
+
+
 
 ---
+
 ## Machine Learning
 
 ### Supervised Algorithms For The Detection Of COVID-19 From Chest Computed Tomography (CT) & X-ray Scan Images <br>
@@ -153,7 +158,6 @@ _Key Skills: Machine Learning · Feature Engineering · Feature Extraction · Im
 <br>
 
 ---
-
 
 
 <center>© 2024 Amr Alfayoumy. Powered by Jekyll and the Minimal Theme.</center>

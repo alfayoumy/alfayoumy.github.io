@@ -38,7 +38,7 @@ Design a deep learning model to recognize human activities (walking, running, si
 <br>
 <center><img src="images/HAR.jpg"/></center>
 <center><i>Web app dashboard includes the prediction of each HAR model</i><center>
-<br>
+<br> 
 </div>
 
 ---

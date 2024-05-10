@@ -107,10 +107,8 @@ Develop a copilot app leveraging a deep learning model to enhance driving safety
 <center><img src="images/copilot3.png"/></center>
 <br>
 <center><img src="images/copilot5.png"/></center>
-<br>
 
 ---
-------
 ## Machine Learning
 
 ### Supervised Algorithms For The Detection Of COVID-19 From Chest Computed Tomography (CT) & X-ray Scan Images <br>

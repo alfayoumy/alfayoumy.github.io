@@ -54,32 +54,34 @@ _Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · De
 <center><i>HAR system overview</i></center>
 <br>
 <div style="text-align: justify">
-<b>Objective:</b>
-<br>
+<b>Objective: </b>
 Design a deep learning model to recognize human activities (walking, running, sitting, etc.) in real-time using data collected from sensors.<br>
 <br>
 <b>Tasks:</b>
 <br>
--Identified and selected appropriate sensors (e.g., accelerometers, gyroscopes) that capture relevant data for activity recognition.<br>
--Collected real-time sensor data corresponding to various human activities.<br>
--Pre-processed the sensor data to ensure consistency and remove noise.<br>
--Designed and implemented multiple deep learning models suitable for processing sequential sensor data including Convolution Neural Networks (CNNs), Recurrent Neural Networks (RNNs). Long Short-Term Memory (LSTM) networks, and CNN-LSTM networks.<br>
--Trained the models on the labeled sensor data for real-time activity recognition.<br>
--Optimized the model for accuracy, efficiency, and low latency to enable real-time operation.<br>
--Tested and evaluated the model's performance in real-time scenarios.<br>
--Developed a web app to display the model prediction results in real-time in a user-friendly interface.<br>
+<ul>
+    <li>Identified and selected appropriate sensors (e.g., accelerometers, gyroscopes) that capture relevant data for activity recognition.</li>
+    <li>Collected real-time sensor data corresponding to various human activities.</li>
+    <li>Pre-processed the sensor data to ensure consistency and remove noise.</li>
+    <li>Designed and implemented multiple deep learning models suitable for processing sequential sensor data including Convolution Neural Networks (CNNs), Recurrent Neural Networks (RNNs). Long Short-Term Memory (LSTM) networks, and CNN-LSTM networks.</li>
+    <li>Trained the models on the labeled sensor data for real-time activity recognition.</li>
+    <li>Optimized the model for accuracy, efficiency, and low latency to enable real-time operation.</li>
+    <li>Tested and evaluated the model's performance in real-time scenarios.</li>
+    <li>Developed a web app to display the model prediction results in real-time in a user-friendly interface.</li>
+</ul>
 </div>
 <div><center>
-<img src="images/GPHAR.jpg"/>
+<img src="images/GPHAR.jpg"/><br>
 <i>Accuracy and loss curves of (a) ANN, (b) CNN, (c) LSTM, (d) CNN-LSTM</i>
 <br><br>
-<img src="images/HARResults.jpg"/>
+<img src="images/HARResults.jpg"/><br>
 <i>Models' performance metrics</i>
 <br><br>
-<img src="images/HAR.jpg"/>
+<img src="images/HAR.jpg"/><br>
 <i>Web app dashboard includes the prediction of each HAR model</i>
 <br><br>
 </center></div>
+
 
 ---
 ### Driving Assistant (Copilot) Android App for Street Sign Detection and Identification in Real-time <br>
@@ -102,23 +104,25 @@ Develop a copilot app leveraging a deep learning model to enhance driving safety
 <br>
 <b>Tasks:</b>
 <br>
--Researched and selected appropriate deep learning models focusing on Convolutional Neural Networks (CNNs) pre-trained for object detection tasks like YOLO.<br>
--Analyzed a large dataset of street sign images encompassing various types, shapes, and environmental conditions (lighting variations, occlusions).<br>
--Pre-processed the image data for training the deep learning model, including techniques such as image resizing, normalization, and data augmentation.<br>
--Adapted the chosen deep learning model for street sign detection and classification by fine-tuning it on the prepared street sign image dataset.<br>
--Integrated the deep learning model with an Android application framework for real-time processing.<br>
--Developed functionalities within the app to capture live video from the smartphone camera and to calculate the car’s speed using GPS.<br>
--Designed an interface to display real-time detections and classifications of street signs on the phone screen with audio alerts for critical signs (stop signs, speed limit signs).<br>
--Optimized the app for performance on mobile devices, balancing accuracy with computational efficiency and battery usage.<br>
+<ul>
+<li>Researched and selected appropriate deep learning models focusing on Convolutional Neural Networks (CNNs) pre-trained for object detection tasks like YOLO.</li>
+<li>Analyzed a large dataset of street sign images encompassing various types, shapes, and environmental conditions (lighting variations, occlusions).</li>
+<li>Pre-processed the image data for training the deep learning model, including techniques such as image resizing, normalization, and data augmentation.</li>
+<li>Adapted the chosen deep learning model for street sign detection and classification by fine-tuning it on the prepared street sign image dataset.</li>
+<li>Integrated the deep learning model with an Android application framework for real-time processing.<br>
+<li>Developed functionalities within the app to capture live video from the smartphone camera and to calculate the car’s speed using GPS.</li>
+<li>Designed an interface to display real-time detections and classifications of street signs on the phone screen with audio alerts for critical signs (stop signs, speed limit signs).</li>
+<li>Optimized the app for performance on mobile devices, balancing accuracy with computational efficiency and battery usage.</li>
+</ul>
 </div>
 <div><center>
-<img src="images/copilot2.png"/>
+<img src="images/copilot2.png"/><br>
 <i>Proposed design</i>
 <br><br>
-<img src="images/copilot3.png"/>
+<img src="images/copilot3.png"/><br>
 <i>Model predicted label vs. true label for an eval batch. Green indicates correct predictions whereas red indicates wrong predictions.</i>
 <br><br>
-<img src="images/copilot5.png"/>
+<img src="images/copilot5.png"/><br>
 <i>The developed app under testing through AVM</i>
 <br><br>
 </center></div>

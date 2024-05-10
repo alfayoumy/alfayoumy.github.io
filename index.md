@@ -42,14 +42,15 @@ Design a deep learning model to recognize human activities (walking, running, si
 </center></div>
 
 ---
-### Supervised Algorithms For The Detection Of COVID-19 From Chest Computed Tomography (CT) & X-ray Scan Images <br>
+### Web App for Real-time Human Activity Recognition Using Deep Learning <br>
 
-[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alfayoumy/COVID19-Detection)
-[![Open PDF](https://img.shields.io/badge/PDF-Read%20PDF-red?logo=adobe-acrobat-reader)](https://www.researchgate.net/publication/350588424_Supervised_Algorithms_for_the_Detection_of_COVID-19_from_Chest_Scan_Images)
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alfayoumy/NUHARIPS)
+[![Open PDF](https://img.shields.io/badge/PDF-Read%20PDF-red?logo=adobe-acrobat-reader)](/pdf/GP.pdf)
 
-_Key Skills: Machine Learning · Feature Engineering · Feature Extraction · Image Processing · Digital Image Processing · Data Classification · Scikit-Learn · Matplotlib · SciPy · NumPy · Pandas (Software) · Python (Programming Language) · Web Applications_
+_Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · Deep Learning · Feature Engineering · Research Skills · Python (Programming Language) · Pandas · NumPy · SciPy · Matplotlib · Keras · TensorFlow · Flask · Web Applications · Firebase · Cloud Firestore · Convolutional Neural Networks (CNN) · Long Short-term Memory (LSTM) · Google Cloud Platform (GCP)_
 <br>
 <center><img src="images/HARDiagram.png"/></center>
+<center><i>HAR system overview</i></center>
 <br>
 <div style="text-align: justify">
 <b>Objective:</b>
@@ -67,13 +68,17 @@ Design a deep learning model to recognize human activities (walking, running, si
 -Tested and evaluated the model's performance in real-time scenarios.<br>
 -Developed a web app to display the model prediction results in real-time in a user-friendly interface.<br>
 </div>
-<br>
-<center><img src="images/GPHAR.jpg"/></center>
-<br>
-<center><img src="images/HARResults.jpg"/></center>
-<br>
-<center><img src="images/HAR.jpg"/></center>
-<br>
+<div><center>
+<img src="images/GPHAR.jpg"/>
+<i>Accuracy and loss curves of (a) ANN, (b) CNN, (c) LSTM, (d) CNN-LSTM</i>
+<br><br>
+<img src="images/HARResults.jpg"/>
+<i>Models' performance metrics</i>
+<br><br>
+<img src="images/HAR.jpg"/>
+<i>Web app dashboard includes the prediction of each HAR model</i>
+<br><br>
+</center></div>
 
 ---
 ### Driving Assistant (Copilot) Android App for Street Sign Detection and Identification in Real-time <br>
@@ -84,8 +89,10 @@ Design a deep learning model to recognize human activities (walking, running, si
 _Key Skills: Android · Android Development · Android Studio · Android SDK · Kotlin · Data Science · Data Analysis · Convolutional Neural Networks (CNN) · Pandas · NumPy · Matplotlib · Python (Programming Language) · Deep Learning · Data Classification_
 <br>
 <center><img src="images/copilot.png"/></center>
+<i>The high-level design of the system</i>
 <br>
-<center><img src="images/copilot2.png"/></center>
+<center><img src="images/copilot1.png"/></center>
+<i>The interacting components of the system</i>
 <br>
 <div style="text-align: justify">
 <b>Objective:</b>
@@ -103,13 +110,17 @@ Develop a copilot app leveraging a deep learning model to enhance driving safety
 -Designed an interface to display real-time detections and classifications of street signs on the phone screen with audio alerts for critical signs (stop signs, speed limit signs).<br>
 -Optimized the app for performance on mobile devices, balancing accuracy with computational efficiency and battery usage.<br>
 </div>
-<br>
-<center><img src="images/copilot3.png"/></center>
-<br>
-<center><img src="images/copilot5.png"/></center>
-<br>
-
-
+<div><center>
+<img src="images/copilot2.png"/>
+<i>Proposed design</i>
+<br><br>
+<img src="images/copilot3.png"/>
+<i>Model predicted label vs. true label for an eval batch. Green indicates correct predictions whereas red indicates wrong predictions.</i>
+<br><br>
+<img src="images/copilot5.png"/>
+<i>The developed app under testing through AVM</i>
+<br><br>
+</center></div>
 
 ---
 

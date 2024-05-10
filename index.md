@@ -136,7 +136,11 @@ _Key Skills: Machine Learning · Feature Engineering · Feature Extraction · Im
 <center><img src="images/covid1.jpg"/></center>
 Confusion matrix of the Voting Classifier on the combined features of the CT model (left) and X-ray model (right).
 <br>
-<center><img src="images/covid2.jpg"/></center>
+<center><img src="images/covid3.jpg"/></center>
+Testing accuracies of the classifying algorithms on the CT dataset
+<br>
+<center><img src="images/covid4.jpg"/></center>
+Testing accuracies of the classifying algorithms on the X-ray dataset
 <br>
 <center><img src="images/covid5.jpg"/></center>
 The proposed model tested through the web app on a CT scan image of a COVID-19 positive case (above) and a CT scan image of a COVID-19 negative case (below).

@@ -29,6 +29,7 @@ Design a deep learning model to recognize human activities (walking, running, si
 -Tested and evaluated the model's performance in real-time scenarios.<br>
 -Developed a web app to display the model prediction results in real-time in a user-friendly interface.<br>
 </div>
+<div>
 <center><img src="images/GPHAR.jpg"/></center>
     <center><i>Accuracy and loss curves of (a) ANN, (b) CNN, (c) LSTM, (d) CNN-LSTM</i></center>
 <br>
@@ -38,7 +39,7 @@ Design a deep learning model to recognize human activities (walking, running, si
 <center><img src="images/HAR.jpg"/></center>
     <center><i>Web app dashboard includes the prediction of each HAR model</i></center>
 <br> 
-
+</div>
 
 ---
 ### Supervised Algorithms For The Detection Of COVID-19 From Chest Computed Tomography (CT) & X-ray Scan Images <br>
@@ -141,16 +142,16 @@ _Key Skills: Machine Learning · Feature Engineering · Feature Extraction · Im
 <br>
 <center><img src="images/covid1.jpg"/></center>
 <center><i>Confusion matrix of the Voting Classifier on the combined features of the CT model (left) and X-ray model (right).</i></center>
-<br><br>
+<br>
 <center><img src="images/covid3.png"/></center>
 <center><i>Testing accuracies of the classifying algorithms on the CT dataset</i></center>
-<br><br>
+<br>
 <center><img src="images/covid4.png"/></center>
 <center><i>Testing accuracies of the classifying algorithms on the X-ray dataset</i></center>
-<br><br>
+<br>
 <center><img src="images/covid5.jpg"/></center>
 <center><i>The proposed model tested through the web app on a CT scan image of a COVID-19 positive case (above) and a CT scan image of a COVID-19 negative case (below).</i></center>
-<br><br>
+<br>
 <center><img src="images/covid6.jpg"/></center>
 <center><i>The proposed model tested through the web app on a CT scan image of a COVID-19 positive case (above), a CT scan image of a viral pneumonia case (middle), and a CT scan image of a normal lung (below).</i></center>
 <br>

@@ -108,6 +108,7 @@ Develop a copilot app leveraging a deep learning model to enhance driving safety
 <br>
 <center><img src="images/copilot5.png"/></center>
 <br>
+<div></div>
 
 ---
 ## Machine Learning

@@ -3,21 +3,21 @@
 
 ## Deep Learning
 
-### <ins>Master's Thesis</ins>: *"Deep Neural Encoding Models of the Human Visual Cortex to Predict fMRI Responses to Natural Visual Scenes"* <br>
+### Real-time Human Activity Recognition for the Elderly <br>
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/giocoal/algonauts2023-image-fMRI-encoding-model)
-[![Open PDF](https://img.shields.io/badge/PDF-Read%20Thesis%20PDF-red?logo=adobe-acrobat-reader)](https://drive.google.com/file/d/1hf3gs0VAdlfDIobfEtqeOhS8HHD0UfpI/view?usp=sharing)
-[![Open PDF](https://img.shields.io/badge/PDF-View%20Slides%20PDF-red?logo=adobe-acrobat-reader)](https://www.slideshare.net/slideshow/masters-thesis-data-science-presentation/266926165)
+[![Open PDF](https://img.shields.io/badge/PDF-Read%20PDF-red?logo=adobe-acrobat-reader)]()
 
-
-_Key Skills: Python (PyTorch, scikit-learn), Visual Encoding Model, Image-fMRI Encoding, Computational Neuroscience, Artificial Vision_
+_Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · Deep Learning · Feature Engineering · Research Skills · Python (Programming Language) · Pandas · NumPy · SciPy · Matplotlib · Keras · TensorFlow · Flask · Web Applications · Firebase · Cloud Firestore · Convolutional Neural Networks (CNN) · Long Short-term Memory (LSTM) · Google Cloud Platform (GCP)_
 
 <div style="text-align: justify">
-During a <b>research internship</b> at the <b>Imaging and Vision Laboratory</b> at the <b>University of Milano-Bicocca</b> I worked on my <b>master's thesis</b> “Deep Neural Encoding Models of the Human Visual Cortex to Predict fMRI Responses to Natural Visual Scenes”, which I developed by competing in the "<b>Algonauts Project 2023 Challenge</b>: How the
-Human Brain Makes Sense of Natural Scenes", exploring the interdisciplinary research related to one of the unsolved problems in both neuroscience and artificial intelligence: the ability to perceive and understand complex natural scenes.
-<br>
-The main objective of the thesis was to develop a comprehensive <b>voxel-based and subject-specific image-fMRI neural encoding model of the human visual cortex based on Deep Neural Networks (DNNs) and transfer learning</b> for the prediction of local neural blood oxygen level-dependent (BOLD) functional magnetic resonance imaging (fMRI) responses to complex visual stimuli.
-The results of my study are collected in my <b>Master's thesis</b>: <a href="https://drive.google.com/file/d/1hf3gs0VAdlfDIobfEtqeOhS8HHD0UfpI/view?usp=sharing">“Deep Neural Encoding Models of the Human Visual Cortex to Predict fMRI Responses to Natural Visual Scenes”</a> <br>
+-Identified and selected appropriate sensors (e.g., accelerometers, gyroscopes) that capture relevant data for activity recognition.<br>
+-Collected real-time sensor data corresponding to various human activities.<br>
+-Pre-processed the sensor data to ensure consistency and remove noise.<br>
+-Designed and implemented multiple deep learning models suitable for processing sequential sensor data including Convolution Neural Networks (CNNs), Recurrent Neural Networks (RNNs). Long Short-Term Memory (LSTM) networks, and CNN-LSTM networks.<br>
+-Trained the models on the labeled sensor data for real-time activity recognition.<br>
+-Optimized the model for accuracy, efficiency, and low latency to enable real-time operation.<br>
+-Tested and evaluated the model's performance in real-time scenarios.<br>
 
 </div>
 <br>

@@ -16,7 +16,7 @@ _Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · De
 <b>Objective:</b>
 <br>
 Design a deep learning model to recognize human activities (walking, running, sitting, etc.) in real-time using data collected from sensors.<br>
-
+<br>
 <b>Tasks:</b>
 <br>
 -Identified and selected appropriate sensors (e.g., accelerometers, gyroscopes) that capture relevant data for activity recognition.<br>
@@ -50,7 +50,7 @@ _Key Skills: Machine Learning · Feature Engineering · Feature Extraction · Im
 <b>Objective:</b>
 <br>
 Design a deep learning model to recognize human activities (walking, running, sitting, etc.) in real-time using data collected from sensors.<br>
-
+<br>
 <b>Tasks:</b>
 <br>
 -Identified and selected appropriate sensors (e.g., accelerometers, gyroscopes) that capture relevant data for activity recognition.<br>
@@ -86,7 +86,7 @@ _Key Skills: Android · Android Development · Android Studio · Android SDK · 
 <b>Objective:</b>
 <br>
 Develop a copilot app leveraging a deep learning model to enhance driving safety by detecting and identifying street signs in real-time from live mobile camera feeds, alerting drivers to speed limits and hazards, promoting adherence to traffic laws, and reducing accidents and congestion.<br>
-
+<br>
 <b>Tasks:</b>
 <br>
 -Researched and selected appropriate deep learning models focusing on Convolutional Neural Networks (CNNs) pre-trained for object detection tasks like YOLO.<br>
@@ -115,32 +115,30 @@ Develop a copilot app leveraging a deep learning model to enhance driving safety
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alfayoumy/COVID19-Detection)
 [![Open PDF](https://img.shields.io/badge/PDF-Read%20PDF-red?logo=adobe-acrobat-reader)](https://www.researchgate.net/publication/350588424_Supervised_Algorithms_for_the_Detection_of_COVID-19_from_Chest_Scan_Images)
 
-_Key Skills: Machine Learning · Feature Engineering · Feature Extraction · Image Processing · Digital Image Processing · Data Classification · Scikit-Learn · Matplotlib · SciPy · NumPy · Pandas (Software) · Python (Programming Language) · Web Applications_
+_Key Skills: Machine Learning · Feature Engineering · Feature Extraction · Image Processing · Digital Image Processing · Data Classification · Scikit-Learn · Matplotlib · SciPy · NumPy · Pandas · OpenCV · Python (Programming Language) · Web Applications_
 <br>
 <center><img src="images/HARDiagram.png"/></center>
 <br>
 <div style="text-align: justify">
 <b>Objective:</b>
 <br>
-Design a deep learning model to recognize human activities (walking, running, sitting, etc.) in real-time using data collected from sensors.<br>
-
+ Develop a supervised machine learning model to automate the analysis of X-ray and CT scan images for faster and more efficient detection of COVID-19.<br>
+<br>
 <b>Tasks:</b>
 <br>
--Identified and selected appropriate sensors (e.g., accelerometers, gyroscopes) that capture relevant data for activity recognition.<br>
--Collected real-time sensor data corresponding to various human activities.<br>
--Pre-processed the sensor data to ensure consistency and remove noise.<br>
--Designed and implemented multiple deep learning models suitable for processing sequential sensor data including Convolution Neural Networks (CNNs), Recurrent Neural Networks (RNNs). Long Short-Term Memory (LSTM) networks, and CNN-LSTM networks.<br>
--Trained the models on the labeled sensor data for real-time activity recognition.<br>
--Optimized the model for accuracy, efficiency, and low latency to enable real-time operation.<br>
--Tested and evaluated the model's performance in real-time scenarios.<br>
--Developed a web app to display the model prediction results in real-time in a user-friendly interface.<br>
+-Collected and pre-processed a large dataset of X-ray and CT scans, including both COVID-19 positive and negative cases.<br>
+-Implemented image processing techniques to extract relevant features from the X-ray and CT scan images.<br>
+-Employed supervised machine learning algorithms, focusing on algorithms effective for classification tasks such as K-Nearest Neighbors (kNN), Support Vector Machines (SVMs), Random Forests, etc.<br>
+-Trained and validated the model on the prepared dataset, optimizing for accuracy in differentiating between COVID-19 and other respiratory illnesses.<br>
+-Evaluated the model's performance metrics such as sensitivity, specificity, and accuracy.<br>
+-Documented the research process, highlighting the chosen feature extraction techniques, machine learning algorithms used, training parameters, and achieved performance.<br>
 </div>
 <br>
-<center><img src="images/GPHAR.jpg"/></center>
+<center><img src="images/covid5.jpg"/></center>
+The proposed model tested through the web app on a CT scan image of a COVID-19 positive case (above) and a CT scan image of a COVID-19 negative case (below)
 <br>
-<center><img src="images/HARResults.jpg"/></center>
-<br>
-<center><img src="images/HAR.jpg"/></center>
+<center><img src="images/covid6.jpg"/></center>
+The proposed model tested through the web app on a CT scan image of a COVID-19 positive case (above), a CT scan image of a viral pneumonia case (middle), and a CT scan image of a normal lung (below)
 <br>
 
 ---

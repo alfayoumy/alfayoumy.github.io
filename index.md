@@ -14,8 +14,7 @@ _Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · De
 <center><i>HAR system overview</i></center>
 <br>
 <div style="text-align: justify">
-<b>Objective:</b>
-<br>
+<b>Objective: </b>
 Design a deep learning model to recognize human activities (walking, running, sitting, etc.) in real-time using data collected from sensors.<br>
 <br>
 <b>Tasks:</b>

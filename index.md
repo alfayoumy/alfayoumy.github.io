@@ -11,7 +11,7 @@
 _Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · Deep Learning · Feature Engineering · Research Skills · Python (Programming Language) · Pandas · NumPy · SciPy · Matplotlib · Keras · TensorFlow · Flask · Web Applications · Firebase · Cloud Firestore · Convolutional Neural Networks (CNN) · Long Short-term Memory (LSTM) · Google Cloud Platform (GCP)_
 <br>
 <center><img src="images/HARDiagram.png"/></center>
-<center>_HAR system overview_<center>
+<center><i>HAR system overview</i><center>
 <br>
 <div style="text-align: justify">
 <b>Objective:</b>
@@ -31,13 +31,13 @@ Design a deep learning model to recognize human activities (walking, running, si
 </div>
 <br>
 <center><img src="images/GPHAR.jpg"/></center>
-<center>_Accuracy and loss curves of (a) ANN, (b) CNN, (c) LSTM, (d) CNN-LSTM_<center>
+<center><i>Accuracy and loss curves of (a) ANN, (b) CNN, (c) LSTM, (d) CNN-LSTM</i><center>
 <br><br>
 <center><img src="images/HARResults.jpg"/></center>
-<center>_Models' performance metrics_<center>
+<center><i>Models' performance metrics</i><center>
 <br>
 <center><img src="images/HAR.jpg"/></center>
-<center>_Web app dashboard includes the prediction of each HAR model_<center>
+<center><i>Web app dashboard includes the prediction of each HAR model</i><center>
 <br>
 
 ---
@@ -137,19 +137,19 @@ _Proposed model overview_
 </div>
 <br>
 <center><img src="images/covid1.jpg"/></center>
-Confusion matrix of the Voting Classifier on the combined features of the CT model (left) and X-ray model (right).
+<center><i>Confusion matrix of the Voting Classifier on the combined features of the CT model (left) and X-ray model (right).</i></center>
 <br><br>
 <center><img src="images/covid3.png"/></center>
-Testing accuracies of the classifying algorithms on the CT dataset
+<center><i>Testing accuracies of the classifying algorithms on the CT dataset</i></center>
 <br><br>
 <center><img src="images/covid4.png"/></center>
-Testing accuracies of the classifying algorithms on the X-ray dataset
+<center><i>Testing accuracies of the classifying algorithms on the X-ray dataset</i></center>
 <br><br>
 <center><img src="images/covid5.jpg"/></center>
-The proposed model tested through the web app on a CT scan image of a COVID-19 positive case (above) and a CT scan image of a COVID-19 negative case (below).
+<center><i>The proposed model tested through the web app on a CT scan image of a COVID-19 positive case (above) and a CT scan image of a COVID-19 negative case (below).</i></center>
 <br><br>
 <center><img src="images/covid6.jpg"/></center>
-The proposed model tested through the web app on a CT scan image of a COVID-19 positive case (above), a CT scan image of a viral pneumonia case (middle), and a CT scan image of a normal lung (below).
+<center><i>The proposed model tested through the web app on a CT scan image of a COVID-19 positive case (above), a CT scan image of a viral pneumonia case (middle), and a CT scan image of a normal lung (below).</i></center>
 <br>
 
 ---

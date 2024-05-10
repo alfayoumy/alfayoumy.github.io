@@ -109,7 +109,7 @@ Develop a copilot app leveraging a deep learning model to enhance driving safety
 <li>Analyzed a large dataset of street sign images encompassing various types, shapes, and environmental conditions (lighting variations, occlusions).</li>
 <li>Pre-processed the image data for training the deep learning model, including techniques such as image resizing, normalization, and data augmentation.</li>
 <li>Adapted the chosen deep learning model for street sign detection and classification by fine-tuning it on the prepared street sign image dataset.</li>
-<li>Integrated the deep learning model with an Android application framework for real-time processing.<br>
+<li>Integrated the deep learning model with an Android application framework for real-time processing.</li>
 <li>Developed functionalities within the app to capture live video from the smartphone camera and to calculate the car’s speed using GPS.</li>
 <li>Designed an interface to display real-time detections and classifications of street signs on the phone screen with audio alerts for critical signs (stop signs, speed limit signs).</li>
 <li>Optimized the app for performance on mobile devices, balancing accuracy with computational efficiency and battery usage.</li>

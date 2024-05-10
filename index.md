@@ -11,6 +11,7 @@
 _Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · Deep Learning · Feature Engineering · Research Skills · Python (Programming Language) · Pandas · NumPy · SciPy · Matplotlib · Keras · TensorFlow · Flask · Web Applications · Firebase · Cloud Firestore · Convolutional Neural Networks (CNN) · Long Short-term Memory (LSTM) · Google Cloud Platform (GCP)_
 <br>
 <center><img src="images/HARDiagram.png"/></center>
+HAR system overview
 <br>
 <div style="text-align: justify">
 <b>Objective:</b>
@@ -136,10 +137,10 @@ _Key Skills: Machine Learning · Feature Engineering · Feature Extraction · Im
 <center><img src="images/covid1.jpg"/></center>
 Confusion matrix of the Voting Classifier on the combined features of the CT model (left) and X-ray model (right).
 <br><br>
-<center><img src="images/covid3.jpg"/></center>
+<center><img src="images/covid3.png"/></center>
 Testing accuracies of the classifying algorithms on the CT dataset
 <br><br>
-<center><img src="images/covid4.jpg"/></center>
+<center><img src="images/covid4.png"/></center>
 Testing accuracies of the classifying algorithms on the X-ray dataset
 <br><br>
 <center><img src="images/covid5.jpg"/></center>

@@ -3,7 +3,15 @@
 
 
 @import "jekyll-theme-minimal";
+
 .wrapper {
-    width: 120%; /* Adjust this value as needed */
-    margin: 0 auto; /* This centers the wrapper horizontally */
+  width:960px;
+  margin:0 auto;
 }
+
+section {
+  width:600px;
+  float:right;
+  padding-bottom:50px;
+}
+

@@ -114,7 +114,9 @@ Develop a copilot app leveraging a deep learning model to enhance driving safety
 
 _Key Skills: Machine Learning · Feature Engineering · Feature Extraction · Image Processing · Digital Image Processing · Data Classification · Scikit-Learn · Matplotlib · SciPy · NumPy · Pandas · OpenCV · Python (Programming Language) · Web Applications_
 <br>
-<center><img src="images/HARDiagram.png"/></center>
+<center><img src="images/covid.png"/></center>
+<br>
+<center><img src="images/covid1.jpg"/></center>
 <br>
 <div style="text-align: justify">
 <b>Objective:</b>
@@ -131,11 +133,16 @@ _Key Skills: Machine Learning · Feature Engineering · Feature Extraction · Im
 -Documented the research process, highlighting the chosen feature extraction techniques, machine learning algorithms used, training parameters, and achieved performance.<br>
 </div>
 <br>
+<center><img src="images/covid1.jpg"/></center>
+Confusion matrix of the Voting Classifier on the combined features of the CT model (left) and X-ray model (right).
+<br>
+<center><img src="images/covid2.jpg"/></center>
+<br>
 <center><img src="images/covid5.jpg"/></center>
-The proposed model tested through the web app on a CT scan image of a COVID-19 positive case (above) and a CT scan image of a COVID-19 negative case (below)
+The proposed model tested through the web app on a CT scan image of a COVID-19 positive case (above) and a CT scan image of a COVID-19 negative case (below).
 <br>
 <center><img src="images/covid6.jpg"/></center>
-The proposed model tested through the web app on a CT scan image of a COVID-19 positive case (above), a CT scan image of a viral pneumonia case (middle), and a CT scan image of a normal lung (below)
+The proposed model tested through the web app on a CT scan image of a COVID-19 positive case (above), a CT scan image of a viral pneumonia case (middle), and a CT scan image of a normal lung (below).
 <br>
 
 ---

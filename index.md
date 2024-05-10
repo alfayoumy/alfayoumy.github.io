@@ -39,6 +39,7 @@ Design a deep learning model to recognize human activities (walking, running, si
     <center><i>Web app dashboard includes the prediction of each HAR model</i></center>
 <br> 
 
+
 ---
 ### Supervised Algorithms For The Detection Of COVID-19 From Chest Computed Tomography (CT) & X-ray Scan Images <br>
 

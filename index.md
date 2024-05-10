@@ -5,11 +5,13 @@
 
 ### Real-time Human Activity Recognition for the Elderly <br>
 
-[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/giocoal/algonauts2023-image-fMRI-encoding-model)
-[![Open PDF](https://img.shields.io/badge/PDF-Read%20PDF-red?logo=adobe-acrobat-reader)]()
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alfayoumy/NUHARIPS)
+[![Open PDF](https://github.com/alfayoumy/alfayoumy.github.io/blob/main/pdf/GP.pdf)]()
 
 _Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · Deep Learning · Feature Engineering · Research Skills · Python (Programming Language) · Pandas · NumPy · SciPy · Matplotlib · Keras · TensorFlow · Flask · Web Applications · Firebase · Cloud Firestore · Convolutional Neural Networks (CNN) · Long Short-term Memory (LSTM) · Google Cloud Platform (GCP)_
-
+<br>
+<center><img src="images/HARDiagram.png"/></center>
+<br>
 <div style="text-align: justify">
 -Identified and selected appropriate sensors (e.g., accelerometers, gyroscopes) that capture relevant data for activity recognition.<br>
 -Collected real-time sensor data corresponding to various human activities.<br>
@@ -21,7 +23,11 @@ _Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · De
 
 </div>
 <br>
-<center><img src="images/visualencoding.png"/></center>
+<center><img src="images/GPHAR.jpg"/></center>
+<br>
+<center><img src="images/HARResults.jpg"/></center>
+<br>
+<center><img src="images/HAR.jpg"/></center>
 <br>
 
 ---
@@ -31,14 +37,16 @@ _Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · De
 [![Open PDF](https://img.shields.io/badge/PDF-View%20Slides%20PDF-red?logo=adobe-acrobat-reader)](https://github.com/giocoal/hmdb51-two-stream-action-recognition/blob/main/Report/Deep%20Learning%20-%20Video%20Action%20Recognition.pdf)
 
 _Key Skills: Python (Keras, OpenCV), Two-stream CNNs, Human Video Action Recognition, Image Processing_
-
+<br>
+<center><img src="images/HARResults.jpg"/></center>
+<br>
 <div style="text-align: justify">
 <b>Two-stream CNNs</b> for <b>video action recognition</b> using Stacked Optical Flows, implemented in <b>Keras</b>, on HMDB-51 dataset.
 <br> 
 We used an atchitecture based on two indipendent recognition streams (spatial and temporal), which are then combined by late fusion. Both the spatial and temporal streams consist of Convolutional Neural Networks (CNNs), the former based on a <b>finetuned ResNet-50</b> and the latter on a CNN which takes stacked <b>Optical Flows</b> as input.
 </div>
 <br>
-<center><img src="images/HMDBcopertina.png"/></center>
+<center><img src="images/HARResults.jpg"/></center>
 <br>
 
 ---

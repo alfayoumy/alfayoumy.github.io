@@ -20,14 +20,16 @@ Design a deep learning model to recognize human activities (walking, running, si
 <br>
 <b>Tasks:</b>
 <br>
--Identified and selected appropriate sensors (e.g., accelerometers, gyroscopes) that capture relevant data for activity recognition.<br>
--Collected real-time sensor data corresponding to various human activities.<br>
--Pre-processed the sensor data to ensure consistency and remove noise.<br>
--Designed and implemented multiple deep learning models suitable for processing sequential sensor data including Convolution Neural Networks (CNNs), Recurrent Neural Networks (RNNs). Long Short-Term Memory (LSTM) networks, and CNN-LSTM networks.<br>
--Trained the models on the labeled sensor data for real-time activity recognition.<br>
--Optimized the model for accuracy, efficiency, and low latency to enable real-time operation.<br>
--Tested and evaluated the model's performance in real-time scenarios.<br>
--Developed a web app to display the model prediction results in real-time in a user-friendly interface.<br>
+<ul>
+    <li>Identified and selected appropriate sensors (e.g., accelerometers, gyroscopes) that capture relevant data for activity recognition.</li>
+    <li>Collected real-time sensor data corresponding to various human activities.</li>
+    <li>Pre-processed the sensor data to ensure consistency and remove noise.</li>
+    <li>Designed and implemented multiple deep learning models suitable for processing sequential sensor data including Convolution Neural Networks (CNNs), Recurrent Neural Networks (RNNs). Long Short-Term Memory (LSTM) networks, and CNN-LSTM networks.</li>
+    <li>Trained the models on the labeled sensor data for real-time activity recognition.</li>
+    <li>Optimized the model for accuracy, efficiency, and low latency to enable real-time operation.</li>
+    <li>Tested and evaluated the model's performance in real-time scenarios.</li>
+    <li>Developed a web app to display the model prediction results in real-time in a user-friendly interface.</li>
+</ul>
 </div>
 <div><center>
 <img src="images/GPHAR.jpg"/>

@@ -120,7 +120,7 @@ Develop a copilot app leveraging a deep learning model to enhance driving safety
 _Key Skills: Machine Learning · Feature Engineering · Feature Extraction · Image Processing · Digital Image Processing · Data Classification · Scikit-Learn · Matplotlib · SciPy · NumPy · Pandas · OpenCV · Python (Programming Language) · Web Applications_
 <br>
 <center><img src="images/covid.png"/></center>
-_Proposed model overview_
+<center><i>Proposed model overview</i></center>
 <br>
 <div style="text-align: justify">
 <b>Objective:</b>

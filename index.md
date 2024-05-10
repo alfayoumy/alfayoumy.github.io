@@ -13,6 +13,9 @@ _Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · De
 <center><img src="images/HARDiagram.png"/></center>
 <br>
 <div style="text-align: justify">
+Objective: Design a deep learning model to recognize human activities (walking, running, sitting, etc.) in real-time using data collected from sensors.<br>
+
+Tasks:<br>
 -Identified and selected appropriate sensors (e.g., accelerometers, gyroscopes) that capture relevant data for activity recognition.<br>
 -Collected real-time sensor data corresponding to various human activities.<br>
 -Pre-processed the sensor data to ensure consistency and remove noise.<br>
@@ -20,6 +23,7 @@ _Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · De
 -Trained the models on the labeled sensor data for real-time activity recognition.<br>
 -Optimized the model for accuracy, efficiency, and low latency to enable real-time operation.<br>
 -Tested and evaluated the model's performance in real-time scenarios.<br>
+-Developed a web app to display the model prediction results in real-time in a user-friendly interface.<br>
 
 </div>
 <br>
@@ -66,22 +70,6 @@ The main objective was to train an <b>Auxiliary Classifier GAN</b> (AC-GAN) to o
 <center><img src="images/CXR-ACGAN - Example.png"/></center>
 <br>
 
----
-### Alzheimers's Disease / Healthy Brain MRI Images Classification and WGAN Generation
-
-[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/giocoal/ADNI-brain-MRI-alzheimer-WGAN-generation-and-classification)
-[![Open PDF](https://img.shields.io/badge/PDF-View%20Slides%20PDF-red?logo=adobe-acrobat-reader)](https://www.slideshare.net/Giorgio469575/identification-of-alzheimers-disease-using-a-deep-learning-method-based-on-t1w-brain-mri-images)
-
-_Key Skills: Python (Keras, OpenCV), Image Generation, Medical Imaging, Wasserstein GAN, Data Augmentation, Image Classification_
-
-<div style="text-align: justify">
-<b>Brain</b> T1-Weighted <b>MRI</b> Images <b>Classification</b> and <b>WGAN Generation</b> (<b>Alzheimer's</b> and Healthy patients) for the purpose of data augmentation. Implemented in TensorFlow, trained on ADNI dataset.
-<br> <br>
-This project focused on Alzheimer's Disease through three main objectives. Firstly, a dataset of axial 2D slices was created from 3D T1-weighted MRI brain images, integrating clinical, genetic, and biological sample data. Secondly, a <b>Custom Resnet-18</b> was trained to <b>classify</b> these images, distinguishing between healthy individuals and those with Alzheimer's. Lastly, different techniques for managing <b>class imbalance</b> were evaluated to improve the classifier's performance and reduce bias, including the training of a generative model (<b>Wasserstein GAN</b>) on Alzheimer's Disease and Healthy images for the purpose of <b>generative data augmentation</b>.
-</div>
-<br>
-<center><img src="images/WGAN_MRI_Example.png"/></center>
-<br>
 
 ---
 ## Machine Learning

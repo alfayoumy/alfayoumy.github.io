@@ -3,7 +3,7 @@
 
 ## Deep Learning
 
-### Real-time Human Activity Recognition for the Elderly <br>
+### Web App for Real-time Human Activity Recognition Using Deep Learning <br>
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alfayoumy/NUHARIPS)
 [![Open PDF](https://img.shields.io/badge/PDF-Read%20PDF-red?logo=adobe-acrobat-reader)](https://github.com/alfayoumy/alfayoumy.github.io/blob/main/pdf/GP.pdf)

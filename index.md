@@ -29,20 +29,19 @@ Design a deep learning model to recognize human activities (walking, running, si
 -Tested and evaluated the model's performance in real-time scenarios.<br>
 -Developed a web app to display the model prediction results in real-time in a user-friendly interface.<br>
 </div>
-<br>
+<div>
 <center><img src="images/GPHAR.jpg"/></center>
 <center><i>Accuracy and loss curves of (a) ANN, (b) CNN, (c) LSTM, (d) CNN-LSTM</i><center>
-<br><br>
+<br>
 <center><img src="images/HARResults.jpg"/></center>
 <center><i>Models' performance metrics</i><center>
 <br>
 <center><img src="images/HAR.jpg"/></center>
 <center><i>Web app dashboard includes the prediction of each HAR model</i><center>
 <br>
-<br>
+</div>
 
 ---
-
 ### Supervised Algorithms For The Detection Of COVID-19 From Chest Computed Tomography (CT) & X-ray Scan Images <br>
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alfayoumy/COVID19-Detection)

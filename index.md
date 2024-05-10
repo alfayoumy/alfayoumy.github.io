@@ -92,7 +92,7 @@ Design a deep learning model to recognize human activities (walking, running, si
 _Key Skills: Android · Android Development · Android Studio · Android SDK · Kotlin · Data Science · Data Analysis · Convolutional Neural Networks (CNN) · Pandas · NumPy · Matplotlib · Python (Programming Language) · Deep Learning · Data Classification_
 <br>
 <center><img src="images/copilot.png"/></center>
-<center><i>High-level design of the system</i></center>
+<center><i>High-level design of the app</i></center>
 <br>
 <center><img src="images/copilot1.png"/></center>
 <center><i>Interacting components of the system</i></center>

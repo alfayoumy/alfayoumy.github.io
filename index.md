@@ -71,37 +71,39 @@ Design a deep learning model to recognize human activities (walking, running, si
 <br>
 
 ---
-### Web App for Real-time Human Activity Recognition Using Deep Learning <br>
+### Driving Assistant (Copilot) Android App for Street Sign Detection and Identification in Real-time <br>
 
-[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alfayoumy/NUHARIPS)
-[![Open PDF](https://img.shields.io/badge/PDF-Read%20PDF-red?logo=adobe-acrobat-reader)](/pdf/GP.pdf)
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alfayoumy/copilot)
+[![Open PDF](https://img.shields.io/badge/PDF-Read%20PDF-red?logo=adobe-acrobat-reader)](/pdf/Copilot.pdf)
 
-_Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · Deep Learning · Feature Engineering · Research Skills · Python (Programming Language) · Pandas · NumPy · SciPy · Matplotlib · Keras · TensorFlow · Flask · Web Applications · Firebase · Cloud Firestore · Convolutional Neural Networks (CNN) · Long Short-term Memory (LSTM) · Google Cloud Platform (GCP)_
+_Key Skills: Android · Android Development · Android Studio · Android SDK · Kotlin · Data Science · Data Analysis · Convolutional Neural Networks (CNN) · Pandas · NumPy · Matplotlib · Python (Programming Language) · Deep Learning · Data Classification_
 <br>
-<center><img src="images/HARDiagram.png"/></center>
+<center><img src="images/copilot.png"/></center>
+<br>
+<center><img src="images/copilot2.png"/></center>
 <br>
 <div style="text-align: justify">
 <b>Objective:</b>
 <br>
-Design a deep learning model to recognize human activities (walking, running, sitting, etc.) in real-time using data collected from sensors.<br>
+Develop a copilot app leveraging a deep learning model to enhance driving safety by detecting and identifying street signs in real-time from live mobile camera feeds, alerting drivers to speed limits and hazards, promoting adherence to traffic laws, and reducing accidents and congestion.<br>
 
 <b>Tasks:</b>
 <br>
--Identified and selected appropriate sensors (e.g., accelerometers, gyroscopes) that capture relevant data for activity recognition.<br>
--Collected real-time sensor data corresponding to various human activities.<br>
--Pre-processed the sensor data to ensure consistency and remove noise.<br>
--Designed and implemented multiple deep learning models suitable for processing sequential sensor data including Convolution Neural Networks (CNNs), Recurrent Neural Networks (RNNs). Long Short-Term Memory (LSTM) networks, and CNN-LSTM networks.<br>
--Trained the models on the labeled sensor data for real-time activity recognition.<br>
--Optimized the model for accuracy, efficiency, and low latency to enable real-time operation.<br>
--Tested and evaluated the model's performance in real-time scenarios.<br>
--Developed a web app to display the model prediction results in real-time in a user-friendly interface.<br>
+-Researched and selected appropriate deep learning models focusing on Convolutional Neural Networks (CNNs) pre-trained for object detection tasks like YOLO.<br>
+-Analyzed a large dataset of street sign images encompassing various types, shapes, and environmental conditions (lighting variations, occlusions).<br>
+-Pre-processed the image data for training the deep learning model, including techniques such as image resizing, normalization, and data augmentation.<br>
+-Adapted the chosen deep learning model for street sign detection and classification by fine-tuning it on the prepared street sign image dataset.<br>
+-Integrated the deep learning model with an Android application framework for real-time processing.<br>
+-Developed functionalities within the app to capture live video from the smartphone camera and to calculate the car’s speed using GPS.<br>
+-Designed an interface to display real-time detections and classifications of street signs on the phone screen with audio alerts for critical signs (stop signs, speed limit signs).<br>
+-Optimized the app for performance on mobile devices, balancing accuracy with computational efficiency and battery usage.<br>
 </div>
 <br>
-<center><img src="images/GPHAR.jpg"/></center>
+<center><img src="images/copilot3.png"/></center>
 <br>
-<center><img src="images/HARResults.jpg"/></center>
+<center><img src="images/copilot5.png"/></center>
 <br>
-<center><img src="images/HAR.jpg"/></center>
+<center><img src="images/copilot7.png"/></center>
 <br>
 
 

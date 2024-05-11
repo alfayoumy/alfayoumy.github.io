@@ -276,6 +276,7 @@ The objective of this project was to conduct a comprehensive business analysis o
     <br>
     <ul>
         <li>Extracted and prepared sales, profit, and customer data for the specified timeframe. This included cleaning and organizing the data to ensure accuracy and consistency for analysis.</li>
+        <li>Developed actionable recommendations based on the analysis for various aspects of the business, including strategies to address identified issues and improve overall performance.</li>
         <li>Conducted a deep dive into various business areas of XYZ Trade:</li>
             <ul>
                 <li>Profitability: Analyzed trends, seasonality, and identified reasons behind a profit decline from Q3 to Q4.</li>
@@ -287,7 +288,6 @@ The objective of this project was to conduct a comprehensive business analysis o
                 <li>Buyer and Brand Contributions: Assessed the contribution of key buyers and brands to overall profitability.</li>
                 <li>Product Profitability: Identified high and low profitability products for strategic decision-making.</li>
             </ul>
-        <li>Developed actionable recommendations based on the analysis for various aspects of the business, including strategies to address identified issues and improve overall performance.</li>
     </ul>
 </div>
 

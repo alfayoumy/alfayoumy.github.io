@@ -279,7 +279,7 @@ The objective of this project was to conduct a comprehensive business analysis o
     <b>Tasks:</b>
     <br>
     <ul>
-        <li>Extracted and prepared sales, profit, and customer data for the specified timeframe. This included cleaning and organizing the data to ensure accuracy and consistency for analysis.
+        <li>Extracted and prepared sales, profit, and customer data for the specified timeframe. This included cleaning and organizing the data to ensure accuracy and consistency for analysis.</li>
         <li>Conducted a deep dive into various business areas of XYZ Trade:</li>
         <li>
             <ul>
@@ -294,8 +294,7 @@ The objective of this project was to conduct a comprehensive business analysis o
             </ul>
         </li>
         <li>Developed actionable recommendations based on the analysis for various aspects of the business, including strategies to address identified issues and improve overall performance.</li>
-
-</ul>
+    </ul>
 </div>
 
 ---

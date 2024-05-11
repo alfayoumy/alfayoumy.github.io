@@ -1,24 +1,24 @@
-[![Contributors][contributors-shield]][contributors-url]
+    [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
-Check out the minimal portfolio at https://giocoal.github.io/minimal-portfolio/
+Check out my portfolio at https://alfayoumy.github.io/
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/giocoal/minimal-portfolio.svg?style=for-the-badge
-[contributors-url]: https://github.com/giocoal/minimal-portfolio/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/giocoal/minimal-portfolio.svg?style=for-the-badge
-[forks-url]: https://github.com/giocoal/minimal-portfolio/network/members
-[stars-shield]: https://img.shields.io/github/stars/giocoal/minimal-portfolio.svg?style=for-the-badge
-[stars-url]: https://github.com/giocoal/minimal-portfolio/stargazers
-[issues-shield]: https://img.shields.io/github/issues/giocoal/minimal-portfolio.svg?style=for-the-badge
-[issues-url]: https://github.com/giocoal/minimal-portfolio/issues
-[license-shield]: https://img.shields.io/github/license/giocoal/minimal-portfolio.svg?style=for-the-badge
-[license-url]: https://github.com/giocoal/minimal-portfolio/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/alfayoumy/alfayoumy.github.io.svg?style=for-the-badge
+[contributors-url]: https://github.com/alfayoumy/alfayoumy.github.io/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/alfayoumy/alfayoumy.github.io.svg?style=for-the-badge
+[forks-url]: https://github.com/alfayoumy/alfayoumy.github.io/network/members
+[stars-shield]: https://img.shields.io/github/stars/alfayoumy/alfayoumy.github.io.svg?style=for-the-badge
+[stars-url]: https://github.com/alfayoumy/alfayoumy.github.io/stargazers
+[issues-shield]: https://img.shields.io/github/issues/alfayoumy/alfayoumy.github.io.svg?style=for-the-badge
+[issues-url]: https://github.com/alfayoumy/alfayoumy.github.io/issues
+[license-shield]: https://img.shields.io/github/license/alfayoumy/alfayoumy.github.io.svg?style=for-the-badge
+[license-url]: https://github.com/alfayoumy/alfayoumy.github.io/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/giorgio-carbone-63154219b/
 [product-screenshot]: images/screenshot.png

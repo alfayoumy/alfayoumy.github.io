@@ -272,14 +272,11 @@ _Key Skills: Machine Learning · Feature Engineering · Scikit-Learn · Data Sci
 <b>Objective:</b>
 The objective of this project was to conduct a comprehensive business analysis of an Electronics Megastore Chain's performance during the third and fourth quarters of 2020. This analysis aimed to identify key findings, including profit trends, sales fluctuations, category and brand dominance, regional performance, store effectiveness, return reasons, buyer and brand contributions, and product profitability potential. Based on these findings, the project sought to provide actionable recommendations to improve profitability and operational efficiency. [Some text is redacted for privacy purposes]<br>
 <br>
-
-<div>
     <b>Tasks:</b>
     <br>
     <ul>
         <li>Extracted and prepared sales, profit, and customer data for the specified timeframe. This included cleaning and organizing the data to ensure accuracy and consistency for analysis.</li>
         <li>Conducted a deep dive into various business areas of XYZ Trade:</li>
-        <li>
             <ul>
                 <li>Profitability: Analyzed trends, seasonality, and identified reasons behind a profit decline from Q3 to Q4.</li>
                 <li>Sales Performance: Investigated overall sales trends, including a significant drop observed on July 31st.</li>
@@ -290,7 +287,6 @@ The objective of this project was to conduct a comprehensive business analysis o
                 <li>Buyer and Brand Contributions: Assessed the contribution of key buyers and brands to overall profitability.</li>
                 <li>Product Profitability: Identified high and low profitability products for strategic decision-making.</li>
             </ul>
-        </li>
         <li>Developed actionable recommendations based on the analysis for various aspects of the business, including strategies to address identified issues and improve overall performance.</li>
     </ul>
 </div>

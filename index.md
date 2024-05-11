@@ -50,8 +50,8 @@ Design a deep learning model to recognize human activities (walking, running, si
 
 _Key Skills: Data Science · Artificial Intelligence (AI) · Data Analysis · Deep Learning · Internet of Things (IoT) · Python (Programming Language) · Pandas · Anaconda · Seaborn · SciPy · NumPy · Matplotlib · Keras · TensorFlow · Binary Classification · Anomaly Detection · Multi-label Classification · Multi-step Forecasting · Multivariate Time Series Forecasting · Convolutional Neural Networks (CNN) · Long Short-term Memory (LSTM) · Gated Recurrent Units (GRUs) · Bidirectional Recurrent Neural Networks (Bi-RNNs)_
 <br>
-<center><img src="images/HARDiagram.png"/></center>
-<center><i>HAR system overview</i></center>
+<center><img src="images/swat.png"/></center>
+<center><i>Overview of the Secure Water Treatment (SWaT) plant</i></center>
 <br>
 <div style="text-align: justify">
 <b>Objective: </b>
@@ -70,11 +70,11 @@ Develop a real-time detection system using deep learning to identify malfunction
 </ul>
 </div>
 <div><center>
-    <img src="images/GPHAR.jpg"/><br>
-    <i>Accuracy and loss curves of (a) ANN, (b) CNN, (c) LSTM, (d) CNN-LSTM</i>
+    <img src="images/swat1.png"/><br>
+    <i>Confusion matrices of the Normal vs. Attack classification task of (a) LSTM, (b) CNN, (c) CNN-LSTM models</i>
     <br><br>
-    <img src="images/HARResults.jpg"/><br>
-    <i>Models' performance metrics</i>
+    <img src="images/swat2.jpg"/><br>
+    <i>Models' performance metrics on the Normal vs. Attack classification task</i>
     <br><br>
     <img src="images/HAR.jpg"/><br>
     <i>Web app dashboard includes the prediction of each HAR model</i>

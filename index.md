@@ -15,7 +15,7 @@ _Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · De
 <br>
 <div style="text-align: justify">
 <b>Objective: </b>
-Design a deep learning model to recognize human activities (walking, running, sitting, etc.) in real-time using data collected from sensors.<br>
+Design a deep learning model to recognize human activities (walking, running, sitting, etc.) using data collected from sensors on a wearable device and develop a web app to monitor human activities in real-time.<br>
 <br>
 <b>Tasks:</b>
 <br>
@@ -27,7 +27,7 @@ Design a deep learning model to recognize human activities (walking, running, si
     <li>Trained the models on the labeled sensor data for real-time activity recognition.</li>
     <li>Optimized the model for accuracy, efficiency, and low latency to enable real-time operation.</li>
     <li>Tested and evaluated the model's performance in real-time scenarios.</li>
-    <li>Developed a web app to display the model prediction results in real-time in a user-friendly interface.</li>
+    <li>Developed a web app to monitor human activities and display the models prediction results in real-time in a user-friendly interface.</li>
 </ul>
 </div>
 <div><center>
@@ -38,7 +38,7 @@ Design a deep learning model to recognize human activities (walking, running, si
 <i>Models' performance metrics</i>
 <br><br>
 <img src="images/HAR.jpg"/><br>
-<i>Web app dashboard includes the prediction of each HAR model</i>
+<i>Web app dashboard showing the prediction of each HAR model</i>
 <br><br>
 </center></div>
 

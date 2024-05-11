@@ -176,7 +176,7 @@ _Key Skills: Machine Learning · Feature Engineering · Feature Extraction · Im
     <i>The proposed model tested through the web app on a CT scan image of a COVID-19 positive case (above), a CT scan image of a viral pneumonia case (middle), and a CT scan image of a normal lung (below).</i>
     <br><br>
     </center></div>
-    
+
 ---
 ### Real-time Indoor Positioning System using Machine Learning <br>
 
@@ -244,19 +244,59 @@ The objective of this project is to utilize Google BigQuery to extract relevant 
 <br>
 
 <div>
-<b>Tasks:</b>
+    <b>Tasks:</b>
+    <br>
+    <ul>
+        <li>Extracted valuable data from the COVID-19 Open Data dataset using Google BigQuery.</li>
+        <li>Analyzed the extracted data to identify key metrics and trends relevant to the COVID-19 pandemic, such as total confirmed cases, total deaths, fatality rates, vaccination rates, etc.</li>
+        <li>Designed and built an interactive dashboard from scratch using Google Data Studio.</li>
+        <li>Integrated various visualizations, including maps, tables, charts, and graphs, to effectively communicate insights and trends.</li>
+        <li>Implemented user-friendly features such as dropdown menus for selecting specific countries and date ranges to enable dynamic data exploration.</li>
+        <li>Ensured data accuracy and reliability by validating the data sources and updating the dashboard regularly with the latest available data.</li>
+        <li>Tested the dashboard functionality to ensure smooth interaction and proper display of information across different devices and platforms.</li>
+        <li>Provided documentation to enable users to understand how to interpret and utilize the dashboard effectively for decision-making and analysis.</li>
+    </ul>
+</div>
+
+---
+
+###  Electronics Megastore Chain Comprehensive Business Intelligence Report <br>
+
+[![Open PDF](https://img.shields.io/badge/PDF-View%20as%20PDF-red?logo=adobe-acrobat-reader)](/pdf/Electronics_BI_Redacted.pdf)
+
+_Key Skills: Machine Learning · Feature Engineering · Scikit-Learn · Data Science · Data Analysis · Artificial Intelligence (AI) · Communication Protocols · Signal Processing · Internet of Things (IoT) · Python (Programming Language) · NumPy · Pandas (Software) · Matplotlib · Data Classification · Flask · Web Applications · Firebase · Cloud Firestore · Google Cloud Platform (GCP) · Cross-validation · Agile Methodology_
 <br>
-<ul>
-    <li>Extracted valuable data from the COVID-19 Open Data dataset using Google BigQuery.</li>
-    <li>Analyzed the extracted data to identify key metrics and trends relevant to the COVID-19 pandemic, such as total confirmed cases, total deaths, fatality rates, vaccination rates, etc.</li>
-    <li>Designed and built an interactive dashboard from scratch using Google Data Studio.</li>
-    <li>Integrated various visualizations, including maps, tables, charts, and graphs, to effectively communicate insights and trends.</li>
-    <li>Implemented user-friendly features such as dropdown menus for selecting specific countries and date ranges to enable dynamic data exploration.</li>
-    <li>Ensured data accuracy and reliability by validating the data sources and updating the dashboard regularly with the latest available data.</li>
-    <li>Tested the dashboard functionality to ensure smooth interaction and proper display of information across different devices and platforms.</li>
-    <li>Provided documentation to enable users to understand how to interpret and utilize the dashboard effectively for decision-making and analysis.</li>
+<center><img src="images/BI_xyz.jpg"/></center>
+<center><i>XYZ Trade Dashboard Thumbnail</i></center>
+<br>
+
+<div style="text-align: justify">
+<b>Objective:</b>
+The objective of this project was to conduct a comprehensive business analysis of an Electronics Megastore Chain's performance during the third and fourth quarters of 2020. This analysis aimed to identify key findings, including profit trends, sales fluctuations, category and brand dominance, regional performance, store effectiveness, return reasons, buyer and brand contributions, and product profitability potential. Based on these findings, the project sought to provide actionable recommendations to improve profitability and operational efficiency. \[Some text is redacted for privacy purposes\]<br>
+<br>
+
+<div>
+    <b>Tasks:</b>
+    <br>
+    <ul>
+        <li>Extracted and prepared sales, profit, and customer data for the specified timeframe. This included cleaning and organizing the data to ensure accuracy and consistency for analysis.
+        <li>Conducted a deep dive into various business areas of XYZ Trade:</li>
+        <li>
+            <ul>
+                <li>Profitability: Analyzed trends, seasonality, and identified reasons behind a profit decline from Q3 to Q4.</li>
+                <li>Sales Performance: Investigated overall sales trends, including a significant drop observed on July 31st.</li>
+                <li>Product and Brand Performance: Evaluated the performance of different product categories and brands, including top sellers, average product prices, and underperforming brands.</li>
+                <li>Regional Performance: Analyzed sales and profitability across different regions, identifying top performing areas and potential reasons for variations.</li>
+                <li>Store Performance: Compared the performance of individual stores, pinpointing top performers, underperformers, and cashier effectiveness.</li>
+                <li>Customer Returns: Investigated return trends, reasons for returns, and identified areas for improvement.</li>
+                <li>Buyer and Brand Contributions: Assessed the contribution of key buyers and brands to overall profitability.</li>
+                <li>Product Profitability: Identified high and low profitability products for strategic decision-making.</li>
+            </ul>
+        </li>
+        <li>Developed actionable recommendations based on the analysis for various aspects of the business, including strategies to address identified issues and improve overall performance.</li>
+
 </ul>
 </div>
 
-
+---
 <center>© 2024 Amr Alfayoumy. Powered by Jekyll and the Minimal Theme.</center>

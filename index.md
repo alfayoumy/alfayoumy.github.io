@@ -8,10 +8,10 @@
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alfayoumy/NUHARIPS)
 [![Open PDF](https://img.shields.io/badge/PDF-Read%20PDF-red?logo=adobe-acrobat-reader)](/pdf/GP.pdf)
 
-_Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · Deep Learning · Feature Engineering · Research Skills · Python (Programming Language) · Pandas · NumPy · SciPy · Matplotlib · Keras · TensorFlow · Flask · Web Applications · Firebase · Cloud Firestore · Convolutional Neural Networks (CNN) · Long Short-term Memory (LSTM) · Google Cloud Platform (GCP) · NoSQL · JSON Web Tokens (JWT) · OAuth · RESTful APIs · Git_
+_Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · Deep Learning · Feature Engineering · Research Skills · Python (Programming Language) · Pandas · NumPy · SciPy · Matplotlib · Keras · TensorFlow · Flask · Web Applications · Firebase · Cloud Firestore · Convolutional Neural Networks (CNN) · Long Short-term Memory (LSTM) · Google Cloud Platform (GCP) · NoSQL · JSON Web Tokens (JWT) · OAuth · RESTful APIs · Git · Agile Methodology_
 <br>
 <center><img src="images/HARDiagram.png"/></center>
-<center><i>HAR system overview</i></center>
+<center><i>HAR System Overview</i></center>
 <br>
 <div style="text-align: justify">
 <b>Objective: </b>
@@ -155,24 +155,71 @@ _Key Skills: Machine Learning · Feature Engineering · Feature Extraction · Im
     <li>Documented the research process, highlighting the chosen feature extraction techniques, machine learning algorithms used, training parameters, and achieved performance.</li>
 </ul>
 </div>
-<br>
-<center><img src="images/covid1.jpg"/></center>
-<center><i>Confusion matrix of the Voting Classifier on the combined features of the CT model (left) and X-ray model (right).</i></center>
-<br>
-<center><img src="images/covid3.png"/></center>
-<center><i>Testing accuracies of the classifying algorithms on the CT dataset</i></center>
-<br>
-<center><img src="images/covid4.png"/></center>
-<center><i>Testing accuracies of the classifying algorithms on the X-ray dataset</i></center>
-<br>
-<center><img src="images/covid5.jpg"/></center>
-<center><i>The proposed model tested through the web app on a CT scan image of a COVID-19 positive case (above) and a CT scan image of a COVID-19 negative case (below).</i></center>
-<br>
-<center><img src="images/covid6.jpg"/></center>
-<center><i>The proposed model tested through the web app on a CT scan image of a COVID-19 positive case (above), a CT scan image of a viral pneumonia case (middle), and a CT scan image of a normal lung (below).</i></center>
-<br>
-
+<div><center>
+    <img src="images/covid1.jpg"/><br>
+    <i>Confusion matrix of the Voting Classifier on the combined features of the CT model (left) and X-ray model (right).</i>
+    <br><br>
+    <img src="images/covid3.png"/><br>
+    <i>Testing accuracies of the classifying algorithms on the CT dataset</i>
+    <br><br>
+    <img src="images/covid4.png"/><br>
+    <i>Testing accuracies of the classifying algorithms on the X-ray dataset</i>
+    <br><br>
+    <img src="images/covid5.jpg"/><br>
+    <i>The proposed model tested through the web app on a CT scan image of a COVID-19 positive case (above) and a CT scan image of a COVID-19 negative case (below).</i>
+    <br><br>
+    <img src="images/covid6.jpg"/>
+    <i>The proposed model tested through the web app on a CT scan image of a COVID-19 positive case (above), a CT scan image of a viral pneumonia case (middle), and a CT scan image of a normal lung (below).</i>
+    <br><br>
+    </center></div>
+    
 ---
+### Real-time Indoor Positioning System using Machine Learning <br>
 
+[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alfayoumy/NUHARIPS)
+[![Open PDF](https://img.shields.io/badge/PDF-Read%20PDF-red?logo=adobe-acrobat-reader)](/pdf/GP.pdf)
+
+_Key Skills: Machine Learning · Feature Engineering · Scikit-Learn · Data Science · Data Analysis · Artificial Intelligence (AI) · Communication Protocols · Signal Processing · Internet of Things (IoT) · Python (Programming Language) · NumPy · Pandas (Software) · Matplotlib · Data Classification · Flask · Web Applications · Firebase · Cloud Firestore · Google Cloud Platform (GCP) · Agile Methodology_
+<br>
+<center><img src="images/IPSDiagram.png"/></center>
+<center><i>IPS Overview</i></center>
+<br>
+<div style="text-align: justify">
+<b>Objective:</b>
+Develop a real-time indoor positioning system using machine learning techniques to accurately predict a user's location within a designated indoor space based on signal data collected from Bluetooth Low Energy (BLE) beacons or similar technologies.<br>
+<br>
+<b>Tasks:</b>
+<br>
+<ul>
+    <li>Investigated different indoor positioning technologies, and chosen Bluetooth Low Energy (BLE) beacons for this application.</li>
+    <li>Collected data points (received signal strength indicator (RSSI) values) from the chosen technology within the designated indoor space.</li>
+    <li>Employed various machine learning algorithms such k-Nearest Neighbors (kNN), Support Vector Machines (SVMs), Random Forest, Naive Bayes, and others to learn the relationship between signal data and location.</li>
+    <li>Trained several models to predict a user's location within the designated space based on real-time BLE RSSI readings.</li>
+    <li>Evaluated the positioning system's accuracy and latency for real-time applications.</li>
+    <li>Optimized the models for efficient resource utilization and real-time performance.</li>
+    <li>Integrated the Indoor Positioning System with the Human Activity Recognition system for the application of patient monitoring in a care facility for the elderly.</li>
+    <li>Configured the system to detect inconsistent events (e.g., patient laying down in the bathroom) and alarming activities (e.g., location and activity have not changed for a period of time) and send alerts when an event is detected.</li>
+    <li>Documented the research process and presented the findings to technical and non-technical audiences.</li>
+</ul>
+</div>
+<div><center>
+    <img src="images/GPSeq.png"/>
+    <i>Sequence diagram of the integrated HAR-IPS system</i>
+    <br><br>
+    <img src="images/IPSResults.jpg"/><br>
+    <i>IPS models' performance metrics</i>
+    <br><br>
+    <img src="images/IPS.jpg"/><br>
+    <i>Web app dashboard showing the prediction of each IPS model</i>
+    <br><br>
+    <img src="images/IPS2.png"/><br>
+    <i>Web app dashboard showing the patient's location inside the designated space</i>
+    <br><br>
+    <img src="images/IPS3.png"/><br>
+    <img src="images/IPS4.png"/><br>
+    <i>Event detection and warning message on the Web app (above) with an email alert notification (below)</i>
+    <br><br>
+    </center></div>
+---
 
 <center>© 2024 Amr Alfayoumy. Powered by Jekyll and the Minimal Theme.</center>

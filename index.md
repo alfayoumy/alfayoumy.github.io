@@ -76,8 +76,8 @@ Develop a real-time detection system using deep learning to identify malfunction
     <img src="images/swat2.jpg"/><br>
     <i>Models' performance metrics on the Normal vs. Attack classification task</i>
     <br><br>
-    <img src="images/HAR.jpg"/><br>
-    <i>Web app dashboard includes the prediction of each HAR model</i>
+    <img src="images/swat3.jpg"/><br>
+    <i>Models' performance metrics on the Attack Points multilabel classification task</i>
     <br><br>
     </center></div>
 

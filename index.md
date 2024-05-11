@@ -308,7 +308,14 @@ Machine Learning Fundamentals with Python - DataCamp <a href="https://www.dataca
 Getting Started with AWS Machine Learning - Amazon Web Services via Coursera <a href="https://coursera.org/verify/ACJ7K2P295F3">(Credential URL)</a><br>
 Data Science Mathematical Skills - Duke University via Coursera <a href="https://coursera.org/verify/HBPS9HF2Z7L6">(Credential URL)</a><br>
 Digital Technology Data Analytics Program - GE via Forage <a href="https://insidesherpa.s3.amazonaws.com/completion-certificates/General%20Electric%20%28GE%29/ThbphD5N5WRsd9Mxo_General%20Electric_amCZJkYoSPc8vgkhQ_completion_certificate.pdf">(Credential URL)</a><br>
-
+Introduction to IoT - Cisco <a href="https://www.youracclaim.com/badges/858caac8-8574-4807-8097-2aab7853cff6?source=linked_in_profile">(Credential URL)</a><br>
+Angular Development Cross-Skilling - Udacity <a href="https://confirm.udacity.com/JTNA4Q4S">(Credential URL)</a><br>
+Software Engineering Virtual Experience - JPMorgan Chase & Co. via Forage <a href="https://insidesherpa.s3.amazonaws.com/completion-certificates/JP%20Morgan/R5iK7HMxJGBgaSbvk_J.P.%20Morgan%20Chase_amCZJkYoSPc8vgkhQ_completion_certificate.pdf">(Credential URL)</a><br>
+Python Fundamentals - DataCamp <a href="https://www.datacamp.com/statement-of-accomplishment/track/25a24a4e8ae72d1b9fab2e4d9996bb12b6675951">(Credential URL)</a><br>
+Python for Machine Learning - Great Learning <a href="https://verify.greatlearning.in/RPFAQLLY">(Credential URL)</a><br>
+Introduction to Creative AI - University of the Arts London via FutureLearn <a href="https://www.futurelearn.com/certificates/mjjk896">(Credential URL)</a><br>
+Fundamentals of Digital Marketing - Google <a href="https://learndigital.withgoogle.com/link/1qsdpcedm9s">(Credential URL)</a><br>
+Learn to Code for the Web - University of Leeds via FutureLearn <a href="https://www.futurelearn.com/certificates/lre39bp">(Credential URL)</a><br>
 
 ---
 

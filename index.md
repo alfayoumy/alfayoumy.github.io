@@ -1,5 +1,8 @@
 # Portfolio
 ---
+## [My Heading 1](## Deep Learning)
+## [My Heading 2](## Machine Learning)
+## [My Heading 3](## Data Visualization)
 
 ## Deep Learning
 
@@ -35,7 +38,7 @@ Design a deep learning model to recognize human activities (walking, running, si
     <i>Accuracy and loss curves of (a) ANN, (b) CNN, (c) LSTM, (d) CNN-LSTM</i>
     <br><br>
     <img src="images/HARResults.jpg"/><br>
-    <i>Models' performance metrics</i>
+    <i>HAR models' performance metrics</i>
     <br><br>
     <img src="images/HAR.jpg"/><br>
     <i>Web app dashboard showing the prediction of each HAR model</i>
@@ -179,7 +182,7 @@ _Key Skills: Machine Learning · Feature Engineering · Feature Extraction · Im
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alfayoumy/NUHARIPS)
 [![Open PDF](https://img.shields.io/badge/PDF-Read%20PDF-red?logo=adobe-acrobat-reader)](/pdf/GP.pdf)
 
-_Key Skills: Machine Learning · Feature Engineering · Scikit-Learn · Data Science · Data Analysis · Artificial Intelligence (AI) · Communication Protocols · Signal Processing · Internet of Things (IoT) · Python (Programming Language) · NumPy · Pandas (Software) · Matplotlib · Data Classification · Flask · Web Applications · Firebase · Cloud Firestore · Google Cloud Platform (GCP) · Agile Methodology_
+_Key Skills: Machine Learning · Feature Engineering · Scikit-Learn · Data Science · Data Analysis · Artificial Intelligence (AI) · Communication Protocols · Signal Processing · Internet of Things (IoT) · Python (Programming Language) · NumPy · Pandas (Software) · Matplotlib · Data Classification · Flask · Web Applications · Firebase · Cloud Firestore · Google Cloud Platform (GCP) · Cross-validation · Agile Methodology_
 <br>
 <center><img src="images/IPSDiagram.png"/></center>
 <center><i>IPS Overview</i></center>
@@ -191,7 +194,7 @@ Develop a real-time indoor positioning system using machine learning techniques 
 <b>Tasks:</b>
 <br>
 <ul>
-    <li>Investigated different indoor positioning technologies, and chosen Bluetooth Low Energy (BLE) beacons for this application.</li>
+    <li>Investigated different indoor positioning technologies, and selected Bluetooth Low Energy (BLE) beacons for this application.</li>
     <li>Collected data points (received signal strength indicator (RSSI) values) from the chosen technology within the designated indoor space.</li>
     <li>Employed various machine learning algorithms such k-Nearest Neighbors (kNN), Support Vector Machines (SVMs), Random Forest, Naive Bayes, and others to learn the relationship between signal data and location.</li>
     <li>Trained several models to predict a user's location within the designated space based on real-time BLE RSSI readings.</li>
@@ -221,5 +224,9 @@ Develop a real-time indoor positioning system using machine learning techniques 
     <br><br>
     </center></div>
 ---
+
+## Data Visualization
+
+### COVID-19 Dashboard using BigQuery and Looker Studio <br>
 
 <center>© 2024 Amr Alfayoumy. Powered by Jekyll and the Minimal Theme.</center>

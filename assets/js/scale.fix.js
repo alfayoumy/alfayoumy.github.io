@@ -27,8 +27,8 @@
 
     initialize();
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-
         document.addEventListener("touchstart", gestureStart, false);
         document.addEventListener("touchend", gestureEnd, false);
     }
+    
 })(document);

@@ -8,7 +8,7 @@
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alfayoumy/NUHARIPS)
 [![Open PDF](https://img.shields.io/badge/PDF-Read%20PDF-red?logo=adobe-acrobat-reader)](/pdf/GP.pdf)
 
-_Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · Deep Learning · Feature Engineering · Research Skills · Python (Programming Language) · Pandas · NumPy · SciPy · Matplotlib · Keras · TensorFlow · Flask · Web Applications · Firebase · Cloud Firestore · Convolutional Neural Networks (CNN) · Long Short-term Memory (LSTM) · Google Cloud Platform (GCP)_
+_Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · Deep Learning · Feature Engineering · Research Skills · Python (Programming Language) · Pandas · NumPy · SciPy · Matplotlib · Keras · TensorFlow · Flask · Web Applications · Firebase · Cloud Firestore · Convolutional Neural Networks (CNN) · Long Short-term Memory (LSTM) · Google Cloud Platform (GCP) · NoSQL · JSON Web Tokens (JWT) · OAuth · RESTful APIs · Git_
 <br>
 <center><img src="images/HARDiagram.png"/></center>
 <center><i>HAR system overview</i></center>
@@ -31,56 +31,55 @@ Design a deep learning model to recognize human activities (walking, running, si
 </ul>
 </div>
 <div><center>
-<img src="images/GPHAR.jpg"/><br>
-<i>Accuracy and loss curves of (a) ANN, (b) CNN, (c) LSTM, (d) CNN-LSTM</i>
-<br><br>
-<img src="images/HARResults.jpg"/><br>
-<i>Models' performance metrics</i>
-<br><br>
-<img src="images/HAR.jpg"/><br>
-<i>Web app dashboard showing the prediction of each HAR model</i>
-<br><br>
-</center></div>
+    <img src="images/GPHAR.jpg"/><br>
+    <i>Accuracy and loss curves of (a) ANN, (b) CNN, (c) LSTM, (d) CNN-LSTM</i>
+    <br><br>
+    <img src="images/HARResults.jpg"/><br>
+    <i>Models' performance metrics</i>
+    <br><br>
+    <img src="images/HAR.jpg"/><br>
+    <i>Web app dashboard showing the prediction of each HAR model</i>
+    <br><br>
+    </center></div>
 
 ---
-### Web App for Real-time Human Activity Recognition Using Deep Learning <br>
+### Real-time Detection of Cyberattacks on Secure Water Treatment Plants (SWaT) \[Work in Progress\]<br>
 
-[![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alfayoumy/NUHARIPS)
-[![Open PDF](https://img.shields.io/badge/PDF-Read%20PDF-red?logo=adobe-acrobat-reader)](/pdf/GP.pdf)
+[![View on GitHub](https://img.shields.io/badge/GitHub-WIP-blue?logo=GitHub)]()
+[![Open PDF](https://img.shields.io/badge/PDF-WIP-red?logo=adobe-acrobat-reader)]()
 
-_Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · Deep Learning · Feature Engineering · Research Skills · Python (Programming Language) · Pandas · NumPy · SciPy · Matplotlib · Keras · TensorFlow · Flask · Web Applications · Firebase · Cloud Firestore · Convolutional Neural Networks (CNN) · Long Short-term Memory (LSTM) · Google Cloud Platform (GCP)_
+_Key Skills: Data Science · Artificial Intelligence (AI) · Data Analysis · Deep Learning · Internet of Things (IoT) · Python (Programming Language) · Pandas · Anaconda · Seaborn · SciPy · NumPy · Matplotlib · Keras · TensorFlow · Binary Classification · Anomaly Detection · Multi-label Classification · Multi-step Forecasting · Multivariate Time Series Forecasting · Convolutional Neural Networks (CNN) · Long Short-term Memory (LSTM) · Gated Recurrent Units (GRUs) · Bidirectional Recurrent Neural Networks (Bi-RNNs)_
 <br>
 <center><img src="images/HARDiagram.png"/></center>
 <center><i>HAR system overview</i></center>
 <br>
 <div style="text-align: justify">
 <b>Objective: </b>
-Design a deep learning model to recognize human activities (walking, running, sitting, etc.) in real-time using data collected from sensors.<br>
+Develop a real-time detection system using deep learning to identify malfunctions and cyberattacks in secure water treatment plants (SWaTs), integrating historical data analysis, predictive modeling, and real-time monitoring to provide timely insights and alerts for informed decision-making by plant operators.<br>
 <br>
 <b>Tasks:</b>
 <br>
 <ul>
-    <li>Identified and selected appropriate sensors (e.g., accelerometers, gyroscopes) that capture relevant data for activity recognition.</li>
-    <li>Collected real-time sensor data corresponding to various human activities.</li>
-    <li>Pre-processed the sensor data to ensure consistency and remove noise.</li>
-    <li>Designed and implemented multiple deep learning models suitable for processing sequential sensor data including Convolution Neural Networks (CNNs), Recurrent Neural Networks (RNNs). Long Short-Term Memory (LSTM) networks, and CNN-LSTM networks.</li>
-    <li>Trained the models on the labeled sensor data for real-time activity recognition.</li>
-    <li>Optimized the model for accuracy, efficiency, and low latency to enable real-time operation.</li>
-    <li>Tested and evaluated the model's performance in real-time scenarios.</li>
-    <li>Developed a web app to display the model prediction results in real-time in a user-friendly interface.</li>
+    <li>Identified the relevant sensors and actuators within the secure treatment plant, understanding the data they generate (e.g., flow rates, chemical levels, actuator status, etc.).</li>
+    <li>Analyzed historical sensor and actuator data alongside information on normal operational states and any past attacks.</li>
+    <li>Pre-processed the data to handle missing values, and outliers, and ensure data quality and integrity.</li>
+    <li>Developed deep learning models to classify and forecast sensor and actuator data in real time.</li>
+    <li>Trained the models to identify normal operational patterns and potential deviations that could indicate a cyberattack as well as identify the exact time of the cyberattack and attack points.</li>
+    <li>Optimized the deep learning models by fine-tuning hyperparameters, adjusting architectures, and implementing advanced techniques such as regularization and dropout to improve performance and generalization.</li> 
+    <li>Evaluated the models' ability to detect anomalies and predict potential cyberattacks on the system.</li>
 </ul>
 </div>
 <div><center>
-<img src="images/GPHAR.jpg"/><br>
-<i>Accuracy and loss curves of (a) ANN, (b) CNN, (c) LSTM, (d) CNN-LSTM</i>
-<br><br>
-<img src="images/HARResults.jpg"/><br>
-<i>Models' performance metrics</i>
-<br><br>
-<img src="images/HAR.jpg"/><br>
-<i>Web app dashboard includes the prediction of each HAR model</i>
-<br><br>
-</center></div>
+    <img src="images/GPHAR.jpg"/><br>
+    <i>Accuracy and loss curves of (a) ANN, (b) CNN, (c) LSTM, (d) CNN-LSTM</i>
+    <br><br>
+    <img src="images/HARResults.jpg"/><br>
+    <i>Models' performance metrics</i>
+    <br><br>
+    <img src="images/HAR.jpg"/><br>
+    <i>Web app dashboard includes the prediction of each HAR model</i>
+    <br><br>
+    </center></div>
 
 
 ---
@@ -89,7 +88,7 @@ Design a deep learning model to recognize human activities (walking, running, si
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alfayoumy/copilot)
 [![Open PDF](https://img.shields.io/badge/PDF-Read%20PDF-red?logo=adobe-acrobat-reader)](/pdf/Copilot.pdf)
 
-_Key Skills: Android · Android Development · Android Studio · Android SDK · Kotlin · Data Science · Data Analysis · Convolutional Neural Networks (CNN) · Pandas · NumPy · Matplotlib · Python (Programming Language) · Deep Learning · Data Classification_
+_Key Skills: Android · Android Development · Android Studio · Android SDK · Kotlin · Data Science · Data Analysis · Convolutional Neural Networks (CNN) · Pandas · NumPy · Matplotlib · Python (Programming Language) · Deep Learning · Data Classification · OpenCV · TensorFlow Lite · Image Processing · Mobile Development · UI/UX Design · Unit Testing · Continuous Integration and Deployment (CI/CD)_
 <br>
 <center><img src="images/copilot.png"/></center>
 <center><i>High-level design of the app</i></center>
@@ -99,33 +98,32 @@ _Key Skills: Android · Android Development · Android Studio · Android SDK · 
 <br>
 <div style="text-align: justify">
 <b>Objective:</b>
-<br>
 Develop a copilot app leveraging a deep learning model to enhance driving safety by detecting and identifying street signs in real-time from live mobile camera feeds, alerting drivers to speed limits and hazards, promoting adherence to traffic laws, and reducing accidents and congestion.<br>
 <br>
 <b>Tasks:</b>
 <br>
 <ul>
-<li>Researched and selected appropriate deep learning models focusing on Convolutional Neural Networks (CNNs) pre-trained for object detection tasks like YOLO.</li>
-<li>Analyzed a large dataset of street sign images encompassing various types, shapes, and environmental conditions (lighting variations, occlusions).</li>
-<li>Pre-processed the image data for training the deep learning model, including techniques such as image resizing, normalization, and data augmentation.</li>
-<li>Adapted the chosen deep learning model for street sign detection and classification by fine-tuning it on the prepared street sign image dataset.</li>
-<li>Integrated the deep learning model with an Android application framework for real-time processing.</li>
-<li>Developed functionalities within the app to capture live video from the smartphone camera and to calculate the car’s speed using GPS.</li>
-<li>Designed an interface to display real-time detections and classifications of street signs on the phone screen with audio alerts for critical signs (stop signs, speed limit signs).</li>
-<li>Optimized the app for performance on mobile devices, balancing accuracy with computational efficiency and battery usage.</li>
+    <li>Researched and selected appropriate deep learning models focusing on Convolutional Neural Networks (CNNs) pre-trained for object detection tasks like YOLO.</li>
+    <li>Analyzed a large dataset of street sign images encompassing various types, shapes, and environmental conditions (lighting variations, occlusions).</li>
+    <li>Pre-processed the image data for training the deep learning model, including techniques such as image resizing, normalization, and data augmentation.</li>
+    <li>Adapted the chosen deep learning model for street sign detection and classification by fine-tuning it on the prepared street sign image dataset.</li>
+    <li>Integrated the deep learning model with an Android application framework for real-time processing.</li>
+    <li>Developed functionalities within the app to capture live video from the smartphone camera and to calculate the car’s speed using GPS.</li>
+    <li>Designed an interface to display real-time detections and classifications of street signs on the phone screen with audio alerts for critical signs (stop signs, speed limit signs).</li>
+    <li>Optimized the app for performance on mobile devices, balancing accuracy with computational efficiency and battery usage.</li>
 </ul>
 </div>
 <div><center>
-<img src="images/copilot2.png"/><br>
-<i>Proposed design</i>
-<br><br>
-<img src="images/copilot3.png"/><br>
-<i>Model predicted labels vs. true labels for an eval batch.<br>Green indicates correct predictions whereas red indicates wrong predictions.</i>
-<br><br>
-<img src="images/copilot5.png"/><br>
-<i>The developed app under testing through AVM</i>
-<br><br>
-</center></div>
+    <img src="images/copilot2.png"/><br>
+    <i>Proposed design</i>
+    <br><br>
+    <img src="images/copilot3.png"/><br>
+    <i>Model predicted labels vs. true labels for an eval batch.<br>Green indicates correct predictions whereas red indicates wrong predictions.</i>
+    <br><br>
+    <img src="images/copilot5.png"/><br>
+    <i>The developed app under testing through AVM</i>
+    <br><br>
+    </center></div>
 
 ---
 

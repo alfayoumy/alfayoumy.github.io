@@ -129,12 +129,12 @@ Develop a copilot app leveraging a deep learning model to enhance driving safety
 
 ## Machine Learning
 
-### Supervised Algorithms For The Detection Of COVID-19 From Chest Computed Tomography (CT) & X-ray Scan Images <br>
+### Supervised Algorithms for the Detection of COVID-19 from Chest CT & X-ray Scan Images <br>
 
 [![View on GitHub](https://img.shields.io/badge/GitHub-View_on_GitHub-blue?logo=GitHub)](https://github.com/alfayoumy/COVID19-Detection)
 [![Open PDF](https://img.shields.io/badge/PDF-Read%20PDF-red?logo=adobe-acrobat-reader)](https://www.researchgate.net/publication/350588424_Supervised_Algorithms_for_the_Detection_of_COVID-19_from_Chest_Scan_Images)
 
-_Key Skills: Machine Learning · Feature Engineering · Feature Extraction · Image Processing · Digital Image Processing · Data Classification · Scikit-Learn · Matplotlib · SciPy · NumPy · Pandas · OpenCV · Python (Programming Language) · Web Applications_
+_Key Skills: Machine Learning · Feature Engineering · Feature Extraction · Image Processing · Digital Image Processing · Data Classification · Scikit-Learn · Matplotlib · SciPy · NumPy · Pandas · OpenCV · Python (Programming Language) · Web Applications  · Hyperparameter Tuning · Cross-validation_
 <br>
 <center><img src="images/covid.png"/></center>
 <center><i>Proposed model overview</i></center>
@@ -146,12 +146,14 @@ _Key Skills: Machine Learning · Feature Engineering · Feature Extraction · Im
 <br>
 <b>Tasks:</b>
 <br>
--Collected and pre-processed a large dataset of X-ray and CT scans, including both COVID-19 positive and negative cases.<br>
--Implemented image processing techniques to extract relevant features from the X-ray and CT scan images.<br>
--Employed supervised machine learning algorithms, focusing on algorithms effective for classification tasks such as K-Nearest Neighbors (kNN), Support Vector Machines (SVMs), Random Forests, etc.<br>
--Trained and validated the model on the prepared dataset, optimizing for accuracy in differentiating between COVID-19 and other respiratory illnesses.<br>
--Evaluated the model's performance metrics such as sensitivity, specificity, and accuracy.<br>
--Documented the research process, highlighting the chosen feature extraction techniques, machine learning algorithms used, training parameters, and achieved performance.<br>
+<ul>
+<li>Collected and pre-processed a large dataset of X-ray and CT scans, including both COVID-19 positive and negative cases.</li>
+<li>Implemented image processing techniques to extract relevant features (HSV Histograms, Haralick Texture Features, Threshold Adjacency Statistics, Raw Pixel Intensities, etc.) from the X-ray and CT scan images.</li>
+<li>Employed supervised machine learning algorithms, focusing on algorithms effective for classification tasks such as K-Nearest Neighbors (kNN), Support Vector Machines (SVMs), Random Forests, etc.</li>
+<li>Trained and validated the model on the prepared dataset, optimizing for accuracy in differentiating between COVID-19 and other respiratory illnesses.</li>
+<li>Evaluated the model's performance metrics such as sensitivity, specificity, and accuracy.</li>
+<li>Documented the research process, highlighting the chosen feature extraction techniques, machine learning algorithms used, training parameters, and achieved performance.</li>
+</ul>
 </div>
 <br>
 <center><img src="images/covid1.jpg"/></center>

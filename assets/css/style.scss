@@ -4,7 +4,7 @@
 
 @import "jekyll-theme-minimal";
 
-@supports (hover: hover) {
+@media only screen and (min-width: 768px) {
     .wrapper {
         width:1000px;
         margin:0 auto;

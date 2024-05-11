@@ -238,10 +238,12 @@ _Key Skills: Machine Learning · Feature Engineering · Scikit-Learn · Data Sci
 <center><i>COVID-19 Dashboard Thumbnail</i></center>
 <br>
 
+<div style="text-align: justify">
 <b>Objective:</b>
 The objective of this project is to utilize Google BigQuery to extract relevant data from the COVID-19 Open Data dataset and then leverage Google Data Studio (Looker Studio) to create an interactive dashboard. This dashboard aims to visualize valuable insights and trends related to COVID-19, including confirmed cases, deaths, vaccination rates, fatality rates, recovery rates, etc. across different countries and over time.<br>
 <br>
 
+<div>
 <b>Tasks:</b>
 <br>
 <ul>

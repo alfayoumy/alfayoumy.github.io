@@ -1,8 +1,8 @@
 # Portfolio
 ---
-## [My Heading 1](## Deep Learning)
-## [My Heading 2](## Machine Learning)
-## [My Heading 3](## Data Visualization)
+## [My Heading 1](#deep-learning)
+## [My Heading 2](#machine-learning)
+## [My Heading 3](#data-visualization)
 
 ## Deep Learning
 

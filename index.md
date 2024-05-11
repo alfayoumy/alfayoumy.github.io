@@ -15,7 +15,7 @@ _Key Skills: Data Analysis · Data Science · Artificial Intelligence (AI) · De
 <br>
 <div style="text-align: justify">
 <b>Objective: </b>
-Design a deep learning model to recognize human activities (walking, running, sitting, etc.) using data collected from sensors on a wearable device and develop a web app to monitor human activities in real-time.<br>
+Design a deep learning model to recognize human activities (walking, running, sitting, etc.) using data collected from sensors on a wearable device and develop a web app to monitor human activities in real-time for the application of a patient monitoring in the setting of a care-facility for the elderly.<br>
 <br>
 <b>Tasks:</b>
 <br>
@@ -73,10 +73,10 @@ Develop a real-time detection system using deep learning to identify malfunction
     <img src="images/swat1.png"/><br>
     <i>Confusion matrices of the Normal vs. Attack classification task of (a) LSTM, (b) CNN, (c) CNN-LSTM models</i>
     <br><br>
-    <img src="images/swat2.jpg"/><br>
+    <img src="images/swat2.png"/><br>
     <i>Models' performance metrics on the Normal vs. Attack classification task</i>
     <br><br>
-    <img src="images/swat3.jpg"/><br>
+    <img src="images/swat3.png"/><br>
     <i>Models' performance metrics on the Attack Points multilabel classification task</i>
     <br><br>
     </center></div>
@@ -147,12 +147,12 @@ _Key Skills: Machine Learning · Feature Engineering · Feature Extraction · Im
 <b>Tasks:</b>
 <br>
 <ul>
-<li>Collected and pre-processed a large dataset of X-ray and CT scans, including both COVID-19 positive and negative cases.</li>
-<li>Implemented image processing techniques to extract relevant features (HSV Histograms, Haralick Texture Features, Threshold Adjacency Statistics, Raw Pixel Intensities, etc.) from the X-ray and CT scan images.</li>
-<li>Employed supervised machine learning algorithms, focusing on algorithms effective for classification tasks such as K-Nearest Neighbors (kNN), Support Vector Machines (SVMs), Random Forests, etc.</li>
-<li>Trained and validated the model on the prepared dataset, optimizing for accuracy in differentiating between COVID-19 and other respiratory illnesses.</li>
-<li>Evaluated the model's performance metrics such as sensitivity, specificity, and accuracy.</li>
-<li>Documented the research process, highlighting the chosen feature extraction techniques, machine learning algorithms used, training parameters, and achieved performance.</li>
+    <li>Collected and pre-processed a large dataset of X-ray and CT scans, including both COVID-19 positive and negative cases.</li>
+    <li>Implemented image processing techniques to extract relevant features (HSV Histograms, Haralick Texture Features, Threshold Adjacency Statistics, Raw Pixel Intensities, etc.) from the X-ray and CT scan images.</li>
+    <li>Employed supervised machine learning algorithms, focusing on algorithms effective for classification tasks such as K-Nearest Neighbors (kNN), Support Vector Machines (SVMs), Random Forests, etc.</li>
+    <li>Trained and validated the model on the prepared dataset, optimizing for accuracy in differentiating between COVID-19 and other respiratory illnesses.</li>
+    <li>Evaluated the model's performance metrics such as sensitivity, specificity, and accuracy.</li>
+    <li>Documented the research process, highlighting the chosen feature extraction techniques, machine learning algorithms used, training parameters, and achieved performance.</li>
 </ul>
 </div>
 <br>

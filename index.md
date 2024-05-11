@@ -293,7 +293,7 @@ The objective of this project was to conduct a comprehensive business analysis o
 
 ---
 
-## Courses & Certificates
+## Courses and Certificates
 <b>Advanced Data Analysis Nanodegree</b> - Udacity <a href="https://graduation.udacity.com/confirm/NEDMDHLV">(Credential URL)</a><br>
 <b>Professional Data Analysis Nanodegree</b> - Udacity <a href="https://graduation.udacity.com/confirm/HA9WK6ST">(Credential URL)</a><br>
 <b>AI Programming with Python Nanodegree</b> - Udacity <a href="https://graduation.udacity.com/confirm/LVYEMCD5">(Credential URL)</a><br>

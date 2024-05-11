@@ -1,7 +1,7 @@
 # Portfolio
 ---
 
-## [Deep Learning](#deep-learning) · [Machine Learning](#machine-learning) · [Data Visualization](#data-visualization) · [Courses](#courses-&amp;-certificates)
+## [Deep Learning](#deep-learning) · [Machine Learning](#machine-learning) · [Data Visualization](#data-visualization) · [Courses](#courses-and-certificates)
 
 ---
 

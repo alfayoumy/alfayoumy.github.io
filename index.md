@@ -230,4 +230,31 @@ Develop a real-time indoor positioning system using machine learning techniques 
 
 ### COVID-19 Dashboard using BigQuery and Looker Studio <br>
 
+[![Open PDF](https://img.shields.io/badge/PDF-View%20as%20PDF-red?logo=adobe-acrobat-reader)](/pdf/COVID-19-Dashboard.pdf)
+
+_Key Skills: Machine Learning · Feature Engineering · Scikit-Learn · Data Science · Data Analysis · Artificial Intelligence (AI) · Communication Protocols · Signal Processing · Internet of Things (IoT) · Python (Programming Language) · NumPy · Pandas (Software) · Matplotlib · Data Classification · Flask · Web Applications · Firebase · Cloud Firestore · Google Cloud Platform (GCP) · Cross-validation · Agile Methodology_
+<br>
+<center><img src="images/covid-dashboard.jpg"/></center>
+<center><i>COVID-19 Dashboard Thumbnail</i></center>
+<br>
+
+<b>Objective:</b>
+The objective of this project is to utilize Google BigQuery to extract relevant data from the COVID-19 Open Data dataset and then leverage Google Data Studio (Looker Studio) to create an interactive dashboard. This dashboard aims to visualize valuable insights and trends related to COVID-19, including confirmed cases, deaths, vaccination rates, fatality rates, recovery rates, etc. across different countries and over time.<br>
+<br>
+
+<b>Tasks:</b>
+<br>
+<ul>
+    <li>Extracting valuable data from the COVID-19 Open Data dataset using Google BigQuery.</li>
+    <li>Analyzing the extracted data to identify key metrics and trends relevant to the COVID-19 pandemic, such as total confirmed cases, total deaths, fatality rates, vaccination rates, etc.</li>
+    <li>Designing and building an interactive dashboard from scratch using Google Data Studio.</li>
+    <li>Integrating various visualizations, including maps, tables, charts, and graphs, to effectively communicate insights and trends.</li>
+    <li>Implementing user-friendly features such as dropdown menus for selecting specific countries and date ranges to enable dynamic data exploration.</li>
+    <li>Ensuring data accuracy and reliability by validating the data sources and updating the dashboard regularly with the latest available data.</li>
+    <li>Testing the dashboard functionality to ensure smooth interaction and proper display of information across different devices and platforms.</li>
+    <li>Providing documentation or training materials to enable users to understand how to interpret and utilize the dashboard effectively for decision-making and analysis.</li>
+</ul>
+</div>
+
+
 <center>© 2024 Amr Alfayoumy. Powered by Jekyll and the Minimal Theme.</center>

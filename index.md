@@ -293,23 +293,23 @@ The objective of this project was to conduct a comprehensive business analysis o
 
 ---
 
+## Courses & Certificates
+Advanced Data Analysis Nanodegree - Udacity <a href="https://graduation.udacity.com/confirm/NEDMDHLV">(Credential URL)</a><br>
+Professional Data Analysis Nanodegree - Udacity <a href="https://graduation.udacity.com/confirm/HA9WK6ST">(Credential URL)</a><br>
+AI Programming with Python Nanodegree - Udacity <a href="https://graduation.udacity.com/confirm/LVYEMCD5">(Credential URL)</a><br>
+Neural Networks and Deep Learning - DeepLearning.AI via Coursera <a href="https://coursera.org/verify/8723TUT582NA">(Credential URL)</a><br>
+Introduction to Machine Learning - Duke University via Coursera <a href="https://coursera.org/verify/F7NBURBJYMGZ">(Credential URL)</a><br>
+Machine Learning with Python - IBM via Coursera <a href="http://coursera.org/verify/F7BNW5GUJVPA">(Credential URL)</a><br>
+Machine Learning Developer by Google - Information Technology Institute (ITI) <a href="https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=261856&code=pqU4obkHBq&qrcode=1">(Credential URL)</a><br>
+Managing Machine Learning Projects with Google Cloud - Google Cloud via Coursera <a href="https://coursera.org/verify/YFYMMEWM4F58">(Credential URL)</a><br>
+Introduction to Cloud Identity - Google Cloud via Coursera <a href="https://www.coursera.org/verify/RUW94EGLSQBK">(Credential URL)</a><br>
+Machine Learning Foundations: A Case Study Approach - University of Washington via Coursera <a href="https://coursera.org/verify/6U3MQTSV4YLS">(Credential URL)</a><br>
+Machine Learning Fundamentals with Python - DataCamp <a href="https://www.datacamp.com/statement-of-accomplishment/track/187036e13eea03b96a782298f2d364587210a937">(Credential URL)</a><br>
+Getting Started with AWS Machine Learning - Amazon Web Services via Coursera <a href="https://coursera.org/verify/ACJ7K2P295F3">(Credential URL)</a><br>
+Data Science Mathematical Skills - Duke University via Coursera <a href="https://coursera.org/verify/HBPS9HF2Z7L6">(Credential URL)</a><br>
+Digital Technology Data Analytics Program - GE via Forage <a href="https://insidesherpa.s3.amazonaws.com/completion-certificates/General%20Electric%20%28GE%29/ThbphD5N5WRsd9Mxo_General%20Electric_amCZJkYoSPc8vgkhQ_completion_certificate.pdf">(Credential URL)</a><br>
 
 
-COURSES & CERTIFICATES
-Advanced Data Analysis Nanodegree - Udacity <a href="https://graduation.udacity.com/confirm/NEDMDHLV">(Credential URL)</a>
-Professional Data Analysis Nanodegree - Udacity <a href="https://graduation.udacity.com/confirm/HA9WK6ST">(Credential URL)</a>
-AI Programming with Python Nanodegree - Udacity <a href="https://graduation.udacity.com/confirm/LVYEMCD5">(Credential URL)</a>
-Neural Networks and Deep Learning - DeepLearning.AI via Coursera <a href="https://coursera.org/verify/8723TUT582NA">(Credential URL)</a>
-Introduction to Machine Learning - Duke University via Coursera <a href="https://coursera.org/verify/F7NBURBJYMGZ">(Credential URL)</a>
-Machine Learning with Python - IBM via Coursera <a href="http://coursera.org/verify/F7BNW5GUJVPA">(Credential URL)</a>
-Machine Learning Developer by Google - Information Technology Institute (ITI) <a href="https://maharatech.gov.eg/mod/customcert/verify_certificate.php?contextid=261856&code=pqU4obkHBq&qrcode=1">(Credential URL)</a>
-Managing Machine Learning Projects with Google Cloud - Google Cloud via Coursera <a href="https://coursera.org/verify/YFYMMEWM4F58">(Credential URL)</a>
-Introduction to Cloud Identity - Google Cloud via Coursera <a href="https://www.coursera.org/verify/RUW94EGLSQBK">(Credential URL)</a>
-Machine Learning Foundations: A Case Study Approach - University of Washington via Coursera <a href="https://coursera.org/verify/6U3MQTSV4YLS">(Credential URL)</a>
-Machine Learning Fundamentals with Python - DataCamp <a href="https://www.datacamp.com/statement-of-accomplishment/track/187036e13eea03b96a782298f2d364587210a937">(Credential URL)</a>
-Getting Started with AWS Machine Learning - Amazon Web Services via Coursera <a href="https://coursera.org/verify/ACJ7K2P295F3">(Credential URL)</a>
-Data Science Mathematical Skills - Duke University via Coursera <a href="https://coursera.org/verify/HBPS9HF2Z7L6">(Credential URL)</a>
-Digital Technology Data Analytics Program - GE via Forage <a href="https://insidesherpa.s3.amazonaws.com/completion-certificates/General%20Electric%20%28GE%29/ThbphD5N5WRsd9Mxo_General%20Electric_amCZJkYoSPc8vgkhQ_completion_certificate.pdf">(Credential URL)</a>
-
+---
 
 <center>© 2024 Amr Alfayoumy. Powered by Jekyll and the Minimal Theme.</center>

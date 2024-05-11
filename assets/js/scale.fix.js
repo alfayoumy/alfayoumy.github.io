@@ -14,7 +14,7 @@
                 changeViewportContent("width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no");
             } else {
                 // For desktop devices
-                changeViewportContent("width=device-width, initial-scale=1.5"); // You can adjust the scale factor as needed
+                changeViewportContent("width=device-width, initial-scale=1.5");
             }
         },
         gestureStart = function() {
@@ -25,8 +25,9 @@
         };
 
 
+    initialize();
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        initialize();
+
         document.addEventListener("touchstart", gestureStart, false);
         document.addEventListener("touchend", gestureEnd, false);
     }

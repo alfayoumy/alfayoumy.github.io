@@ -242,8 +242,6 @@ _Key Skills: Machine Learning · Feature Engineering · Scikit-Learn · Data Sci
 <b>Objective:</b>
 The objective of this project is to utilize Google BigQuery to extract relevant data from the COVID-19 Open Data dataset and then leverage Google Data Studio (Looker Studio) to create an interactive dashboard. This dashboard aims to visualize valuable insights and trends related to COVID-19, including confirmed cases, deaths, vaccination rates, fatality rates, recovery rates, etc. across different countries and over time.<br>
 <br>
-
-<div>
     <b>Tasks:</b>
     <br>
     <ul>
@@ -272,7 +270,7 @@ _Key Skills: Machine Learning · Feature Engineering · Scikit-Learn · Data Sci
 
 <div style="text-align: justify">
 <b>Objective:</b>
-The objective of this project was to conduct a comprehensive business analysis of an Electronics Megastore Chain's performance during the third and fourth quarters of 2020. This analysis aimed to identify key findings, including profit trends, sales fluctuations, category and brand dominance, regional performance, store effectiveness, return reasons, buyer and brand contributions, and product profitability potential. Based on these findings, the project sought to provide actionable recommendations to improve profitability and operational efficiency. \[Some text is redacted for privacy purposes\]<br>
+The objective of this project was to conduct a comprehensive business analysis of an Electronics Megastore Chain's performance during the third and fourth quarters of 2020. This analysis aimed to identify key findings, including profit trends, sales fluctuations, category and brand dominance, regional performance, store effectiveness, return reasons, buyer and brand contributions, and product profitability potential. Based on these findings, the project sought to provide actionable recommendations to improve profitability and operational efficiency. [Some text is redacted for privacy purposes]<br>
 <br>
 
 <div>

@@ -20,7 +20,7 @@ Check out my portfolio at https://alfayoumy.github.io/
 [license-shield]: https://img.shields.io/github/license/alfayoumy/alfayoumy.github.io.svg?style=for-the-badge
 [license-url]: https://github.com/alfayoumy/alfayoumy.github.io/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/giorgio-carbone-63154219b/
+[linkedin-url]: https://www.linkedin.com/in/alfayoumy/
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/

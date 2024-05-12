@@ -320,3 +320,4 @@ The objective of this project was to conduct a comprehensive business analysis o
 ---
 
 <center>© 2024 Amr Alfayoumy. Powered by Jekyll and the Minimal Theme.</center>
+<button onclick="topFunction()" id="topbtn" title="Go to top"> </button>

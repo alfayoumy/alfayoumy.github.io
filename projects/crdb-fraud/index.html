@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" href="/_next/static/media/70bc3e132a0a741e-s.p.15008bfb.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/8800dfc60902df36-s.p.e22d03ab.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/e41d5df559864f9e-s.p.380d09ea.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="stylesheet" href="/_next/static/chunks/193213d9c0b2e44c.css" data-precedence="next" />
+  <link rel="stylesheet" href="/overrides.css" />
+  <title>CRDB Bank - ML Fraud Detection (Tanzania) — Amr Alfayoumy</title>
+  <meta name="description" content="A senior-owned fraud anomaly detection build for CRDB Bank PLC, Tanzania's largest bank, using database-first feature engineering, governed scoring artifacts, and a supervised fraud-model runway planned for mid-November 2026 go-live." />
+  <meta name="application-name" content="Amr Alfayoumy · Portfolio" />
+  <meta name="author" content="Amr Alfayoumy" />
+  <meta name="creator" content="Amr Alfayoumy" />
+  <meta name="publisher" content="Amr Alfayoumy" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="CRDB Bank - ML Fraud Detection (Tanzania) — Amr Alfayoumy" />
+  <meta property="og:description" content="A senior-owned fraud anomaly detection build for CRDB Bank PLC, Tanzania's largest bank, using database-first feature engineering, governed scoring artifacts, and a supervised fraud-model runway planned for mid-November 2026 go-live." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alfayoumy.github.io/projects/crdb-fraud/" />
+  <meta property="og:site_name" content="Amr Alfayoumy" />
+  <meta property="og:image" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta property="og:image:secure_url" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Amr Alfayoumy portfolio mark" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CRDB Bank - ML Fraud Detection (Tanzania) — Amr Alfayoumy" />
+  <meta name="twitter:description" content="A senior-owned fraud anomaly detection build for CRDB Bank PLC, Tanzania's largest bank, using database-first feature engineering, governed scoring artifacts, and a supervised fraud-model runway planned for mid-November 2026 go-live." />
+  <meta name="twitter:image" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta name="twitter:image:alt" content="Amr Alfayoumy portfolio mark" />
+  <link rel="canonical" href="https://alfayoumy.github.io/projects/crdb-fraud/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "url": "https://alfayoumy.github.io/projects/crdb-fraud/",
+    "name": "CRDB Bank Tanzania Fraud Detection System",
+    "description": "Multi-channel fraud analytics for high-volume banking transactions.",
+    "creator": { "@id": "https://alfayoumy.github.io/#person" },
+    "keywords": ["Fraud Detection", "Banking", "Machine Learning", "Risk Analytics"]
+  }
+  </script>
+  <script>(function(){try{var t=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',t==='dark'||t==='light'?t:'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body class="instrument_serif_794b969e-module__2VhGdW__variable onest_859d3e11-module__eWePdW__variable jetbrains_mono_84d6efd-module__5Hl15a__variable">
+  <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none" style="background:var(--bg)">
+    <div class="absolute inset-0 bp-grid" style="mask-image:radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, transparent 100%);-webkit-mask-image:radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, transparent 100%)"></div>
+    <div class="absolute" style="top:-10%;right:-10%;width:60vw;height:60vw;background:radial-gradient(circle, rgba(255,74,28,0.10) 0%, rgba(255,74,28,0) 60%);filter:blur(40px)"></div>
+    <div class="absolute" style="bottom:-15%;left:-15%;width:55vw;height:55vw;background:radial-gradient(circle, rgba(200,255,94,0.05) 0%, rgba(200,255,94,0) 60%);filter:blur(50px)"></div>
+    <div class="noise"></div>
+  </div>
+  <div class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md" style="background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--rule)">
+    <div class="shell flex items-center gap-4 sm:gap-6 h-10 text-[11px] font-mono uppercase tracking-[0.16em] whitespace-nowrap overflow-hidden">
+      <a href="/" class="text-[var(--fg)] hover:text-[var(--signal)] transition-colors">AMR.ALFAYOUMY</a>
+      <a href="/projects/" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ PROJECTS</a>
+      <a href="/blog/" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ BLOG</a>
+      <a href="https://www.linkedin.com/in/alfayoumy" target="_blank" rel="noopener noreferrer" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ LINKEDIN</a>
+      <a href="/hire/" class="hidden md:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ HIRE</a>
+      <span class="hidden 2xl:inline text-[var(--fg-3)] whitespace-nowrap">/ Fraud analytics</span>
+      <nav aria-label="Section navigation" class="hidden md:flex items-center gap-3 lg:gap-4 mx-auto">
+        <a href="#summary" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§01</a><a href="#challenge" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§02</a><a href="#approach" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§03</a><a href="#key-decisions" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§04</a><a href="#architecture" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§05</a><a href="#highlights" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§06</a><a href="#outcomes" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§07</a><a href="#stack" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§08</a><a href="#links" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§09</a>
+      </nav>
+      <div class="ml-auto flex items-center gap-3 sm:gap-5">
+        <a href="mailto:amr.alfayoumy@outlook.com" class="hidden sm:inline-flex items-center gap-1 transition-colors" style="color:var(--fg)">
+          <span style="color:var(--signal)">→</span><span class="hover:text-[var(--signal)] transition-colors">EMAIL</span>
+        </a>
+        <span class="hidden lg:flex items-center gap-2 text-[var(--pulse)]"><span class="live-dot"></span> OPEN TO BUILD</span>
+        <button type="button" id="themeToggle" class="inline-flex font-mono text-[11px] uppercase tracking-[0.16em] transition-colors hover:text-[var(--signal)]" style="color:var(--fg-2)">◐ DARK</button>
+      </div>
+    </div>
+  </div>
+  <nav aria-label="Section navigation" class="md:hidden fixed bottom-3 left-1/2 -translate-x-1/2 z-30 flex gap-1 max-w-[calc(100vw-1rem)] overflow-x-auto px-2 py-1.5 backdrop-blur-md" style="background:var(--panel);border:1px solid var(--rule)">
+    <a href="#summary" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§01</a><a href="#challenge" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§02</a><a href="#approach" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§03</a><a href="#key-decisions" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§04</a><a href="#architecture" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§05</a><a href="#highlights" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§06</a><a href="#outcomes" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§07</a><a href="#stack" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§08</a><a href="#links" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§09</a>
+  </nav>
+<main class="relative">
+<article class="pt-28 pb-24">
+  <div class="shell">
+    <div class="caption mb-6 flex flex-wrap items-center gap-3">
+      <a class="hover:text-[var(--signal)] transition-colors" href="/">← HOME</a>
+      <span class="text-[var(--fg-4)]">/</span>
+      <a class="hover:text-[var(--signal)] transition-colors" href="/projects/">PROJECTS</a>
+      <span class="text-[var(--fg-4)]">/</span>
+      <span class="text-[var(--fg-2)]">CRDB BANK - ML FRAUD DETECTION (TANZANIA)</span>
+    </div>
+    <header id="summary" class="grid grid-cols-12 gap-x-6 gap-y-6 mb-16 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-9">
+        <div class="caption-signal mb-3" style="color:var(--pulse)">ACTIVE DELIVERY · Planned go-live mid-November 2026 · Fraud analytics</div>
+        <h1 class="font-display" style="font-size:clamp(3rem, 8vw, 6rem);line-height:0.95;letter-spacing:-0.035em">CRDB Bank - ML Fraud Detection (Tanzania)<span class="font-display-italic" style="color:var(--signal)">.</span></h1>
+      </div>
+      <div class="col-span-12 lg:col-span-3 text-[var(--fg-3)] font-mono uppercase tracking-[0.12em]" style="font-size:11px;line-height:1.8">
+        Lead Data Engineer / ML Fraud Owner<br/>
+        Cairo, Egypt<br/>
+        Source: model audit documentation
+      </div>
+      <div class="col-span-12 lg:col-span-8">
+        <p class="font-display-italic text-[var(--fg-2)]" style="font-size:clamp(1.35rem, 2vw, 1.9rem);line-height:1.4">I owned the data and model engineering foundation for a fraud anomaly detection platform at CRDB Bank PLC, Tanzania's largest bank, building the enterprise data feature pipeline, a governed scoring workflow, score reproducibility controls, and supervised fraud-learning runway for a planned mid-November 2026 production launch.</p>
+      </div>
+      <div class="col-span-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Transactions</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">70M/month</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Production transaction-level scale after migration</div>
+</div>
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Customers</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">9M+</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Population coverage</div>
+</div>
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Channels</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">30+</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Digital and traditional fraud surfaces</div>
+</div>
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Model</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">Governed</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Versioned anomaly-detection model build</div>
+</div>
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Threshold</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">99.5%</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Training-derived anomaly cutoff for current scoring</div>
+</div>
+
+        </div>
+      </div>
+    </header>
+    <section id="challenge" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 02 — CHALLENGE<div class="caption mt-1.5" style="color:var(--fg-3)">WHY IT MATTERED</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+        <div class="space-y-5">
+          <p>CRDB Bank operated at national scale as Tanzania's largest bank, serving more than 9 million customers and processing tens of millions of transactions every month. The fraud platform had to identify unusual behavior across a very large population without turning into a noisy generic-alert engine.</p><p>The risk surface was broad: mobile money, ATM/POS, digital banking, agency banking, SWIFT and TISS wires, TIPS, cheques, trade finance, and account-opening activity each carried different fraud patterns, latency expectations, and data-quality constraints.</p><p>A major source migration replaced the original data with an 70M-record-per-month transaction-level schema with partial field alignment. I treated that as an ownership problem, not a mapping exercise: the feature logic, ledger flattening, preprocessing, validation evidence, lineage, and score-time assumptions all had to be rebuilt and governed.</p>
+        </div>
+      </div>
+    </section>
+    <section id="approach" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 03 — APPROACH<div class="caption mt-1.5" style="color:var(--fg-3)">HOW I BUILT IT</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+        <div class="space-y-5">
+          <p>I led the model-ready data architecture from raw database staging through transaction foundations, ledger flattening, currency normalization, behavioral features, model-preparation layers, a governed scoring dataset, and lineage mappings. The pipeline produced one analytical row per customer transaction while keeping operational identifiers and labels outside the score-time feature set.</p><p>The feature layer captured transaction amount and direction, normalized monetary values, cyclical time signals, posting lag, interarrival timing, balance context, channel and currency behavior, novelty flags, velocity windows, amount deviation, ledger complexity, profile completeness, and data-quality indicators.</p><p>For the current model, I implemented a governed anomaly-detection pipeline with reproducible preprocessing, persisted robust transformation parameters, a versioned deployable model artifact, and a training-derived anomaly threshold. The model was intentionally positioned as anomaly detection and alert candidate generation, not a final calibrated fraud probability.</p><p>In parallel, I built the positive-fraud feature path from confirmed fraud records into a schema-compatible analytical dataset. That gave the project the supervised-learning bridge needed for the next phase without contaminating the unsupervised model input.</p>
+        </div>
+      </div>
+    </section>
+    <section id="key-decisions" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-8 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 04 — KEY DECISIONS<div class="caption mt-1.5" style="color:var(--fg-3)">WHAT I CHOSE &amp; WHY</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 01</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Keep model features separate from labels and lineage</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">I designed a governed numerical score-time feature contract and kept labels, source identifiers, and investigation lineage in separate mapping layers. That prevented leakage and made the model auditable from raw transaction to scored output.</p>
+          </article>
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 02</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Make preprocessing a versioned scoring dependency</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">Training learned the imputation and robust-scaling parameters once, stored them, and reused them during production scoring. No batch score was allowed to quietly relearn transformation parameters or decision thresholds at score time.</p>
+          </article>
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 03</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Start with a governed anomaly-detection champion</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">Confirmed fraud labels were still being integrated, so I used a governed anomaly-detection approach as the initial champion for unusual transaction behavior. It produced anomaly scores, candidate alerts, and a reusable signal for the future hybrid fraud model.</p>
+          </article>
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 04</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Build supervised learning without polluting anomaly training</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">I built the positive-fraud pipeline in parallel, producing schema-compatible fraud examples for the supervised phase while keeping confirmed fraud rows out of the unsupervised training table until a formal labeled assembly was ready.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="architecture" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 05 — ARCHITECTURE<div class="caption mt-1.5" style="color:var(--fg-3)">HOW IT FITS TOGETHER</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+        <p class="mb-8">The architecture was a transaction-level fraud-scoring platform with a governed handoff between the enterprise database and analytics platform: source transactions were shaped into foundational and ledger-flattened analytical datasets, converted into model-ready feature contracts, preprocessed with persisted training parameters, scored through a versioned anomaly-model artifact, and prepared for case-management integration with tiering, reason codes, and supervised challengers planned before the mid-November 2026 launch.</p>
+        <div class="flex items-center justify-between mb-4">
+          <div class="caption" style="color:var(--fg-3)">// FIG. SYSTEM DIAGRAM</div>
+          <div class="caption" style="color:var(--fg-3)">SCALE 1:N</div>
+        </div>
+        <div class="overflow-x-auto" style="border:1px solid var(--rule);background:var(--panel-2);position:relative">
+          <div aria-hidden="true" style="position:absolute;inset:-1px;pointer-events:none">
+            <span style="position:absolute;top:-1px;left:-1px;width:8px;height:8px;border-top:1px solid var(--signal);border-left:1px solid var(--signal)"></span>
+            <span style="position:absolute;top:-1px;right:-1px;width:8px;height:8px;border-top:1px solid var(--signal);border-right:1px solid var(--signal)"></span>
+            <span style="position:absolute;bottom:-1px;left:-1px;width:8px;height:8px;border-bottom:1px solid var(--signal);border-left:1px solid var(--signal)"></span>
+            <span style="position:absolute;bottom:-1px;right:-1px;width:8px;height:8px;border-bottom:1px solid var(--signal);border-right:1px solid var(--signal)"></span>
+          </div>
+          <svg role="img" aria-labelledby="crdbArchTitle crdbArchDesc" viewBox="0 0 1120 790" style="min-width:980px;width:100%;height:auto;display:block;color:var(--fg);font-family:var(--font-jetbrains-mono),ui-monospace,monospace">
+            <title id="crdbArchTitle">CRDB Bank fraud anomaly detection model architecture</title>
+            <desc id="crdbArchDesc">Enterprise transaction sources feed ledger flattening, a governed model input, analytics preprocessing, versioned anomaly scoring, thresholding, and planned case-management delivery.</desc>
+            <defs>
+              <pattern id="crdbGrid" width="36" height="36" patternUnits="userSpaceOnUse">
+                <path d="M36 0H0V36" fill="none" stroke="var(--grid)" stroke-width="1"/>
+              </pattern>
+              <marker id="arrowSignal" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <path d="M0,0 L8,4 L0,8 Z" fill="var(--signal)"/>
+              </marker>
+              <style>
+                .bm-lane{fill:var(--fg-3);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase}
+                .bm-kicker{fill:var(--signal);font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+                .bm-title{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase}
+                .bm-small{fill:var(--fg-3);font-size:9.5px}
+                .bm-dash{stroke:var(--rule);stroke-width:1;stroke-dasharray:2 5}
+                .bm-flow{stroke:var(--signal);stroke-width:1.25;fill:none;marker-end:url(#arrowSignal)}
+                .bm-control{stroke:var(--fg-4);stroke-width:1;fill:none;stroke-dasharray:3 5;marker-end:url(#arrowSignal)}
+                .bm-source{fill:var(--panel-2);stroke:var(--rule);stroke-width:1}.bm-source-title{fill:var(--fg)}
+                .bm-fe{fill:var(--signal-soft);stroke:var(--signal);stroke-width:1.3}.bm-fe-title{fill:var(--signal)}
+                .bm-cohort{fill:var(--pulse-soft);stroke:var(--pulse);stroke-width:1.3}.bm-cohort-title{fill:var(--pulse)}
+                .bm-model{fill:rgba(255,74,28,.08);stroke:#b8681c;stroke-width:1.3}.bm-model-title{fill:#b8681c}
+                .bm-score{fill:rgba(47,122,26,.08);stroke:#5d8f2b;stroke-width:1.3}.bm-score-title{fill:#5d8f2b}
+                .bm-agg{fill:rgba(11,10,7,.04);stroke:var(--fg-3);stroke-width:1.2}.bm-agg-title{fill:var(--fg-2)}
+                .bm-fp{fill:rgba(255,74,28,.055);stroke:#9b4b24;stroke-width:1.25}.bm-fp-title{fill:#9b4b24}
+                .bm-tier{fill:rgba(47,122,26,.07);stroke:#3f7f52;stroke-width:1.25}.bm-tier-title{fill:#3f7f52}
+                .bm-explain{fill:rgba(92,77,142,.08);stroke:#6f639b;stroke-width:1.3}.bm-explain-title{fill:#6f639b}
+                .bm-aml{fill:rgba(255,74,28,.04);stroke:#7c4a36;stroke-width:1.3}.bm-aml-title{fill:#7c4a36}
+              </style>
+            </defs>
+            <rect x="0" y="0" width="1120" height="790" fill="var(--bg)" opacity=".12"/>
+            <rect x="220" y="28" width="850" height="730" fill="url(#crdbGrid)" opacity=".85"/>
+            <line x1="240" y1="96" x2="1048" y2="96" class="bm-dash"/>
+            <line x1="240" y1="174" x2="1048" y2="174" class="bm-dash"/>
+            <line x1="240" y1="252" x2="1048" y2="252" class="bm-dash"/>
+            <line x1="240" y1="332" x2="1048" y2="332" class="bm-dash"/>
+            <line x1="240" y1="414" x2="1048" y2="414" class="bm-dash"/>
+            <line x1="240" y1="504" x2="1048" y2="504" class="bm-dash"/>
+            <line x1="240" y1="594" x2="1048" y2="594" class="bm-dash"/>
+            <line x1="240" y1="684" x2="1048" y2="684" class="bm-dash"/>
+            <text x="38" y="66" class="bm-lane">SOURCE SYSTEMS</text>
+            <text x="38" y="144" class="bm-lane">DATABASE ETL</text>
+            <text x="38" y="222" class="bm-lane">FEATURE CONTRACT</text>
+            <text x="38" y="302" class="bm-lane">ANALYTICS MODEL</text>
+            <text x="38" y="384" class="bm-lane">SCORE CONTROLS</text>
+            <text x="38" y="640" class="bm-lane">OPERATIONS ROADMAP</text>
+
+            <rect x="420" y="50" width="426" height="50" class="bm-source" rx="2"/>
+            <text x="633" y="73" text-anchor="middle" class="bm-title bm-source-title">30+ CHANNEL TRANSACTION FEEDS</text>
+            <text x="633" y="88" text-anchor="middle" class="bm-small">mobile money · cards · agency · wires · TIPS · cheques · trade finance</text>
+            <path d="M633 100V120" class="bm-flow"/>
+            <text x="648" y="115" class="bm-kicker">70M monthly records</text>
+
+            <rect x="358" y="124" width="550" height="58" class="bm-fe" rx="2"/>
+            <text x="633" y="150" text-anchor="middle" class="bm-title bm-fe-title">BASE TABLES + LEDGER FLATTENING</text>
+            <text x="633" y="166" text-anchor="middle" class="bm-small">STG_TXN_BASE · LEDGER_FLATTENED_ABT · source reconciliation</text>
+            <path d="M633 182V202" class="bm-flow"/>
+            <text x="648" y="197" class="bm-kicker">schema-aware validation</text>
+
+            <rect x="390" y="206" width="486" height="58" class="bm-cohort" rx="2"/>
+            <text x="633" y="232" text-anchor="middle" class="bm-title bm-cohort-title">GOVERNED MODEL INPUT + LINEAGE</text>
+            <text x="633" y="248" text-anchor="middle" class="bm-small">behavior · velocity · amount deviation · FX · positive-fraud parity</text>
+            <path d="M633 264V284" class="bm-flow"/>
+
+            <rect x="355" y="288" width="556" height="64" class="bm-model" rx="2"/>
+            <text x="633" y="314" text-anchor="middle" class="bm-title bm-model-title">GOVERNED ANOMALY MODEL</text>
+            <text x="633" y="330" text-anchor="middle" class="bm-small">validated configuration · versioned deployable artifact</text>
+            <path d="M633 352V374" class="bm-flow"/>
+
+            <rect x="543" y="378" width="180" height="42" class="bm-score" rx="2"/>
+            <text x="633" y="403" text-anchor="middle" class="bm-title bm-score-title">_ANOMALY_</text>
+            <text x="633" y="416" text-anchor="middle" class="bm-small">raw model score</text>
+            <path d="M633 420V450" class="bm-flow"/>
+
+            <rect x="538" y="454" width="190" height="42" class="bm-agg" rx="2"/>
+            <text x="633" y="479" text-anchor="middle" class="bm-title bm-agg-title">THRESHOLD</text>
+            <text x="633" y="492" text-anchor="middle" class="bm-small">99.5 percentile flag</text>
+            <path d="M633 496V526" class="bm-flow"/>
+
+            <rect x="535" y="530" width="195" height="42" class="bm-fp" rx="2"/>
+            <text x="633" y="555" text-anchor="middle" class="bm-title bm-fp-title">ALERT CANDIDATES</text>
+            <text x="633" y="568" text-anchor="middle" class="bm-small">analyst review input</text>
+            <path d="M633 572V602" class="bm-flow"/>
+
+            <rect x="543" y="606" width="180" height="42" class="bm-tier" rx="2"/>
+            <text x="633" y="631" text-anchor="middle" class="bm-title bm-tier-title">REASON CODES</text>
+            <text x="633" y="644" text-anchor="middle" class="bm-small">planned explainability</text>
+            <path d="M633 648V678" class="bm-flow"/>
+
+            <rect x="538" y="682" width="190" height="42" class="bm-explain" rx="2"/>
+            <text x="633" y="707" text-anchor="middle" class="bm-title bm-explain-title">TIERING</text>
+            <text x="633" y="720" text-anchor="middle" class="bm-small">planned T1/T2/T3 routing</text>
+            <path d="M728 703H760" class="bm-flow"/>
+
+            <rect x="765" y="682" width="195" height="42" class="bm-aml" rx="2"/>
+            <text x="862" y="707" text-anchor="middle" class="bm-title bm-aml-title">CASE MANAGEMENT</text>
+            <text x="862" y="720" text-anchor="middle" class="bm-small">mid-November 2026 go-live target</text>
+            <rect x="956" y="288" width="112" height="64" class="bm-source" rx="2"/>
+            <text x="1012" y="314" text-anchor="middle" class="bm-title bm-source-title">CONTROL</text>
+            <text x="1012" y="330" text-anchor="middle" class="bm-small">model risk</text>
+            <text x="1012" y="343" text-anchor="middle" class="bm-small">artifact versions</text>
+            <path d="M956 304H918" class="bm-control"/>
+            <path d="M1012 288V154H916" class="bm-control"/>
+            <text x="892" y="280" class="bm-small">monitoring and validation loop</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section id="highlights" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 06 — HIGHLIGHTS<div class="caption mt-1.5" style="color:var(--fg-3)">KEY TAKEAWAYS</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ LARGEST-BANK SCALE</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Built for CRDB Bank PLC, Tanzania's largest bank, including a migrated transaction-level schema with roughly 70M monthly records.</p>
+          </article>
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ 30+ CHANNEL FRAUD COVERAGE</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Covered mobile money, ATM/POS, digital banking, agency banking, wires, TIPS, cheques, trade finance, and account-opening surfaces.</p>
+          </article>
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ DATABASE-FIRST FEATURE FACTORY</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Implemented base-table creation, ledger flattening, FX conversion, behavior windows, encoding, model-prep, final input, and lineage outputs.</p>
+          </article>
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ GOVERNED ANOMALY MODEL</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Trained the governed anomaly-detection workflow, persisted a versioned deployable model artifact, and stored the threshold separately for production scoring.</p>
+          </article>
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ SUPERVISED MODEL RUNWAY</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Built the positive-fraud feature pipeline so confirmed fraud examples could be appended into a future supervised and hybrid champion build.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="outcomes" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 07 — OUTCOMES<div class="caption mt-1.5" style="color:var(--fg-3)">RESULTS AND LESSONS</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <ul class="space-y-3 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Owned the end-to-end model engineering path from source staging through feature creation, lineage, reproducible preprocessing, model training, and batch scoring workflows.</span></li><li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Delivered the current unsupervised anomaly detection foundation as an analyst triage and alert-candidate generator, with production launch planned for mid-November 2026 after validation and integration hardening.</span></li><li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Separated model features, labels, lineage, and positive-fraud examples so the architecture could pass model-risk review and mature into supervised learning without leakage.</span></li><li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Implemented reusable controls around schema parity, feature existence, row-count validation, train-time preprocessing parameters, versioned artifact reuse, and score-time thresholding.</span></li><li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Defined the next production architecture: reason codes, tiering, false-positive suppression, case-management payload mapping, monitoring dashboards, and a hybrid supervised-plus-unsupervised champion strategy.</span></li>
+        </ul>
+      </div>
+    </section>
+    <section id="stack" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 08 — STACK<div class="caption mt-1.5" style="color:var(--fg-3)">THE TOOLS</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">
+        <div class="space-y-5">
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">Data</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Enterprise SQL</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Ledger flattening</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Governed model input</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Lineage maps</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Schema validation</span></div>
+</div>
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">Features</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Velocity windows</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Amount deviation</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Ledger complexity</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">FX diagnostics</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Data-quality flags</span></div>
+</div>
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">Models</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Enterprise analytics platform</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Unsupervised anomaly detection</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Versioned model artifact</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Distribution-based thresholding</span></div>
+</div>
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">Delivery</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Batch scoring</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Fraud case-management plan</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Reason-code roadmap</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Tiering roadmap</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Model monitoring</span></div>
+</div>
+
+        </div>
+      </div>
+    </section>
+    <section id="links" class="mb-8 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 09 — LINKS<div class="caption mt-1.5" style="color:var(--fg-3)">SOURCE TRAIL</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 flex flex-wrap gap-3">
+        <a href="https://www.linkedin.com/in/alfayoumy" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] uppercase tracking-[0.16em] px-3 py-2" style="border:1px solid var(--rule);background:var(--panel-2);color:var(--fg)">LinkedIn profile</a>
+      </div>
+    </section>
+  </div>
+</article>
+</main>
+  <footer class="shell pb-10">
+    <div class="hairline mb-6"></div>
+    <div class="caption">
+      Built around the existing portfolio styling and rewritten from the CRDB model audit documentation.
+    </div>
+  </footer>
+  <script src="/theme-toggle.js"></script>
+</body>
+</html>

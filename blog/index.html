@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" href="/_next/static/media/70bc3e132a0a741e-s.p.15008bfb.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/8800dfc60902df36-s.p.e22d03ab.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/e41d5df559864f9e-s.p.380d09ea.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="stylesheet" href="/_next/static/chunks/193213d9c0b2e44c.css" data-precedence="next" />
+  <link rel="stylesheet" href="/overrides.css" />
+  <title>Blog — Amr Alfayoumy</title>
+  <meta name="description" content="Articles by Amr Alfayoumy on AI engineering challenges, production machine learning, fraud analytics, automation, and practical delivery opinions." />
+  <meta name="application-name" content="Amr Alfayoumy · Portfolio" />
+  <meta name="author" content="Amr Alfayoumy" />
+  <meta name="creator" content="Amr Alfayoumy" />
+  <meta name="publisher" content="Amr Alfayoumy" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Blog — Amr Alfayoumy" />
+  <meta property="og:description" content="Articles by Amr Alfayoumy on AI engineering challenges, production machine learning, fraud analytics, automation, and practical delivery opinions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alfayoumy.github.io/blog/" />
+  <meta property="og:site_name" content="Amr Alfayoumy" />
+  <meta property="og:image" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta property="og:image:secure_url" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Amr Alfayoumy portfolio mark" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog — Amr Alfayoumy" />
+  <meta name="twitter:description" content="Articles by Amr Alfayoumy on AI engineering challenges, production machine learning, fraud analytics, automation, and practical delivery opinions." />
+  <meta name="twitter:image" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta name="twitter:image:alt" content="Amr Alfayoumy portfolio mark" />
+  <link rel="canonical" href="https://alfayoumy.github.io/blog/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "url": "https://alfayoumy.github.io/blog/",
+    "name": "Blog — Amr Alfayoumy",
+    "author": { "@id": "https://alfayoumy.github.io/#person" },
+    "mainEntity": {
+      "@type": "ItemList",
+      "numberOfItems": 3,
+      "itemListElement": [
+        "https://alfayoumy.github.io/blog/cpu-first-inference-onnx-openvino/",
+        "https://alfayoumy.github.io/blog/open-source-sna-proc-network-reimplementation/",
+        "https://alfayoumy.github.io/blog/fraud-model-cpu-reproducibility/"
+      ]
+    }
+  }
+  </script>
+  <script>(function(){try{var t=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',t==='dark'||t==='light'?t:'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body class="instrument_serif_794b969e-module__2VhGdW__variable onest_859d3e11-module__eWePdW__variable jetbrains_mono_84d6efd-module__5Hl15a__variable">
+  <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none" style="background:var(--bg)">
+    <div class="absolute inset-0 bp-grid" style="mask-image:radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, transparent 100%);-webkit-mask-image:radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, transparent 100%)"></div>
+    <div class="absolute" style="top:-10%;right:-10%;width:60vw;height:60vw;background:radial-gradient(circle, rgba(255,74,28,0.10) 0%, rgba(255,74,28,0) 60%);filter:blur(40px)"></div>
+    <div class="absolute" style="bottom:-15%;left:-15%;width:55vw;height:55vw;background:radial-gradient(circle, rgba(200,255,94,0.05) 0%, rgba(200,255,94,0) 60%);filter:blur(50px)"></div>
+    <div class="noise"></div>
+  </div>
+  <div class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md" style="background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--rule)">
+    <div class="shell flex items-center gap-4 sm:gap-6 h-10 text-[11px] font-mono uppercase tracking-[0.16em] whitespace-nowrap overflow-hidden">
+      <a href="/" class="text-[var(--fg)] hover:text-[var(--signal)] transition-colors">AMR.ALFAYOUMY</a>
+      <a href="/projects/" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ PROJECTS</a>
+      <a href="/blog/" class="hidden sm:inline text-[var(--signal)] transition-colors">/ BLOG</a>
+      <a href="https://www.linkedin.com/in/alfayoumy" target="_blank" rel="noopener noreferrer" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ LINKEDIN</a>
+      <a href="/hire/" class="hidden md:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ HIRE</a>
+      <span class="hidden xl:inline text-[var(--fg-3)] whitespace-nowrap">/ NOTES ON PRACTICAL AI DELIVERY</span>
+      <nav aria-label="Section navigation" class="hidden md:flex items-center gap-3 lg:gap-4 mx-auto">
+        <a href="#overview" data-nav-label="Overview" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§01</a>
+        <a href="#notes" data-nav-label="Articles" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§02</a>
+        <a href="#contact" data-nav-label="Contact" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§03</a>
+      </nav>
+      <div class="ml-auto flex items-center gap-3 sm:gap-5">
+        <a href="mailto:amr.alfayoumy@outlook.com" class="hidden sm:inline-flex items-center gap-1 transition-colors" style="color:var(--fg)">
+          <span style="color:var(--signal)">→</span><span class="hover:text-[var(--signal)] transition-colors">EMAIL</span>
+        </a>
+        <span class="hidden lg:flex items-center gap-2 text-[var(--pulse)]"><span class="live-dot"></span> OPEN TO BUILD</span>
+        <button type="button" id="themeToggle" class="inline-flex font-mono text-[11px] uppercase tracking-[0.16em] transition-colors hover:text-[var(--signal)]" style="color:var(--fg-2)">◐ DARK</button>
+      </div>
+    </div>
+  </div>
+  <nav aria-label="Section navigation" class="md:hidden fixed bottom-3 left-1/2 -translate-x-1/2 z-30 flex gap-1 px-2 py-1.5 backdrop-blur-md" style="background:var(--panel);border:1px solid var(--rule)">
+    <a href="#overview" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§01</a>
+    <a href="#notes" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§02</a>
+    <a href="#contact" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§03</a>
+  </nav>
+  <main class="relative">
+    <section id="overview" class="blog-hero">
+      <div class="shell">
+        <div class="page-breadcrumb">
+          <a href="/" class="caption hover:text-[var(--signal)] transition-colors">AMR.ALFAYOUMY</a>
+          <span class="caption" style="color:var(--fg-3)">/</span>
+          <span class="caption-signal">BLOG</span>
+        </div>
+        <div class="blog-hero-grid">
+          <div>
+            <div class="caption-signal mb-4">// NOTES · PUBLISHED INDEX</div>
+            <h1 class="font-display blog-page-title">
+              <span class="line">The</span>
+              <span class="line font-display-italic accent-line">notes.</span>
+            </h1>
+          </div>
+          <div class="blog-hero-copy">
+            <p>Articles on challenges, solutions, and opinions from practical AI delivery: the messy parts of shipping models, agents, fraud analytics, automation layers, and enterprise data products.</p>
+            <div class="blog-hero-meta">
+              <span>Chronological stack</span>
+              <span>Newest first</span>
+              <span>Challenges · Solutions · Opinion</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="shell"><div style="height:1px;background:linear-gradient(90deg, transparent 0%, var(--rule) 25%, var(--rule) 75%, transparent 100%)"></div></div>
+    <section id="notes" class="section" style="padding-block:clamp(4rem, 8vw, 6rem)">
+      <div class="shell">
+        <div class="blog-stack" aria-label="Blog articles in reverse chronological order">
+          <article class="blog-row">
+            <div class="blog-row-meta">
+              <span>01</span>
+              <time datetime="2026-08">2026.08</time>
+              <span>15 min read</span>
+            </div>
+            <div class="blog-row-body">
+              <div class="blog-row-kicker">Production ML · CPU inference</div>
+              <h2 class="font-display blog-row-title"><a href="/blog/cpu-first-inference-onnx-openvino/">Real-time AI does not always need a GPU.</a></h2>
+              <p class="blog-row-copy">How ONNX Runtime, OpenVINO, quantization, streaming, and disciplined CPU serving met a sub-four-second production SLO while saving $1,096.83 per month.</p>
+              <a href="/blog/cpu-first-inference-onnx-openvino/" class="blog-row-link">Read article <span>→</span></a>
+            </div>
+          </article>
+          <article class="blog-row">
+            <div class="blog-row-meta">
+              <span>02</span>
+              <time datetime="2026-06">2026.06</time>
+              <span>10 min read</span>
+            </div>
+            <div class="blog-row-body">
+              <div class="blog-row-kicker">Graph analytics · Platform modernization</div>
+              <h2 class="font-display blog-row-title"><a href="/blog/open-source-sna-proc-network-reimplementation/">From 300M monthly calls to customer influence maps.</a></h2>
+              <p class="blog-row-copy">A field note on rebuilding an automated SAS PROC NETWORK model in open source, reducing 300M+ monthly calls into a 30-35M node graph, cutting SLA in half, and giving the client finer model control.</p>
+              <a href="/blog/open-source-sna-proc-network-reimplementation/" class="blog-row-link">Read article <span>→</span></a>
+            </div>
+          </article>
+          <article class="blog-row">
+            <div class="blog-row-meta">
+              <span>03</span>
+              <time datetime="2026-06">2026.06</time>
+              <span>8 min read</span>
+            </div>
+            <div class="blog-row-body">
+              <div class="blog-row-kicker">Production ML · Fraud analytics</div>
+              <h2 class="font-display blog-row-title"><a href="/blog/fraud-model-cpu-reproducibility/">When the same fraud model gave two different answers.</a></h2>
+              <p class="blog-row-copy">A field note on a fraud risk model that looked broken in production, but was actually diverging because the development and production CPUs selected different numeric execution paths.</p>
+              <a href="/blog/fraud-model-cpu-reproducibility/" class="blog-row-link">Read article <span>→</span></a>
+            </div>
+          </article>
+          <article class="blog-row">
+            <div class="blog-row-meta">
+              <span>04</span>
+              <time datetime="2026-06">2026.06</time>
+              <span>7 min draft</span>
+            </div>
+            <div class="blog-row-body">
+              <div class="blog-row-kicker">Field note</div>
+              <h2 class="font-display blog-row-title">What fraud models need before the model is the problem.</h2>
+              <p class="blog-row-copy">A place for notes on feature history, customer cohorts, investigator queues, suppression logic, explainability, and why the model is usually only one part of fraud delivery.</p>
+              <span class="blog-row-link blog-row-link-muted">Drafting now <span>→</span></span>
+            </div>
+          </article>
+          <article class="blog-row">
+            <div class="blog-row-meta">
+              <span>05</span>
+              <time datetime="2026-06">2026.06</time>
+              <span>6 min draft</span>
+            </div>
+            <div class="blog-row-body">
+              <div class="blog-row-kicker">Opinion</div>
+              <h2 class="font-display blog-row-title">Automation should remove handoffs, not judgment.</h2>
+              <p class="blog-row-copy">An opinion piece slot for writing about useful automation: compressing repetitive handoffs while keeping human control, review, and accountability clear.</p>
+              <span class="blog-row-link blog-row-link-muted">Drafting now <span>→</span></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <div class="shell"><div style="height:1px;background:linear-gradient(90deg, transparent 0%, var(--rule) 25%, var(--rule) 75%, transparent 100%)"></div></div>
+    <section id="contact" class="section" style="padding-block:clamp(4rem, 8vw, 6rem)">
+      <div class="shell grid grid-cols-12 gap-x-6 gap-y-8">
+        <div class="col-span-12 lg:col-span-4">
+          <div class="home-section-top">
+            <div class="home-section-mark">§03</div>
+            <div>
+              <div class="caption-signal">// CONTACT</div>
+              <div class="caption mt-1.5" style="color:var(--fg-3)">WRITE / DISCUSS</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-12 lg:col-span-8">
+          <h2 class="font-display blog-contact-title">Have a topic worth unpacking<span class="font-display-italic" style="color:var(--signal)">?</span></h2>
+          <p class="blog-contact-copy">Good posts usually start as a real constraint, a strange failure mode, or a technical decision that needed defending. Send the thread over and I can turn it into a note.</p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="mailto:amr.alfayoumy@outlook.com" class="font-mono text-[11px] uppercase tracking-[0.16em] px-4 py-3 transition-colors" style="border:1px solid var(--signal);background:var(--signal);color:var(--bg-on-signal)">Email Amr</a>
+            <a href="/projects/" class="font-mono text-[11px] uppercase tracking-[0.16em] px-4 py-3 transition-colors" style="border:1px solid var(--rule);background:var(--panel-2);color:var(--fg)">Back to projects</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="shell pb-10">
+    <div class="hairline mb-6"></div>
+    <div class="caption">© 2026 AMR ALFAYOUMY · NOTES INDEX</div>
+  </footer>
+  <script src="/theme-toggle.js"></script>
+</body>
+</html>

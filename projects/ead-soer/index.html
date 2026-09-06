@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" href="/_next/static/media/70bc3e132a0a741e-s.p.15008bfb.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/8800dfc60902df36-s.p.e22d03ab.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/e41d5df559864f9e-s.p.380d09ea.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="stylesheet" href="/_next/static/chunks/193213d9c0b2e44c.css" data-precedence="next" />
+  <link rel="stylesheet" href="/overrides.css" />
+  <title>EAD State of Environment Report Platform — Amr Alfayoumy</title>
+  <meta name="description" content="A first-of-its-kind environmental reporting platform for Environment Agency - Abu Dhabi that fused structured environmental databases and unstructured research documents into multilingual analytical narratives, cutting report generation from months to days." />
+  <meta name="application-name" content="Amr Alfayoumy · Portfolio" />
+  <meta name="author" content="Amr Alfayoumy" />
+  <meta name="creator" content="Amr Alfayoumy" />
+  <meta name="publisher" content="Amr Alfayoumy" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="EAD State of Environment Report Platform — Amr Alfayoumy" />
+  <meta property="og:description" content="A first-of-its-kind environmental reporting platform for Environment Agency - Abu Dhabi that fused structured environmental databases and unstructured research documents into multilingual analytical narratives, cutting report generation from months to days." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alfayoumy.github.io/projects/ead-soer/" />
+  <meta property="og:site_name" content="Amr Alfayoumy" />
+  <meta property="og:image" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta property="og:image:secure_url" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Amr Alfayoumy portfolio mark" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EAD State of Environment Report Platform — Amr Alfayoumy" />
+  <meta name="twitter:description" content="A first-of-its-kind environmental reporting platform for Environment Agency - Abu Dhabi that fused structured environmental databases and unstructured research documents into multilingual analytical narratives, cutting report generation from months to days." />
+  <meta name="twitter:image" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta name="twitter:image:alt" content="Amr Alfayoumy portfolio mark" />
+  <link rel="canonical" href="https://alfayoumy.github.io/projects/ead-soer/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "url": "https://alfayoumy.github.io/projects/ead-soer/",
+    "name": "EAD State of Environment Report Platform",
+    "description": "A production multi-agent platform for automated environmental reporting.",
+    "creator": { "@id": "https://alfayoumy.github.io/#person" },
+    "keywords": ["Agentic AI", "Reporting Automation", "RAG", "Environmental Data"]
+  }
+  </script>
+  <script>(function(){try{var t=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',t==='dark'||t==='light'?t:'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body class="instrument_serif_794b969e-module__2VhGdW__variable onest_859d3e11-module__eWePdW__variable jetbrains_mono_84d6efd-module__5Hl15a__variable">
+  <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none" style="background:var(--bg)">
+    <div class="absolute inset-0 bp-grid" style="mask-image:radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, transparent 100%);-webkit-mask-image:radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, transparent 100%)"></div>
+    <div class="absolute" style="top:-10%;right:-10%;width:60vw;height:60vw;background:radial-gradient(circle, rgba(255,74,28,0.10) 0%, rgba(255,74,28,0) 60%);filter:blur(40px)"></div>
+    <div class="absolute" style="bottom:-15%;left:-15%;width:55vw;height:55vw;background:radial-gradient(circle, rgba(200,255,94,0.05) 0%, rgba(200,255,94,0) 60%);filter:blur(50px)"></div>
+    <div class="noise"></div>
+  </div>
+  <div class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md" style="background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--rule)">
+    <div class="shell flex items-center gap-4 sm:gap-6 h-10 text-[11px] font-mono uppercase tracking-[0.16em] whitespace-nowrap overflow-hidden">
+      <a href="/" class="text-[var(--fg)] hover:text-[var(--signal)] transition-colors">AMR.ALFAYOUMY</a>
+      <a href="/projects/" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ PROJECTS</a>
+      <a href="/blog/" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ BLOG</a>
+      <a href="https://www.linkedin.com/in/alfayoumy" target="_blank" rel="noopener noreferrer" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ LINKEDIN</a>
+      <a href="/hire/" class="hidden md:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ HIRE</a>
+      <span class="hidden 2xl:inline text-[var(--fg-3)] whitespace-nowrap">/ Environmental reporting automation</span>
+      <nav aria-label="Section navigation" class="hidden md:flex items-center gap-3 lg:gap-4 mx-auto">
+        <a href="#summary" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§01</a><a href="#challenge" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§02</a><a href="#approach" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§03</a><a href="#key-decisions" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§04</a><a href="#architecture" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§05</a><a href="#highlights" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§06</a><a href="#outcomes" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§07</a><a href="#stack" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§08</a><a href="#links" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§09</a>
+      </nav>
+      <div class="ml-auto flex items-center gap-3 sm:gap-5">
+        <a href="mailto:amr.alfayoumy@outlook.com" class="hidden sm:inline-flex items-center gap-1 transition-colors" style="color:var(--fg)">
+          <span style="color:var(--signal)">→</span><span class="hover:text-[var(--signal)] transition-colors">EMAIL</span>
+        </a>
+        <span class="hidden lg:flex items-center gap-2 text-[var(--pulse)]"><span class="live-dot"></span> OPEN TO BUILD</span>
+        <button type="button" id="themeToggle" class="inline-flex font-mono text-[11px] uppercase tracking-[0.16em] transition-colors hover:text-[var(--signal)]" style="color:var(--fg-2)">◐ DARK</button>
+      </div>
+    </div>
+  </div>
+  <nav aria-label="Section navigation" class="md:hidden fixed bottom-3 left-1/2 -translate-x-1/2 z-30 flex gap-1 max-w-[calc(100vw-1rem)] overflow-x-auto px-2 py-1.5 backdrop-blur-md" style="background:var(--panel);border:1px solid var(--rule)">
+    <a href="#summary" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§01</a><a href="#challenge" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§02</a><a href="#approach" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§03</a><a href="#key-decisions" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§04</a><a href="#architecture" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§05</a><a href="#highlights" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§06</a><a href="#outcomes" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§07</a><a href="#stack" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§08</a><a href="#links" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§09</a>
+  </nav>
+<main class="relative">
+<article class="pt-28 pb-24">
+  <div class="shell">
+    <div class="caption mb-6 flex flex-wrap items-center gap-3">
+      <a class="hover:text-[var(--signal)] transition-colors" href="/">← HOME</a>
+      <span class="text-[var(--fg-4)]">/</span>
+      <a class="hover:text-[var(--signal)] transition-colors" href="/projects/">PROJECTS</a>
+      <span class="text-[var(--fg-4)]">/</span>
+      <span class="text-[var(--fg-2)]">EAD STATE OF ENVIRONMENT REPORT PLATFORM</span>
+    </div>
+    <header id="summary" class="grid grid-cols-12 gap-x-6 gap-y-6 mb-16 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-9">
+        <div class="caption-signal mb-3" style="color:var(--pulse)">PRODUCTION · 2024-2025 · Environmental reporting automation</div>
+        <h1 class="font-display" style="font-size:clamp(3rem, 8vw, 6rem);line-height:0.95;letter-spacing:-0.035em">EAD State of Environment Report Platform<span class="font-display-italic" style="color:var(--signal)">.</span></h1>
+      </div>
+      <div class="col-span-12 lg:col-span-3 text-[var(--fg-3)] font-mono uppercase tracking-[0.12em]" style="font-size:11px;line-height:1.8">
+        AI/ML Engineer · Reporting Platform Owner<br/>
+        Cairo, Egypt<br/>
+        Source: year-end review 2025 + project materials
+      </div>
+      <div class="col-span-12 lg:col-span-8">
+        <p class="font-display-italic text-[var(--fg-2)]" style="font-size:clamp(1.35rem, 2vw, 1.9rem);line-height:1.4">A first-of-its-kind environmental reporting platform for Environment Agency - Abu Dhabi, where I helped own the AI and data foundation that fused 6,000+ structured environmental variables with unstructured reports and research documents to generate multilingual analytical narratives in days instead of months.</p>
+      </div>
+      <div class="col-span-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Delivery Impact</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">Months → Days</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Report generation cycle reduction</div>
+</div>
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Structured Data</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">6,000+</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Environmental variables and KPIs integrated</div>
+</div>
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Data Modes</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">2</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Structured databases plus unstructured documents</div>
+</div>
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Core System</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">Multi-Agent</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Analysis, OCR, translation, and narrative generation</div>
+</div>
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Launch</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">COP30</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">High-visibility public launch context</div>
+</div>
+
+        </div>
+      </div>
+    </header>
+    <section id="challenge" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 02 — CHALLENGE<div class="caption mt-1.5" style="color:var(--fg-3)">WHY IT MATTERED</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+        <div class="space-y-5">
+          <p>The reporting problem was much larger than text generation. Environmental reporting depended on combining structured indicators from EAD databases with unstructured evidence from multilingual PDFs, research papers, and supporting documents, then turning that mixture into defensible narratives instead of disconnected summaries.</p>
+          <p>The scale of the structured layer mattered. Thousands of environmental variables had to be standardized, reconciled, and exposed in a way the AI backend could reason over without breaking traceability, consistency, or stakeholder trust in the final report chapters.</p>
+          <p>This was also a high-visibility government delivery. The system needed to support multilingual outputs, analytical accuracy, and maintainable operations while reducing a months-long reporting workflow into something repeatable enough for ongoing institutional use.</p>
+        </div>
+      </div>
+    </section>
+    <section id="approach" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 03 — APPROACH<div class="caption mt-1.5" style="color:var(--fg-3)">HOW I BUILT IT</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+        <div class="space-y-5">
+          <p>I helped own the platform from the AI and data side: integrating EAD database sources, shaping standardized ETL paths for environmental KPIs, designing the multi-agent backend, and making the system capable of combining structured evidence with unstructured report content in one generation workflow.</p>
+          <p>The backend separated responsibilities across specialized agents for narrative generation, structured data analysis, summarization and translation, and OCR plus text extraction. That let us keep each stage focused while still producing coherent multilingual chapters and analytical outputs end to end.</p>
+          <p>On the unstructured side, the OCR and extraction path turned multilingual documents into AI-usable context. On the structured side, the portal pulled current environmental data and statistical signals from standardized sources. The value came from fusing both layers, not treating either one as sufficient on its own.</p>
+          <p>I also approached the project as a production platform rather than a demo workflow: maintainable data contracts, consistent ETL foundations, AI orchestration that could be handed over, and a reporting experience robust enough for a major public launch and continued operational use.</p>
+        </div>
+      </div>
+    </section>
+    <section id="key-decisions" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-8 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 04 — KEY DECISIONS<div class="caption mt-1.5" style="color:var(--fg-3)">WHAT I CHOSE &amp; WHY</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 01</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Build the reporting engine around structured plus unstructured evidence</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">I did not want the portal to become either a dashboard with no narrative intelligence or a document summarizer with no live analytical grounding. The system was designed to merge structured environmental KPIs with extracted document context so generated narratives stayed analytical, current, and reference-grounded.</p>
+          </article>
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 02</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Treat data engineering as the backbone of the AI product</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">Before narrative quality could matter, the environmental data had to be standardized and consistent. I pushed for ETL foundations and KPI alignment first, because without a disciplined data layer, the AI output would be faster but not trustworthy.</p>
+          </article>
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 03</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Use specialized agents instead of one generic generation chain</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">Narrative generation, structured analysis, OCR extraction, summarization, and translation each had different failure modes. I separated them into focused agent roles so each layer could be tuned independently and the system could scale operationally instead of collapsing into one opaque prompt flow.</p>
+          </article>
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 04</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Design the portal for institutional reuse, not one report cycle</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">The real win was not a single generated report. I treated the work as reusable reporting infrastructure that could support future chapters, refreshed environmental data, multilingual delivery, and formal handover, turning a labor-intensive reporting process into a repeatable platform capability.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="architecture" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 05 — ARCHITECTURE<div class="caption mt-1.5" style="color:var(--fg-3)">HOW IT FITS TOGETHER</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+        <p class="mb-8">The platform architecture starts with EAD environmental databases and unstructured reference documents, standardizes them through ETL and extraction layers, and then routes both streams into specialized AI agents for statistical interpretation, OCR-driven document understanding, multilingual summarization, and reference-grounded narrative generation. The result is a portal that can synthesize current structured indicators and historical research context into report-ready environmental analysis.</p>
+        <div class="flex items-center justify-between mb-4">
+          <div class="caption" style="color:var(--fg-3)">// FIG. SYSTEM DIAGRAM</div>
+          <div class="caption" style="color:var(--fg-3)">SCALE 1:N</div>
+        </div>
+        <div class="overflow-x-auto" style="border:1px solid var(--rule);background:var(--panel-2);position:relative">
+          <div aria-hidden="true" style="position:absolute;inset:-1px;pointer-events:none">
+            <span style="position:absolute;top:-1px;left:-1px;width:8px;height:8px;border-top:1px solid var(--signal);border-left:1px solid var(--signal)"></span>
+            <span style="position:absolute;top:-1px;right:-1px;width:8px;height:8px;border-top:1px solid var(--signal);border-right:1px solid var(--signal)"></span>
+            <span style="position:absolute;bottom:-1px;left:-1px;width:8px;height:8px;border-bottom:1px solid var(--signal);border-left:1px solid var(--signal)"></span>
+            <span style="position:absolute;bottom:-1px;right:-1px;width:8px;height:8px;border-bottom:1px solid var(--signal);border-right:1px solid var(--signal)"></span>
+          </div>
+          <svg role="img" aria-labelledby="soerArchTitle soerArchDesc" viewBox="0 0 1120 600" style="min-width:980px;width:100%;height:auto;display:block;color:var(--fg);font-family:var(--font-jetbrains-mono),ui-monospace,monospace">
+            <title id="soerArchTitle">EAD State of Environment reporting platform high-level architecture</title>
+            <desc id="soerArchDesc">Structured environmental databases and unstructured documents feed ETL, OCR, specialized AI agents, and multilingual reporting outputs.</desc>
+            <defs>
+              <pattern id="soerGrid" width="36" height="36" patternUnits="userSpaceOnUse">
+                <path d="M36 0H0V36" fill="none" stroke="var(--grid)" stroke-width="1"/>
+              </pattern>
+              <marker id="soerArrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <path d="M0,0 L8,4 L0,8 Z" fill="var(--signal)"/>
+              </marker>
+              <style>
+                .soer-lane{fill:var(--fg-3);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase}
+                .soer-kicker{fill:var(--signal);font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+                .soer-title{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase}
+                .soer-small{fill:var(--fg-3);font-size:9.5px}
+                .soer-dash{stroke:var(--rule);stroke-width:1;stroke-dasharray:2 5}
+                .soer-flow{stroke:var(--signal);stroke-width:1.25;fill:none;marker-end:url(#soerArrow)}
+                .soer-merge{stroke:var(--signal);stroke-width:1.25;fill:none}
+                .soer-source{fill:var(--panel-2);stroke:var(--rule);stroke-width:1}
+                .soer-source-title{fill:var(--fg)}
+                .soer-etl{fill:var(--signal-soft);stroke:var(--signal);stroke-width:1.3}
+                .soer-etl-title{fill:var(--signal)}
+                .soer-fuse{fill:var(--pulse-soft);stroke:var(--pulse);stroke-width:1.3}
+                .soer-fuse-title{fill:var(--pulse)}
+                .soer-agent{fill:rgba(255,74,28,.08);stroke:#b8681c;stroke-width:1.3}
+                .soer-agent-title{fill:#b8681c}
+                .soer-out{fill:rgba(47,122,26,.08);stroke:#5d8f2b;stroke-width:1.25}
+                .soer-out-title{fill:#5d8f2b}
+                .soer-ops{fill:rgba(11,10,7,.04);stroke:var(--fg-3);stroke-width:1.2}
+                .soer-ops-title{fill:var(--fg-2)}
+              </style>
+            </defs>
+            <rect x="0" y="0" width="1120" height="600" fill="var(--bg)" opacity=".12"/>
+            <rect x="220" y="28" width="850" height="540" fill="url(#soerGrid)" opacity=".85"/>
+            <line x1="240" y1="96" x2="1048" y2="96" class="soer-dash"/>
+            <line x1="240" y1="186" x2="1048" y2="186" class="soer-dash"/>
+            <line x1="240" y1="276" x2="1048" y2="276" class="soer-dash"/>
+            <line x1="240" y1="366" x2="1048" y2="366" class="soer-dash"/>
+            <line x1="240" y1="466" x2="1048" y2="466" class="soer-dash"/>
+            <text x="38" y="66" class="soer-lane">SOURCE LAYERS</text>
+            <text x="38" y="156" class="soer-lane">DATA FOUNDATION</text>
+            <text x="38" y="246" class="soer-lane">AI FUSION LAYER</text>
+            <text x="38" y="336" class="soer-lane">SPECIALIZED AGENTS</text>
+            <text x="38" y="436" class="soer-lane">REPORT OUTPUTS</text>
+            <text x="38" y="536" class="soer-lane">PORTAL OPERATIONS</text>
+
+            <rect x="290" y="50" width="686" height="50" class="soer-source" rx="2"/>
+            <text x="633" y="73" text-anchor="middle" class="soer-title soer-source-title">EAD DATABASES + RESEARCH REPORTS + MULTILINGUAL DOCUMENT CORPORA</text>
+            <text x="633" y="88" text-anchor="middle" class="soer-small">structured environmental variables · sensor and KPI tables · PDFs and supporting reports</text>
+            <path d="M633 100V128" class="soer-flow"/>
+            <text x="648" y="122" class="soer-kicker">dual-source ingestion</text>
+
+            <rect x="330" y="132" width="606" height="60" class="soer-etl" rx="2"/>
+            <text x="633" y="158" text-anchor="middle" class="soer-title soer-etl-title">STANDARDIZED ETL + OCR AND TEXT EXTRACTION</text>
+            <text x="633" y="174" text-anchor="middle" class="soer-small">environmental KPI harmonization · multilingual extraction · consistent data contracts</text>
+            <path d="M633 192V220" class="soer-flow"/>
+            <text x="648" y="214" class="soer-kicker">structured and unstructured alignment</text>
+
+            <rect x="308" y="224" width="650" height="60" class="soer-fuse" rx="2"/>
+            <text x="633" y="250" text-anchor="middle" class="soer-title soer-fuse-title">EVIDENCE FUSION LAYER</text>
+            <text x="633" y="266" text-anchor="middle" class="soer-small">current environmental data + extracted document context + reference-grounded prompting</text>
+            <path d="M633 284V300H374V312" class="soer-flow"/>
+            <path d="M633 284V312" class="soer-flow"/>
+            <path d="M633 284V300H887V312" class="soer-flow"/>
+
+            <rect x="270" y="316" width="208" height="70" class="soer-agent" rx="2"/>
+            <text x="374" y="344" text-anchor="middle" class="soer-title soer-agent-title">DATA ANALYSIS AGENT</text>
+            <text x="374" y="360" text-anchor="middle" class="soer-small">statistical insight generation</text>
+            <text x="374" y="374" text-anchor="middle" class="soer-small">table interpretation</text>
+
+            <rect x="496" y="316" width="274" height="70" class="soer-agent" rx="2"/>
+            <text x="633" y="344" text-anchor="middle" class="soer-title soer-agent-title">NARRATIVE GENERATION AGENT</text>
+            <text x="633" y="360" text-anchor="middle" class="soer-small">reference-grounded analytical chapters</text>
+            <text x="633" y="374" text-anchor="middle" class="soer-small">environmental reporting language</text>
+
+            <rect x="788" y="316" width="198" height="70" class="soer-agent" rx="2"/>
+            <text x="887" y="344" text-anchor="middle" class="soer-title soer-agent-title">SUPPORT AGENTS</text>
+            <text x="887" y="360" text-anchor="middle" class="soer-small">summarization</text>
+            <text x="887" y="374" text-anchor="middle" class="soer-small">translation</text>
+
+            <path d="M374 386V416" class="soer-flow"/>
+            <path d="M633 386V416" class="soer-flow"/>
+            <path d="M887 386V416" class="soer-flow"/>
+
+            <rect x="278" y="420" width="220" height="58" class="soer-out" rx="2"/>
+            <text x="388" y="446" text-anchor="middle" class="soer-title soer-out-title">QUERYABLE INSIGHTS</text>
+            <text x="388" y="462" text-anchor="middle" class="soer-small">portal exploration and analytical lookup</text>
+
+            <rect x="524" y="420" width="218" height="58" class="soer-out" rx="2"/>
+            <text x="633" y="446" text-anchor="middle" class="soer-title soer-out-title">REPORT CHAPTERS</text>
+            <text x="633" y="462" text-anchor="middle" class="soer-small">long-form environmental narratives</text>
+
+            <rect x="768" y="420" width="218" height="58" class="soer-out" rx="2"/>
+            <text x="877" y="446" text-anchor="middle" class="soer-title soer-out-title">SUMMARIES</text>
+            <text x="877" y="462" text-anchor="middle" class="soer-small">concise multilingual reporting outputs</text>
+
+            <path d="M388 478V493H633" class="soer-merge"/>
+            <path d="M877 478V493H633" class="soer-merge"/>
+            <path d="M633 478V508" class="soer-flow"/>
+
+            <rect x="406" y="512" width="454" height="52" class="soer-ops" rx="2"/>
+            <text x="633" y="536" text-anchor="middle" class="soer-title soer-ops-title">PORTAL DELIVERY + HANDOVER</text>
+            <text x="633" y="552" text-anchor="middle" class="soer-small">maintainable workflows · reusable reporting capability · formal team transition</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section id="highlights" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 06 — HIGHLIGHTS<div class="caption mt-1.5" style="color:var(--fg-3)">KEY TAKEAWAYS</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ HUGE REPORTING AUTOMATION WIN</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Turned an environmental reporting workflow that traditionally took months into a platform that could generate multilingual analytical outputs in days.</p>
+          </article>
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ STRUCTURED + UNSTRUCTURED FUSION</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Combined thousands of environmental variables from current databases with OCR-extracted context from multilingual reports instead of forcing the platform into a single data mode.</p>
+          </article>
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ SENIOR-LEVEL DATA FOUNDATION OWNERSHIP</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Treated ETL, KPI standardization, and data consistency as core product architecture so the AI layer could produce defensible reporting instead of polished guesswork.</p>
+          </article>
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ MULTI-AGENT REPORTING BACKEND</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Separated narrative generation, data analysis, OCR extraction, summarization, and translation into specialized AI services tuned for different reporting jobs.</p>
+          </article>
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ PUBLICLY VISIBLE GOVERNMENT DELIVERY</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Contributed to a first-of-its-kind launch in environmental monitoring and reporting, giving the work both operational significance and public visibility.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="outcomes" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 07 — OUTCOMES<div class="caption mt-1.5" style="color:var(--fg-3)">RESULTS AND LESSONS</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <ul class="space-y-3 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Delivered a reusable AI reporting workflow that integrated unstructured documents and live structured environmental data into one portal experience.</span></li>
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Cut report generation effort from months to days, which was the clearest proof that the system moved beyond experimentation into real workflow transformation.</span></li>
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Made environmental reporting more accessible to both technical and non-technical stakeholders through multilingual narrative outputs and analytical summaries.</span></li>
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Established a platform foundation strong enough for formal handover, ongoing maintenance, and future expansion instead of leaving behind a one-off AI prototype.</span></li>
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Helped position the work as a showcase-grade government AI product by linking operational data engineering, narrative intelligence, and portal delivery in one system.</span></li>
+        </ul>
+      </div>
+    </section>
+    <section id="stack" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 08 — STACK<div class="caption mt-1.5" style="color:var(--fg-3)">THE TOOLS</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">
+        <div class="space-y-5">
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">Agents</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Narrative generation</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Data analysis</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Summarization</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Translation</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">OCR extraction</span></div>
+</div>
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">Data</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">SQL</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Standardized ETL</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Environmental KPIs</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">6,000+ variables</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Statistical analysis</span></div>
+</div>
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">Docs</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">OCR</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Text extraction</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Multilingual PDFs</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Reference grounding</span></div>
+</div>
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">Platform</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Portal backend</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Multilingual outputs</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Reporting workflows</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Formal handover</span></div>
+</div>
+
+        </div>
+      </div>
+    </section>
+    <section id="links" class="mb-8 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 09 — LINKS<div class="caption mt-1.5" style="color:var(--fg-3)">SOURCE TRAIL</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 flex flex-wrap gap-3">
+        <a href="https://www.linkedin.com/posts/alfayoumy_activity-7396459876329328640-DBfv" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] uppercase tracking-[0.16em] px-3 py-2" style="border:1px solid var(--rule);background:var(--panel-2);color:var(--fg)">LinkedIn SOE post</a><a href="https://www.linkedin.com/in/alfayoumy" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] uppercase tracking-[0.16em] px-3 py-2" style="border:1px solid var(--rule);background:var(--panel-2);color:var(--fg)">LinkedIn profile</a>
+      </div>
+    </section>
+  </div>
+</article>
+</main>
+  <footer class="shell pb-10">
+    <div class="hairline mb-6"></div>
+    <div class="caption">
+      Rewritten around the portfolio project-page system using details from the year-end review, project materials,
+      and supporting public portfolio references.
+    </div>
+  </footer>
+  <script src="/theme-toggle.js"></script>
+</body>
+</html>

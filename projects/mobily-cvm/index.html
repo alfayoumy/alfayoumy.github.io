@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" href="/_next/static/media/70bc3e132a0a741e-s.p.15008bfb.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/8800dfc60902df36-s.p.e22d03ab.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/e41d5df559864f9e-s.p.380d09ea.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="stylesheet" href="/_next/static/chunks/193213d9c0b2e44c.css" data-precedence="next" />
+  <link rel="stylesheet" href="/overrides.css" />
+  <title>Mobily AI/ML Modernization — Amr Alfayoumy</title>
+  <meta name="description" content="An end-to-end modernization effort migrating 15 mission-critical telecom use cases from legacy SAS environments into Dataiku-centered ML and data pipelines." />
+  <meta name="application-name" content="Amr Alfayoumy · Portfolio" />
+  <meta name="author" content="Amr Alfayoumy" />
+  <meta name="creator" content="Amr Alfayoumy" />
+  <meta name="publisher" content="Amr Alfayoumy" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Mobily AI/ML Modernization — Amr Alfayoumy" />
+  <meta property="og:description" content="An end-to-end modernization effort migrating 15 mission-critical telecom use cases from legacy SAS environments into Dataiku-centered ML and data pipelines." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alfayoumy.github.io/projects/mobily-cvm/" />
+  <meta property="og:site_name" content="Amr Alfayoumy" />
+  <meta property="og:image" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta property="og:image:secure_url" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Amr Alfayoumy portfolio mark" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mobily AI/ML Modernization — Amr Alfayoumy" />
+  <meta name="twitter:description" content="An end-to-end modernization effort migrating 15 mission-critical telecom use cases from legacy SAS environments into Dataiku-centered ML and data pipelines." />
+  <meta name="twitter:image" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta name="twitter:image:alt" content="Amr Alfayoumy portfolio mark" />
+  <link rel="canonical" href="https://alfayoumy.github.io/projects/mobily-cvm/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "url": "https://alfayoumy.github.io/projects/mobily-cvm/",
+    "name": "Mobily AI/ML Modernization",
+    "description": "Enterprise telecom analytics modernization from SAS to Dataiku.",
+    "creator": { "@id": "https://alfayoumy.github.io/#person" },
+    "keywords": ["Dataiku", "SAS", "Machine Learning", "Telecom Analytics"]
+  }
+  </script>
+  <script>(function(){try{var t=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',t==='dark'||t==='light'?t:'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body class="instrument_serif_794b969e-module__2VhGdW__variable onest_859d3e11-module__eWePdW__variable jetbrains_mono_84d6efd-module__5Hl15a__variable">
+  <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none" style="background:var(--bg)">
+    <div class="absolute inset-0 bp-grid" style="mask-image:radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, transparent 100%);-webkit-mask-image:radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, transparent 100%)"></div>
+    <div class="absolute" style="top:-10%;right:-10%;width:60vw;height:60vw;background:radial-gradient(circle, rgba(255,74,28,0.10) 0%, rgba(255,74,28,0) 60%);filter:blur(40px)"></div>
+    <div class="absolute" style="bottom:-15%;left:-15%;width:55vw;height:55vw;background:radial-gradient(circle, rgba(200,255,94,0.05) 0%, rgba(200,255,94,0) 60%);filter:blur(50px)"></div>
+    <div class="noise"></div>
+  </div>
+  <div class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md" style="background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--rule)">
+    <div class="shell flex items-center gap-4 sm:gap-6 h-10 text-[11px] font-mono uppercase tracking-[0.16em] whitespace-nowrap overflow-hidden">
+      <a href="/" class="text-[var(--fg)] hover:text-[var(--signal)] transition-colors">AMR.ALFAYOUMY</a>
+      <a href="/projects/" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ PROJECTS</a>
+      <a href="/blog/" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ BLOG</a>
+      <a href="https://www.linkedin.com/in/alfayoumy" target="_blank" rel="noopener noreferrer" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ LINKEDIN</a>
+      <a href="/hire/" class="hidden md:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ HIRE</a>
+      <span class="hidden 2xl:inline text-[var(--fg-3)] whitespace-nowrap">/ Enterprise modernization</span>
+      <nav aria-label="Section navigation" class="hidden md:flex items-center gap-3 lg:gap-4 mx-auto">
+        <a href="#summary" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§01</a><a href="#challenge" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§02</a><a href="#approach" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§03</a><a href="#key-decisions" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§04</a><a href="#architecture" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§05</a><a href="#highlights" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§06</a><a href="#outcomes" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§07</a><a href="#stack" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§08</a><a href="#links" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§09</a>
+      </nav>
+      <div class="ml-auto flex items-center gap-3 sm:gap-5">
+        <a href="mailto:amr.alfayoumy@outlook.com" class="hidden sm:inline-flex items-center gap-1 transition-colors" style="color:var(--fg)">
+          <span style="color:var(--signal)">→</span><span class="hover:text-[var(--signal)] transition-colors">EMAIL</span>
+        </a>
+        <span class="hidden lg:flex items-center gap-2 text-[var(--pulse)]"><span class="live-dot"></span> OPEN TO BUILD</span>
+        <button type="button" id="themeToggle" class="inline-flex font-mono text-[11px] uppercase tracking-[0.16em] transition-colors hover:text-[var(--signal)]" style="color:var(--fg-2)">◐ DARK</button>
+      </div>
+    </div>
+  </div>
+  <nav aria-label="Section navigation" class="md:hidden fixed bottom-3 left-1/2 -translate-x-1/2 z-30 flex gap-1 px-2 py-1.5 backdrop-blur-md" style="background:var(--panel);border:1px solid var(--rule)">
+    <a href="#summary" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§01</a><a href="#challenge" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§02</a><a href="#approach" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§03</a><a href="#key-decisions" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§04</a><a href="#architecture" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§05</a><a href="#highlights" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§06</a><a href="#outcomes" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§07</a><a href="#stack" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§08</a><a href="#links" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§09</a>
+  </nav>
+<main class="relative">
+<article class="pt-28 pb-24">
+  <div class="shell">
+    <div class="caption mb-6 flex flex-wrap items-center gap-3">
+      <a class="hover:text-[var(--signal)] transition-colors" href="/">← HOME</a>
+      <span class="text-[var(--fg-4)]">/</span>
+      <a class="hover:text-[var(--signal)] transition-colors" href="/projects/">PROJECTS</a>
+      <span class="text-[var(--fg-4)]">/</span>
+      <span class="text-[var(--fg-2)]">MOBILY AI/ML MODERNIZATION</span>
+    </div>
+    <header id="summary" class="grid grid-cols-12 gap-x-6 gap-y-6 mb-16 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-9">
+        <div class="caption-signal mb-3" style="color:var(--signal)">ACTIVE PROGRAM · 2025-Present · Enterprise modernization</div>
+        <h1 class="font-display" style="font-size:clamp(3rem, 8vw, 6rem);line-height:0.95;letter-spacing:-0.035em">Mobily AI/ML Modernization<span class="font-display-italic" style="color:var(--signal)">.</span></h1>
+      </div>
+      <div class="col-span-12 lg:col-span-3 text-[var(--fg-3)] font-mono uppercase tracking-[0.12em]" style="font-size:11px;line-height:1.8">
+        Data Scientist &amp; AI/ML Engineer<br/>
+        Cairo, Egypt<br/>
+        Enterprise modernization case study
+      </div>
+      <div class="col-span-12 lg:col-span-8">
+        <p class="font-display-italic text-[var(--fg-2)]" style="font-size:clamp(1.35rem, 2vw, 1.9rem);line-height:1.4">An end-to-end modernization effort migrating 15 mission-critical telecom use cases from legacy SAS environments into Dataiku-centered ML and data pipelines.</p>
+      </div>
+      <div class="col-span-12 lg:col-span-4">
+        <div class="grid grid-cols-1 gap-3">
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Use cases</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">15</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Mission-critical telecom workloads</div>
+</div>
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Subscribers</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">13M+</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Production business scale</div>
+</div>
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Domains</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">4+</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Core business areas</div>
+</div>
+
+        </div>
+      </div>
+    </header>
+    <section id="challenge" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 02 — CHALLENGE<div class="caption mt-1.5" style="color:var(--fg-3)">WHY IT MATTERED</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+          <p>The Customer Value Management (CVM) and B2B business divisions operated a complex legacy analytics ecosystem consisting of proprietary SAS modules (Viya, Model Studio, Job Executor, CAS actions) and extensive Teradata stored procedures. This infrastructure incurred substantial operational overhead, presented high maintenance complexity with hundreds of custom macros, and created computational bottlenecks during large-scale customer network simulations.</p>
+          <p>The core challenge lay in re-architecting and migrating 13 critical analytical pipelines into a modern governed platform (Dataiku DSS) without interrupting live business operations. The target state required ensuring strict numeric parity with legacy baselines while offloading heavy transformations onto distributed compute clusters and optimized Teradata SQL database pushdown engines.</p>
+      </div>
+    </section>
+    <section id="approach" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 03 — APPROACH<div class="caption mt-1.5" style="color:var(--fg-3)">HOW I BUILT IT</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+        <div class="space-y-5">
+          <p>My approach focused on reverse engineering monolithic legacy SAS models and scripts, and restructuring them into modular, governed workflows containerized on Kubernetes and orchestrated via Dataiku DSS. To eliminate compute bottlenecks, we systematically offloaded resource-intensive feature preparation and training workloads to distributed clusters on Cloudera, while routing graph-theory and specialized modeling tasks to dedicated high-RAM Kubernetes pods. Standardized Git-backed project versioning and an MLflow-driven Model Registry ensured complete traceability from development to production.</p>
+          <p>Moving beyond simple model migration, we established a rigorous promotion pipeline. Models are developed on Design nodes, packaged into versioned, immutable bundles, and promoted to UAT Automation nodes where they run against non-production staging tables to perform strict regression checks and assert parity against legacy baselines. Once approved, CI/CD scripts deploy these bundles to Production Automation nodes. Daily and monthly production scoring routines run inside isolated Kubernetes containers, staging outputs in temporary schemas before executing atomic Teradata merges to protect database locks and ensure zero-downtime campaign updates.</p>
+          
+          <div class="mt-8 border-t border-[var(--rule)] pt-8">
+            <h2 class="font-display text-[1.4rem] mb-4 text-[var(--fg)]">Pipeline Deep Dives</h2>
+            <div class="space-y-6 text-[0.98rem]">
+              <div>
+                <h3 class="font-mono text-[12px] text-[var(--signal)] uppercase tracking-wider mb-2">// 01 — Social Network Analysis (SNA) &amp; Graph Mining</h3>
+                <p>Constructs undirected relationship graphs from millions of monthly call details on local high-RAM compute nodes. Implements high-performance modularity optimization graph algorithms for community detection and centrality metrics (Out-Degree and weighted out-degree) to identify high-influence subscribers for targeted campaigns.</p>
+              </div>
+              <div>
+                <h3 class="font-mono text-[12px] text-[var(--signal)] uppercase tracking-wider mb-2">// 02 — Price Elasticity &amp; Demand Simulation Engine</h3>
+                <p>Calculates demand elasticity coefficients using a bottom-up hierarchical rollup cascade (Package &rarr; L2 &rarr; L1 &rarr; L0) to resolve data sparsity. Applies Interquartile Range (IQR) filtering and runs parallel log-log regressions across 30 pricing scenarios to map products into strategic performance quadrants.</p>
+              </div>
+              <div>
+                <h3 class="font-mono text-[12px] text-[var(--signal)] uppercase tracking-wider mb-2">// 03 — Dual Collaborative Filtering Recommendation Systems</h3>
+                <p>Generates cross-sell and up-sell guidance by running matrix operations over product purchase history. Leverages User-User similarity matching for standard accounts and Item-Item matrices for maximum-holding accounts. Resolves sparse data via segment augmentation and prioritizes upgrades by monthly and non-recurring revenue profiles.</p>
+              </div>
+              <div>
+                <h3 class="font-mono text-[12px] text-[var(--signal)] uppercase tracking-wider mb-2">// 04 — Value &amp; Sophistication Microsegmentation</h3>
+                <p>Classifies accounts across financial value (revenue ranks + growth potential) and tech sophistication (complexity indices). Employs linear interpolation binning and optimizes scoring runs using delta-processing paths that evaluate only new, maturing, or recovering accounts to prevent full-table recalculations.</p>
+              </div>
+              <div>
+                <h3 class="font-mono text-[12px] text-[var(--signal)] uppercase tracking-wider mb-2">// 05 — Churn, Propensity &amp; Consumer Risk Pipelines</h3>
+                <p>Predicts voluntary/involuntary churn and consumer credit defaults. Applies Weight of Evidence (WoE) mapping and target encoding to sparse inputs. Trains autotuned ensemble gradient boosting algorithms using segment-specific activity thresholds to ensure high-precision retention scoring.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="key-decisions" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-8 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 04 — KEY DECISIONS<div class="caption mt-1.5" style="color:var(--fg-3)">WHAT I CHOSE &amp; WHY</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 01</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Strict Schema Validation Contracts</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">Automated scenario pre-checks match incoming datasets against strict structural definitions (column names, types, and modeling roles: inputs, rejects, features, targets) before scheduling model runs, ensuring garbage data never pollutes downstream scoring.</p>
+          </article>
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 02</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Adversarial Data Drift Monitoring</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">To monitor input data drift, I implemented non-blocking flow branches that train a binary classifier to distinguish between reference baseline data and live scoring batches. A high ROC-AUC score triggers notifications indicating significant feature distribution shifts.</p>
+          </article>
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 03</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Automated Drift Tracking</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">Evaluation steps automatically calculate performance metrics (AUC, Kolmogorov-Smirnov stats, lift curves) by comparing historical model predictions against subsequent actual ground-truth labels, exposing concept drift before it impacts campaigns.</p>
+          </article>
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 04</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Atomic Staging &amp; Error Recovery</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">Connection retry loops handle database timeouts, while strict step-validators abort scoring runs if upstream validation fails. Teardown rules truncate target tables on script exceptions to maintain strict atomic data integrity inside Teradata.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="architecture" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 05 — ARCHITECTURE<div class="caption mt-1.5" style="color:var(--fg-3)">HOW IT FITS TOGETHER</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+        <p class="mb-8">I engineered a resilient, Kubernetes-native MLOps architecture that bridges legacy SAS deconstruction with a modern, governed promotion lifecycle. Source SAS macros and Teradata logic are reverse-engineered into strict data contracts and developed as Git-versioned Dataiku flows with MLflow experiment tracking. To enforce zero-regression deployments, I designed a UAT parity gate that automatically asserts numerical equivalence between the new container-based pipelines and legacy baselines before CI/CD automation promotes the immutable bundles to production. The runtime layer leverages containerized high-RAM inference, fortified by adversarial drift detection and atomic staging swaps to guarantee high-availability scoring.</p>
+        <div class="flex items-center justify-between mb-4">
+          <div class="caption" style="color:var(--fg-3)">// FIG. MLOPS PIPELINE DIAGRAM</div>
+          <div class="caption" style="color:var(--fg-3)">CONTAINER GRID 1:1</div>
+        </div>
+        <div class="overflow-x-auto" style="border:1px solid var(--rule);background:var(--panel-2);position:relative">
+          <div aria-hidden="true" style="position:absolute;inset:-1px;pointer-events:none">
+            <span style="position:absolute;top:-1px;left:-1px;width:8px;height:8px;border-top:1px solid var(--signal);border-left:1px solid var(--signal)"></span>
+            <span style="position:absolute;top:-1px;right:-1px;width:8px;height:8px;border-top:1px solid var(--signal);border-right:1px solid var(--signal)"></span>
+            <span style="position:absolute;bottom:-1px;left:-1px;width:8px;height:8px;border-bottom:1px solid var(--signal);border-left:1px solid var(--signal)"></span>
+            <span style="position:absolute;bottom:-1px;right:-1px;width:8px;height:8px;border-bottom:1px solid var(--signal);border-right:1px solid var(--signal)"></span>
+          </div>
+          <svg role="img" aria-labelledby="mobilyArchTitle mobilyArchDesc" viewBox="0 0 1120 800" style="min-width:980px;width:100%;height:auto;display:block;color:var(--fg);font-family:var(--font-jetbrains-mono),ui-monospace,monospace">
+            <title id="mobilyArchTitle">Mobily telecom modernization system architecture</title>
+            <desc id="mobilyArchDesc">A high-level DAG showing legacy SAS reverse engineering, Dataiku DSS build and MLflow registry, UAT parity validation testing, production automation, and active drift monitoring.</desc>
+            <defs>
+              <pattern id="mobilyGrid" width="36" height="36" patternUnits="userSpaceOnUse">
+                <path d="M36 0H0V36" fill="none" stroke="var(--grid)" stroke-width="1"/>
+              </pattern>
+              <marker id="arrowSignal" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <path d="M0,0 L8,4 L0,8 Z" fill="var(--signal)"/>
+              </marker>
+              <style>
+                .mobily-lane{fill:var(--fg-3);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase}
+                .mobily-kicker{fill:var(--signal);font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+                .mobily-title{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase}
+                .mobily-small{fill:var(--fg-3);font-size:9.5px}
+                .mobily-dash{stroke:var(--rule);stroke-width:1;stroke-dasharray:2 5}
+                .mobily-flow{stroke:var(--signal);stroke-width:1.25;fill:none;marker-end:url(#arrowSignal)}
+                .mobily-control{stroke:var(--fg-4);stroke-width:1;fill:none;stroke-dasharray:3 5;marker-end:url(#arrowSignal)}
+                .mobily-sas{fill:rgba(159,61,24,0.06);stroke:#9f3d18;stroke-width:1.2}
+                .mobily-dev{fill:var(--signal-soft);stroke:var(--signal);stroke-width:1.25}
+                .mobily-uat{fill:var(--pulse-soft);stroke:var(--pulse);stroke-width:1.25}
+                .mobily-prod{fill:rgba(47,122,26,0.07);stroke:#5d8f2b;stroke-width:1.25}
+                .mobily-gov{fill:rgba(92,77,142,0.08);stroke:#6f639b;stroke-width:1.25}
+              </style>
+            </defs>
+            <rect x="0" y="0" width="1120" height="800" fill="var(--bg)" opacity=".12"/>
+            <rect x="220" y="28" width="850" height="744" fill="url(#mobilyGrid)" opacity=".85"/>
+            <line x1="240" y1="96" x2="1048" y2="96" class="mobily-dash"/>
+            <line x1="240" y1="210" x2="1048" y2="210" class="mobily-dash"/>
+            <line x1="240" y1="360" x2="1048" y2="360" class="mobily-dash"/>
+            <line x1="240" y1="520" x2="1048" y2="520" class="mobily-dash"/>
+            <line x1="240" y1="675" x2="1048" y2="675" class="mobily-dash"/>
+            
+            <text x="38" y="66" class="mobily-lane">01 / LEGACY SAS</text>
+            <text x="38" y="154" class="mobily-lane">02 / DSS DESIGN</text>
+            <text x="38" y="285" class="mobily-lane">03 / UAT PARITY</text>
+            <text x="38" y="445" class="mobily-lane">04 / PROD ENGINE</text>
+            <text x="38" y="605" class="mobily-lane">05 / OBSERVABILITY</text>
+            <text x="38" y="735" class="mobily-lane">06 / RETRAIN CYCLE</text>
+
+            <!-- LANE 1 -->
+            <rect x="240" y="42" width="220" height="42" class="mobily-sas" rx="2"/>
+            <text x="350" y="61" text-anchor="middle" class="mobily-title" style="fill:var(--fg)">SAS CODE DECONSTRUCT</text>
+            <text x="350" y="74" text-anchor="middle" class="mobily-small">macros · CAS actions · PROC steps</text>
+            
+            <rect x="490" y="42" width="220" height="42" class="mobily-sas" rx="2"/>
+            <text x="600" y="61" text-anchor="middle" class="mobily-title" style="fill:var(--fg)">TERADATA SQL LINEAGE</text>
+            <text x="600" y="74" text-anchor="middle" class="mobily-small">stored procedure join chains</text>
+            
+            <rect x="740" y="42" width="220" height="42" class="mobily-sas" rx="2"/>
+            <text x="850" y="61" text-anchor="middle" class="mobily-title" style="fill:var(--fg)">SCHEMA CONTRACTS</text>
+            <text x="850" y="74" text-anchor="middle" class="mobily-small">data columns &amp; variable roles</text>
+            
+            <!-- Flows from L1 to DSS Flows in L2 -->
+            <path d="M350 84 V108 H600 V128" class="mobily-flow"/>
+            <path d="M600 84 V128" class="mobily-flow"/>
+            <path d="M850 84 V108 H600 V128" class="mobily-flow"/>
+
+            <!-- LANE 2 -->
+            <rect x="240" y="132" width="220" height="48" class="mobily-dev" rx="2"/>
+            <text x="350" y="153" text-anchor="middle" class="mobily-title" style="fill:var(--signal)">LOCAL K8S PODS (RAM)</text>
+            <text x="350" y="168" text-anchor="middle" class="mobily-small">graph-theory &amp; heavy compute</text>
+            
+            <rect x="490" y="132" width="220" height="48" class="mobily-dev" rx="2"/>
+            <text x="600" y="153" text-anchor="middle" class="mobily-title" style="fill:var(--signal)">GIT-BACKED DSS FLOWS</text>
+            <text x="600" y="168" text-anchor="middle" class="mobily-small">visual prepare &amp; Python recipes</text>
+            
+            <rect x="740" y="132" width="220" height="48" class="mobily-dev" rx="2"/>
+            <text x="850" y="153" text-anchor="middle" class="mobily-title" style="fill:var(--signal)">MLFLOW MODEL REGISTRY</text>
+            <text x="850" y="168" text-anchor="middle" class="mobily-small">hyperparameters &amp; ROC evaluation</text>
+            
+            <!-- Flows from DSS to K8s and MLflow in L2 -->
+            <path d="M490 156 H464" class="mobily-flow"/>
+            <path d="M710 156 H736" class="mobily-flow"/>
+
+            <!-- LANE 3 -->
+            <rect x="280" y="246" width="240" height="52" class="mobily-uat" rx="2"/>
+            <text x="400" y="269" text-anchor="middle" class="mobily-title" style="fill:var(--pulse)">IMMUTABLE PROJECT BUNDLE</text>
+            <text x="400" y="284" text-anchor="middle" class="mobily-small">UAT node promotion package</text>
+            
+            <rect x="600" y="246" width="240" height="52" class="mobily-uat" rx="2"/>
+            <text x="720" y="269" text-anchor="middle" class="mobily-title" style="fill:var(--pulse)">NUMERICAL PARITY GATE</text>
+            <text x="720" y="284" text-anchor="middle" class="mobily-small">automated regression vs SAS baselines</text>
+            
+            <!-- Flows from L2 to L3 -->
+            <path d="M600 180 V210 H400 V242" class="mobily-flow"/>
+            <path d="M520 272 H596" class="mobily-flow"/>
+
+            <!-- LANE 4 -->
+            <rect x="240" y="392" width="220" height="50" class="mobily-prod" rx="2"/>
+            <text x="350" y="415" text-anchor="middle" class="mobily-title" style="fill:#5d8f2b">CI/CD BUNDLE PROMOTION</text>
+            <text x="350" y="430" text-anchor="middle" class="mobily-small">Production Automation deploy</text>
+            
+            <rect x="490" y="392" width="220" height="50" class="mobily-prod" rx="2"/>
+            <text x="600" y="415" text-anchor="middle" class="mobily-title" style="fill:#5d8f2b">AUTOMATED SCENARIOS</text>
+            <text x="600" y="430" text-anchor="middle" class="mobily-small">retry triggers &amp; DB event calls</text>
+            
+            <rect x="740" y="392" width="220" height="50" class="mobily-prod" rx="2"/>
+            <text x="850" y="415" text-anchor="middle" class="mobily-title" style="fill:#5d8f2b">KUBERNETES SCORING RUNS</text>
+            <text x="850" y="430" text-anchor="middle" class="mobily-small">containerized production execution</text>
+            
+            <!-- Flows from L3 to L4 -->
+            <path d="M720 298 V340 H350 V388" class="mobily-flow"/>
+            <path d="M460 417 H486" class="mobily-flow"/>
+            <path d="M710 417 H736" class="mobily-flow"/>
+
+            <!-- LANE 5 -->
+            <rect x="240" y="562" width="220" height="50" class="mobily-gov" rx="2"/>
+            <text x="350" y="585" text-anchor="middle" class="mobily-title" style="fill:#6f639b">ADVERSARIAL INPUT DRIFT</text>
+            <text x="350" y="600" text-anchor="middle" class="mobily-small">batch classifier drift alerts</text>
+            
+            <rect x="490" y="562" width="220" height="50" class="mobily-gov" rx="2"/>
+            <text x="600" y="585" text-anchor="middle" class="mobily-title" style="fill:#6f639b">EVALUATION STORE METRICS</text>
+            <text x="600" y="600" text-anchor="middle" class="mobily-small">concept drift: PSI &amp; actual Lift</text>
+            
+            <rect x="740" y="562" width="220" height="50" class="mobily-gov" rx="2"/>
+            <text x="850" y="585" text-anchor="middle" class="mobily-title" style="fill:#6f639b">ATOMIC TERADATA SWAP</text>
+            <text x="850" y="600" text-anchor="middle" class="mobily-small">zero-downtime staging writes</text>
+            
+            <!-- Flows from L4 to L5 -->
+            <path d="M850 442 V490 H350 V558" class="mobily-flow"/>
+            <path d="M850 442 V505 H600 V558" class="mobily-flow"/>
+            <path d="M850 442 V558" class="mobily-flow"/>
+
+            <!-- LANE 6 -->
+            <rect x="240" y="708" width="220" height="42" class="mobily-sas" rx="2"/>
+            <text x="350" y="728" text-anchor="middle" class="mobily-title" style="fill:var(--fg)">EMAIL ALERTS</text>
+            <text x="350" y="740" text-anchor="middle" class="mobily-small">error routing &amp; pipeline recovery</text>
+            
+            <rect x="620" y="708" width="240" height="42" class="mobily-dev" rx="2"/>
+            <text x="740" y="728" text-anchor="middle" class="mobily-title" style="fill:var(--signal)">GOVERNED RETRAINING LOOP</text>
+            <text x="740" y="740" text-anchor="middle" class="mobily-small">orchestrated model updates</text>
+            
+            <!-- Flows from L5 to L6 -->
+            <path d="M350 612 V704" class="mobily-flow"/>
+            <path d="M600 612 V650 H740 V704" class="mobily-flow"/>
+            <path d="M850 612 V650 H740 V704" class="mobily-flow"/>
+            
+            <!-- Feedback loop back to L2 -->
+            <path d="M740 750 V775 H1020 V112 H600 V128" class="mobily-control"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section id="highlights" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 06 — HIGHLIGHTS<div class="caption mt-1.5" style="color:var(--fg-3)">KEY TAKEAWAYS</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <ul class="space-y-3 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span><strong>Scale vs. Complexity:</strong> Migrating and re-architecting 13 critical enterprise telecom analytics pipelines under strict legacy parity constraints.</span></li>
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span><strong>Massive Footprint:</strong> Serving a commercial subscriber footprint of over 13 million active lines across the network.</span></li>
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span><strong>Distributed Compute:</strong> Offloading calculations to distributed containers on Cloudera, Teradata SQL pushdowns, and high-RAM local graph nodes to solve compute bottlenecks.</span></li>
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span><strong>Enterprise MLOps:</strong> Implementing strict MLOps controls, including input schema contracts, adversarial data drift tracking, and automated performance evaluation.</span></li>
+        </ul>
+      </div>
+    </section>
+    <section id="outcomes" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 07 — OUTCOMES<div class="caption mt-1.5" style="color:var(--fg-3)">RESULTS AND LESSONS</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <ul class="space-y-3 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Achieved full numerical output parity against historical SAS baselines, validating migration accuracy.</span></li>
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Optimized pipeline execution window durations, meeting all SLA targets (e.g. B2B recommendations within 4 hours).</span></li>
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Unlocked high-performance graph processing utilizing NetworKit on K8s clusters.</span></li>
+        </ul>
+      </div>
+    </section>
+    <section id="stack" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 08 — STACK<div class="caption mt-1.5" style="color:var(--fg-3)">THE TOOLS</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">
+        <div class="space-y-5">
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">Platform</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Dataiku DSS</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">SAS</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Cloudera</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Teradata</span></div>
+</div>
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">Processing</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Python Recipes</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Teradata SQL Pushdown</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">NetworKit</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Python</span></div>
+</div>
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">Use cases</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Social Network Analysis (SNA)</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Price Elasticity &amp; Scenario What-If</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Cross-sell &amp; Up-sell CF</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">B2B Microsegmentation</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Churn, Propensity &amp; Credit Risk</span></div>
+</div>
+
+        </div>
+      </div>
+    </section>
+    <section id="links" class="mb-8 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 09 — LINKS<div class="caption mt-1.5" style="color:var(--fg-3)">SOURCE TRAIL</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 flex flex-wrap gap-3">
+        <a href="https://www.linkedin.com/in/alfayoumy" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] uppercase tracking-[0.16em] px-3 py-2" style="border:1px solid var(--rule);background:var(--panel-2);color:var(--fg)">LinkedIn profile</a>
+      </div>
+    </section>
+  </div>
+</article>
+</main>
+  <footer class="shell pb-10">
+    <div class="hairline mb-6"></div>
+    <div class="caption">© 2026 AMR ALFAYOUMY · PROJECT CASE STUDY</div>
+  </footer>
+  <script src="/theme-toggle.js"></script>
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" href="/_next/static/media/70bc3e132a0a741e-s.p.15008bfb.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/8800dfc60902df36-s.p.e22d03ab.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/e41d5df559864f9e-s.p.380d09ea.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="stylesheet" href="/_next/static/chunks/193213d9c0b2e44c.css" data-precedence="next" />
+  <link rel="stylesheet" href="/overrides.css" />
+  <title>Bank Muscat Financial Crime - Behavioral Anomaly Detection — Amr Alfayoumy</title>
+  <meta name="description" content="Two production behavioral anomaly detection models for Bank Muscat&#x27;s conventional and Meethaq Islamic banking segments, built on two years of transactional and behavioral history and delivered as a full SAS Viya MLOps cycle for AML operations." />
+  <meta name="application-name" content="Amr Alfayoumy · Portfolio" />
+  <meta name="author" content="Amr Alfayoumy" />
+  <meta name="creator" content="Amr Alfayoumy" />
+  <meta name="publisher" content="Amr Alfayoumy" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Bank Muscat Financial Crime - Behavioral Anomaly Detection — Amr Alfayoumy" />
+  <meta property="og:description" content="Two production behavioral anomaly detection models for Bank Muscat&#x27;s conventional and Meethaq Islamic banking segments, built on two years of transactional and behavioral history and delivered as a full SAS Viya MLOps cycle for AML operations." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alfayoumy.github.io/projects/bm-ad/" />
+  <meta property="og:site_name" content="Amr Alfayoumy" />
+  <meta property="og:image" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta property="og:image:secure_url" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Amr Alfayoumy portfolio mark" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bank Muscat Financial Crime - Behavioral Anomaly Detection — Amr Alfayoumy" />
+  <meta name="twitter:description" content="Two production behavioral anomaly detection models for Bank Muscat&#x27;s conventional and Meethaq Islamic banking segments, built on two years of transactional and behavioral history and delivered as a full SAS Viya MLOps cycle for AML operations." />
+  <meta name="twitter:image" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta name="twitter:image:alt" content="Amr Alfayoumy portfolio mark" />
+  <link rel="canonical" href="https://alfayoumy.github.io/projects/bm-ad/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "url": "https://alfayoumy.github.io/projects/bm-ad/",
+    "name": "Bank Muscat Behavioral Anomaly Detection",
+    "description": "A behavioral anomaly detection system for AML investigation workflows.",
+    "creator": { "@id": "https://alfayoumy.github.io/#person" },
+    "keywords": ["AML", "Anomaly Detection", "Financial Crime", "Machine Learning"]
+  }
+  </script>
+  <script>(function(){try{var t=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',t==='dark'||t==='light'?t:'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body class="instrument_serif_794b969e-module__2VhGdW__variable onest_859d3e11-module__eWePdW__variable jetbrains_mono_84d6efd-module__5Hl15a__variable">
+  <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none" style="background:var(--bg)">
+    <div class="absolute inset-0 bp-grid" style="mask-image:radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, transparent 100%);-webkit-mask-image:radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, transparent 100%)"></div>
+    <div class="absolute" style="top:-10%;right:-10%;width:60vw;height:60vw;background:radial-gradient(circle, rgba(255,74,28,0.10) 0%, rgba(255,74,28,0) 60%);filter:blur(40px)"></div>
+    <div class="absolute" style="bottom:-15%;left:-15%;width:55vw;height:55vw;background:radial-gradient(circle, rgba(200,255,94,0.05) 0%, rgba(200,255,94,0) 60%);filter:blur(50px)"></div>
+    <div class="noise"></div>
+  </div>
+  <div class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md" style="background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--rule)">
+    <div class="shell flex items-center gap-4 sm:gap-6 h-10 text-[11px] font-mono uppercase tracking-[0.16em] whitespace-nowrap overflow-hidden">
+      <a href="/" class="text-[var(--fg)] hover:text-[var(--signal)] transition-colors">AMR.ALFAYOUMY</a>
+      <a href="/projects/" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ PROJECTS</a>
+      <a href="/blog/" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ BLOG</a>
+      <a href="https://www.linkedin.com/in/alfayoumy" target="_blank" rel="noopener noreferrer" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ LINKEDIN</a>
+      <a href="/hire/" class="hidden md:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ HIRE</a>
+      <span class="hidden 2xl:inline text-[var(--fg-3)] whitespace-nowrap">/ AML and anomaly detection</span>
+      <nav aria-label="Section navigation" class="hidden md:flex items-center gap-3 lg:gap-4 mx-auto">
+        <a href="#summary" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§01</a><a href="#challenge" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§02</a><a href="#approach" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§03</a><a href="#key-decisions" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§04</a><a href="#architecture" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§05</a><a href="#highlights" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§06</a><a href="#outcomes" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§07</a><a href="#stack" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§08</a><a href="#links" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§09</a>
+      </nav>
+      <div class="ml-auto flex items-center gap-3 sm:gap-5">
+        <a href="mailto:amr.alfayoumy@outlook.com" class="hidden sm:inline-flex items-center gap-1 transition-colors" style="color:var(--fg)">
+          <span style="color:var(--signal)">→</span><span class="hover:text-[var(--signal)] transition-colors">EMAIL</span>
+        </a>
+        <span class="hidden lg:flex items-center gap-2 text-[var(--pulse)]"><span class="live-dot"></span> OPEN TO BUILD</span>
+        <button type="button" id="themeToggle" class="inline-flex font-mono text-[11px] uppercase tracking-[0.16em] transition-colors hover:text-[var(--signal)]" style="color:var(--fg-2)">◐ DARK</button>
+      </div>
+    </div>
+  </div>
+  <nav aria-label="Section navigation" class="md:hidden fixed bottom-3 left-1/2 -translate-x-1/2 z-30 flex gap-1 max-w-[calc(100vw-1rem)] overflow-x-auto px-2 py-1.5 backdrop-blur-md" style="background:var(--panel);border:1px solid var(--rule)">
+    <a href="#summary" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§01</a><a href="#challenge" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§02</a><a href="#approach" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§03</a><a href="#key-decisions" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§04</a><a href="#architecture" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§05</a><a href="#highlights" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§06</a><a href="#outcomes" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§07</a><a href="#stack" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§08</a><a href="#links" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§09</a>
+  </nav>
+<main class="relative">
+<article class="pt-28 pb-24">
+  <div class="shell">
+    <div class="caption mb-6 flex flex-wrap items-center gap-3">
+      <a class="hover:text-[var(--signal)] transition-colors" href="/">← HOME</a>
+      <span class="text-[var(--fg-4)]">/</span>
+      <a class="hover:text-[var(--signal)] transition-colors" href="/projects/">PROJECTS</a>
+      <span class="text-[var(--fg-4)]">/</span>
+      <span class="text-[var(--fg-2)]">BANK MUSCAT FINANCIAL CRIME - BEHAVIORAL ANOMALY DETECTION</span>
+    </div>
+    <header id="summary" class="grid grid-cols-12 gap-x-6 gap-y-6 mb-16 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-9">
+        <div class="caption-signal mb-3" style="color:var(--pulse)">PRODUCTION · 2025-Present · AML and anomaly detection</div>
+        <h1 class="font-display" style="font-size:clamp(3rem, 8vw, 6rem);line-height:0.95;letter-spacing:-0.035em">Bank Muscat Financial Crime - Behavioral Anomaly Detection<span class="font-display-italic" style="color:var(--signal)">.</span></h1>
+      </div>
+      <div class="col-span-12 lg:col-span-3 text-[var(--fg-3)] font-mono uppercase tracking-[0.12em]" style="font-size:11px;line-height:1.8">
+        Data Scientist &amp; AI/ML Engineer<br/>
+        Cairo, Egypt<br/>
+        Behavioral anomaly detection case study
+      </div>
+      <div class="col-span-12 lg:col-span-8">
+        <p class="font-display-italic text-[var(--fg-2)]" style="font-size:clamp(1.35rem, 2vw, 1.9rem);line-height:1.4">Two production behavioral anomaly detection models for Bank Muscat&#x27;s conventional and Meethaq Islamic banking segments, built on two years of transactional and behavioral history and delivered as a full SAS Viya MLOps cycle for AML operations.</p>
+      </div>
+      <div class="col-span-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Customers</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">2M+</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Bank Muscat operating scale</div>
+</div>
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Features</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">120+</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Behavioral and transactional signals</div>
+</div>
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Sub-Models</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">12</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">3 algorithms × 4 customer cohorts</div>
+</div>
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Alerts</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">200+/week</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">High-value AML review signals</div>
+</div>
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Triage Time</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">~65% saved</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Estimated compliance review-time reduction from explainable, risk-ranked alerts</div>
+</div>
+
+        </div>
+      </div>
+    </header>
+    <section id="challenge" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 02 — CHALLENGE<div class="caption mt-1.5" style="color:var(--fg-3)">WHY IT MATTERED</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+        <div class="space-y-5">
+          <p>Bank Muscat serves more than 2 million customers, so the AML model had to work at enterprise scale while staying efficient in runtime, memory footprint, and operational review volume.</p><p>The bank needed a path beyond rule-only alerting without losing control, explainability, or integration with compliance operations. The solution had to surface previously unseen behavioral abnormalities while still aligning with the bank&#x27;s existing SAS AML investigation workflow.</p><p>Behavioral baselines differed sharply between conventional and Islamic banking, personal and corporate customers, and established versus thin-file entities. A single generic anomaly model would have blurred those populations and produced weaker signals.</p>
+        </div>
+      </div>
+    </section>
+    <section id="approach" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 03 — APPROACH<div class="caption mt-1.5" style="color:var(--fg-3)">HOW I BUILT IT</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+        <div class="space-y-5">
+          <p>I owned the architecture end to end: ETLs, stored procedures, feature generation, preprocessing, model training, batch scoring, score aggregation, explainability, alert text generation, and integration into the bank&#x27;s anti-money laundering solution.</p><p>For training, I built a segmented modeling design with three complementary anomaly detection approaches multiplied across four cohorts: personal, corporate, personal thin-file, and corporate thin-file. Each model family was selected for a distinct strength, so the ensemble could capture multiple abnormality patterns without overloading production infrastructure.</p><p>For scoring, I designed a 12-step batch pipeline that moves from data ingestion and preprocessing into model scoring, global score normalization on a 0-100 scale, false-positive optimization and suppression, Low / Medium / High risk classification, per-model top-5 feature attribution, cross-model attribution aggregation, plain-language compliance narratives, and final delivery into SAS AML.</p><p>The MLOps layer was designed for recurring retraining and scheduled scoring through Control-M automation, with SAS Viya / SAS VDMML serving as the production model lifecycle platform.</p>
+        </div>
+      </div>
+    </section>
+    <section id="key-decisions" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-8 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 04 — KEY DECISIONS<div class="caption mt-1.5" style="color:var(--fg-3)">WHAT I CHOSE &amp; WHY</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 01</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Use three anomaly lenses, not one flagship model</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">For a banking crime model, I did not trust a single detector to represent abnormality. I chose a controlled ensemble of complementary anomaly detection approaches because each fails differently and catches a different shape of risk. The decision gave compliance a broader signal surface without turning the system into an ungovernable model zoo.</p>
+          </article>
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 02</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Separate thin-file accounts instead of forcing weak history</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">Thin-file customers do not have enough behavioral history to be judged by the same baselines as mature accounts. I split personal thin-file and corporate thin-file populations into their own cohorts so missing tenure did not masquerade as low risk or artificial anomaly. That separation protected model fairness, calibration, and investigator trust.</p>
+          </article>
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 03</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Design explainability as an operations layer</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">I treated explainability as production infrastructure, not a notebook artifact. The layer extracts per-model top drivers, consolidates them across the ensemble, and turns them into plain-language AML narratives that investigators can act on quickly. The goal was efficiency: fewer opaque scores, faster triage, and a review queue that explains why each alert deserves attention.</p>
+          </article>
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 04</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Calibrate risk after segmentation, then suppress noise</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">Conventional banking, Meethaq Islamic banking, personal customers, and corporate customers have materially different behavior. I routed first, scored within the right population, normalized onto a shared 0-100 risk scale, then applied false-positive suppression before AML delivery. That sequence kept the model sensitive to local behavior while giving the bank one operational language for risk.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="architecture" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 05 — ARCHITECTURE<div class="caption mt-1.5" style="color:var(--fg-3)">HOW IT FITS TOGETHER</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+        <p class="mb-8">The production flow is a governed batch-scoring architecture: core banking, customer, and AML history feed Oracle SQL feature factories that build two-year behavioral baselines. Customers are routed by banking segment and cohort, scored through three complementary anomaly families, normalized into a shared 0-100 risk scale, and delivered into SAS AML with explainable top-feature narratives for investigator review.</p>
+        <div class="flex items-center justify-between mb-4">
+          <div class="caption" style="color:var(--fg-3)">// FIG. SYSTEM DIAGRAM</div>
+          <div class="caption" style="color:var(--fg-3)">SCALE 1:N</div>
+        </div>
+        <div class="overflow-x-auto" style="border:1px solid var(--rule);background:var(--panel-2);position:relative">
+          <div aria-hidden="true" style="position:absolute;inset:-1px;pointer-events:none">
+            <span style="position:absolute;top:-1px;left:-1px;width:8px;height:8px;border-top:1px solid var(--signal);border-left:1px solid var(--signal)"></span>
+            <span style="position:absolute;top:-1px;right:-1px;width:8px;height:8px;border-top:1px solid var(--signal);border-right:1px solid var(--signal)"></span>
+            <span style="position:absolute;bottom:-1px;left:-1px;width:8px;height:8px;border-bottom:1px solid var(--signal);border-left:1px solid var(--signal)"></span>
+            <span style="position:absolute;bottom:-1px;right:-1px;width:8px;height:8px;border-bottom:1px solid var(--signal);border-right:1px solid var(--signal)"></span>
+          </div>
+          <svg role="img" aria-labelledby="bmArchTitle bmArchDesc" viewBox="0 0 1120 760" style="min-width:980px;width:100%;height:auto;display:block;color:var(--fg);font-family:var(--font-jetbrains-mono),ui-monospace,monospace">
+            <title id="bmArchTitle">Bank Muscat behavioral anomaly detection high-level architecture</title>
+            <desc id="bmArchDesc">Banking, customer, KYC, and AML history feed Oracle data contracts, two-year behavioral feature engineering, segment and cohort routing, parallel anomaly model families, score normalization, false-positive suppression, attribution, AML narratives, SAS AML delivery, and MLOps controls.</desc>
+            <defs>
+              <pattern id="bmGrid" width="36" height="36" patternUnits="userSpaceOnUse">
+                <path d="M36 0H0V36" fill="none" stroke="var(--grid)" stroke-width="1"/>
+              </pattern>
+              <marker id="arrowSignal" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <path d="M0,0 L8,4 L0,8 Z" fill="var(--signal)"/>
+              </marker>
+              <style>
+                .bm-lane{fill:var(--fg-3);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase}
+                .bm-kicker{fill:var(--signal);font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+                .bm-title{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase}
+                .bm-small{fill:var(--fg-3);font-size:9.5px}
+                .bm-dash{stroke:var(--rule);stroke-width:1;stroke-dasharray:2 5}
+                .bm-flow{stroke:var(--signal);stroke-width:1.25;fill:none;marker-end:url(#arrowSignal)}
+                .bm-control{stroke:var(--fg-4);stroke-width:1;fill:none;stroke-dasharray:3 5;marker-end:url(#arrowSignal)}
+                .bm-source{fill:var(--panel-2);stroke:var(--rule);stroke-width:1}.bm-source-title{fill:var(--fg)}
+                .bm-fe{fill:var(--signal-soft);stroke:var(--signal);stroke-width:1.3}.bm-fe-title{fill:var(--signal)}
+                .bm-cohort{fill:var(--pulse-soft);stroke:var(--pulse);stroke-width:1.3}.bm-cohort-title{fill:var(--pulse)}
+                .bm-model{fill:rgba(255,74,28,.08);stroke:#b8681c;stroke-width:1.3}.bm-model-title{fill:#b8681c}
+                .bm-score{fill:rgba(47,122,26,.08);stroke:#5d8f2b;stroke-width:1.3}.bm-score-title{fill:#5d8f2b}
+                .bm-agg{fill:rgba(11,10,7,.04);stroke:var(--fg-3);stroke-width:1.2}.bm-agg-title{fill:var(--fg-2)}
+                .bm-fp{fill:rgba(255,74,28,.055);stroke:#9b4b24;stroke-width:1.25}.bm-fp-title{fill:#9b4b24}
+                .bm-tier{fill:rgba(47,122,26,.07);stroke:#3f7f52;stroke-width:1.25}.bm-tier-title{fill:#3f7f52}
+                .bm-explain{fill:rgba(92,77,142,.08);stroke:#6f639b;stroke-width:1.3}.bm-explain-title{fill:#6f639b}
+                .bm-aml{fill:rgba(255,74,28,.04);stroke:#7c4a36;stroke-width:1.3}.bm-aml-title{fill:#7c4a36}
+              </style>
+            </defs>
+            <rect x="0" y="0" width="1120" height="760" fill="var(--bg)" opacity=".12"/>
+            <rect x="220" y="28" width="850" height="704" fill="url(#bmGrid)" opacity=".85"/>
+            <line x1="240" y1="96" x2="1048" y2="96" class="bm-dash"/>
+            <line x1="240" y1="174" x2="1048" y2="174" class="bm-dash"/>
+            <line x1="240" y1="282" x2="1048" y2="282" class="bm-dash"/>
+            <line x1="240" y1="374" x2="1048" y2="374" class="bm-dash"/>
+            <line x1="240" y1="482" x2="1048" y2="482" class="bm-dash"/>
+            <line x1="240" y1="592" x2="1048" y2="592" class="bm-dash"/>
+            <line x1="240" y1="672" x2="1048" y2="672" class="bm-dash"/>
+            <text x="38" y="66" class="bm-lane">SOURCE SYSTEMS</text>
+            <text x="38" y="144" class="bm-lane">DATA CONTRACTS</text>
+            <text x="38" y="232" class="bm-lane">FEATURE FACTORY</text>
+            <text x="38" y="326" class="bm-lane">SEGMENT ROUTING</text>
+            <text x="38" y="436" class="bm-lane">MODEL GRID</text>
+            <text x="38" y="544" class="bm-lane">SCORE GOVERNANCE</text>
+            <text x="38" y="632" class="bm-lane">AML DELIVERY</text>
+            <text x="38" y="716" class="bm-lane">MLOPS CONTROLS</text>
+
+            <rect x="250" y="50" width="250" height="50" class="bm-source" rx="2"/>
+            <text x="375" y="73" text-anchor="middle" class="bm-title bm-source-title">CORE BANKING TXNS</text>
+            <text x="375" y="88" text-anchor="middle" class="bm-small">channels · amounts · velocity · history</text>
+            <rect x="525" y="50" width="220" height="50" class="bm-source" rx="2"/>
+            <text x="635" y="73" text-anchor="middle" class="bm-title bm-source-title">CUSTOMER + KYC</text>
+            <text x="635" y="88" text-anchor="middle" class="bm-small">segments · tenure · profile depth</text>
+            <rect x="770" y="50" width="250" height="50" class="bm-source" rx="2"/>
+            <text x="895" y="73" text-anchor="middle" class="bm-title bm-source-title">AML HISTORY</text>
+            <text x="895" y="88" text-anchor="middle" class="bm-small">prior alerts · scenarios · outcomes</text>
+            <path d="M375 100V112H633V120" class="bm-flow"/>
+            <path d="M635 100V120" class="bm-flow"/>
+            <path d="M895 100V112H633V120" class="bm-flow"/>
+            <text x="650" y="115" class="bm-kicker">scheduled batch extract</text>
+
+            <rect x="300" y="124" width="666" height="58" class="bm-fe" rx="2"/>
+            <text x="633" y="150" text-anchor="middle" class="bm-title bm-fe-title">ORACLE STAGING + RECONCILIATION CONTRACTS</text>
+            <text x="633" y="166" text-anchor="middle" class="bm-small">stored procedures · joins · quality checks · aligned customer and transaction grain</text>
+            <path d="M633 182V202" class="bm-flow"/>
+            <text x="650" y="197" class="bm-kicker">validated feature inputs</text>
+
+            <rect x="286" y="206" width="700" height="70" class="bm-cohort" rx="2"/>
+            <text x="636" y="232" text-anchor="middle" class="bm-title bm-cohort-title">TWO-YEAR BEHAVIORAL FEATURE FACTORY</text>
+            <text x="636" y="248" text-anchor="middle" class="bm-small">120+ engineered signals · peer baselines · velocity windows · novelty · profile completeness</text>
+            <text x="636" y="263" text-anchor="middle" class="bm-small">feature parity across training, scoring, retraining, and AML payload generation</text>
+            <path d="M636 276V288H425V300" class="bm-flow"/>
+
+            <rect x="275" y="300" width="300" height="54" class="bm-fe" rx="2"/>
+            <text x="425" y="324" text-anchor="middle" class="bm-title bm-fe-title">BANKING SEGMENT ROUTER</text>
+            <text x="425" y="340" text-anchor="middle" class="bm-small">conventional · Meethaq Islamic banking</text>
+            <path d="M575 327H596" class="bm-flow"/>
+            <rect x="600" y="300" width="370" height="54" class="bm-fe" rx="2"/>
+            <text x="785" y="324" text-anchor="middle" class="bm-title bm-fe-title">CUSTOMER COHORT ROUTER</text>
+            <text x="785" y="340" text-anchor="middle" class="bm-small">personal · corporate · personal thin-file · corporate thin-file</text>
+
+            <path d="M785 354V368H380V382" class="bm-flow"/>
+            <path d="M785 354V368H632V382" class="bm-flow"/>
+            <path d="M785 354V368H884V382" class="bm-flow"/>
+
+            <rect x="270" y="386" width="220" height="70" class="bm-model" rx="2"/>
+            <text x="380" y="414" text-anchor="middle" class="bm-title bm-model-title">ANOMALY FAMILY 01</text>
+            <text x="380" y="430" text-anchor="middle" class="bm-small">behavioral outlier lens</text>
+            <text x="380" y="444" text-anchor="middle" class="bm-small">4 routed cohort models</text>
+            <rect x="522" y="386" width="220" height="70" class="bm-model" rx="2"/>
+            <text x="632" y="414" text-anchor="middle" class="bm-title bm-model-title">ANOMALY FAMILY 02</text>
+            <text x="632" y="430" text-anchor="middle" class="bm-small">peer-deviation lens</text>
+            <text x="632" y="444" text-anchor="middle" class="bm-small">4 routed cohort models</text>
+            <rect x="774" y="386" width="220" height="70" class="bm-model" rx="2"/>
+            <text x="884" y="414" text-anchor="middle" class="bm-title bm-model-title">ANOMALY FAMILY 03</text>
+            <text x="884" y="430" text-anchor="middle" class="bm-small">sparse-history lens</text>
+            <text x="884" y="444" text-anchor="middle" class="bm-small">4 routed cohort models</text>
+
+            <path d="M380 456V488" class="bm-flow"/>
+            <path d="M632 456V472H380V488" class="bm-flow"/>
+            <path d="M884 456V472H380V488" class="bm-flow"/>
+
+            <rect x="270" y="492" width="220" height="60" class="bm-score" rx="2"/>
+            <text x="380" y="517" text-anchor="middle" class="bm-title bm-score-title">PER-MODEL SCORES</text>
+            <text x="380" y="533" text-anchor="middle" class="bm-small">raw outputs · top-5 drivers</text>
+            <path d="M490 522H518" class="bm-flow"/>
+            <rect x="522" y="492" width="220" height="60" class="bm-agg" rx="2"/>
+            <text x="632" y="517" text-anchor="middle" class="bm-title bm-agg-title">GLOBAL NORMALIZATION</text>
+            <text x="632" y="533" text-anchor="middle" class="bm-small">shared 0-100 risk language</text>
+            <path d="M742 522H770" class="bm-flow"/>
+            <rect x="774" y="492" width="220" height="60" class="bm-fp" rx="2"/>
+            <text x="884" y="517" text-anchor="middle" class="bm-title bm-fp-title">SUPPRESSION + TIERS</text>
+            <text x="884" y="533" text-anchor="middle" class="bm-small">threshold gates · Low / Medium / High</text>
+
+            <path d="M884 552V576H380V598" class="bm-flow"/>
+            <rect x="270" y="602" width="220" height="52" class="bm-tier" rx="2"/>
+            <text x="380" y="625" text-anchor="middle" class="bm-title bm-tier-title">ATTRIBUTION ROLLUP</text>
+            <text x="380" y="640" text-anchor="middle" class="bm-small">cross-model driver consolidation</text>
+            <path d="M490 628H518" class="bm-flow"/>
+            <rect x="522" y="602" width="220" height="52" class="bm-explain" rx="2"/>
+            <text x="632" y="625" text-anchor="middle" class="bm-title bm-explain-title">AML NARRATIVES</text>
+            <text x="632" y="640" text-anchor="middle" class="bm-small">plain-language alert text</text>
+            <path d="M742 628H770" class="bm-flow"/>
+            <rect x="774" y="602" width="220" height="52" class="bm-aml" rx="2"/>
+            <text x="884" y="625" text-anchor="middle" class="bm-title bm-aml-title">SAS AML CASE QUEUE</text>
+            <text x="884" y="640" text-anchor="middle" class="bm-small">investigator review workflow</text>
+
+            <rect x="270" y="686" width="220" height="46" class="bm-source" rx="2"/>
+            <text x="380" y="706" text-anchor="middle" class="bm-title bm-source-title">CONTROL-M</text>
+            <text x="380" y="721" text-anchor="middle" class="bm-small">scoring and retraining schedules</text>
+            <rect x="522" y="686" width="220" height="46" class="bm-source" rx="2"/>
+            <text x="632" y="706" text-anchor="middle" class="bm-title bm-source-title">MODEL LIFECYCLE</text>
+            <text x="632" y="721" text-anchor="middle" class="bm-small">SAS Viya · VDMML · CAS execution</text>
+            <rect x="774" y="686" width="220" height="46" class="bm-source" rx="2"/>
+            <text x="884" y="706" text-anchor="middle" class="bm-title bm-source-title">PRODUCTION MONITORING</text>
+            <text x="884" y="721" text-anchor="middle" class="bm-small">review volume · drift · alert quality</text>
+            <path d="M490 709H1038V153H970" class="bm-control"/>
+            <path d="M742 709H1030V421H998" class="bm-control"/>
+            <path d="M994 709H1046V522H998" class="bm-control"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section id="highlights" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 06 — HIGHLIGHTS<div class="caption mt-1.5" style="color:var(--fg-3)">KEY TAKEAWAYS</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ END-TO-END BANK-SCALE ARCHITECTURE</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Architected the end-to-end solution for Oman&#x27;s largest bank, covering conventional banking and the Meethaq Islamic banking segment.</p>
+          </article>
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ PARALLEL TRAINING + BATCH SCORING</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Built highly parallelized training and batch-scoring pipelines across stored procedures, ETL layers, preprocessing, feature engineering, and model execution.</p>
+          </article>
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ TWO-YEAR BEHAVIORAL FEATURE FACTORY</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Engineered 120+ behavioral features from two years of massive transactional and customer-behavior data.</p>
+          </article>
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ 3 x 4 SEGMENTED ANOMALY MODEL GRID</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Trained and tuned three complementary anomaly detection model families across four cohorts: personal, corporate, personal thin-file, and corporate thin-file.</p>
+          </article>
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ GOVERNED 12-STEP AML SCORING PIPELINE</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Implemented a 12-step scoring pipeline covering ingestion, preprocessing, scoring, aggregation, suppression, risk classification, explainability, alert narratives, and SAS AML integration.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="outcomes" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 07 — OUTCOMES<div class="caption mt-1.5" style="color:var(--fg-3)">RESULTS AND LESSONS</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <ul class="space-y-3 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Delivered a production AML anomaly detection capability that finds more than 200 high-value alerts weekly for compliance review.</span></li><li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Surfaced previously unseen behavioral abnormalities while also independently catching abnormal cases that overlapped with existing SAS AML rule-based scenarios in live production.</span></li><li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Gave compliance officers explainable, risk-ranked alerts with top contributing features and plain-text narratives instead of opaque model scores.</span></li><li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Improved AML operations with a repeatable MLOps cycle: automated scoring, retraining readiness, governed model execution, and direct investigator workflow integration.</span></li><li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Post-go-live client feedback was extremely positive, especially around the scale of the architecture, the quality of the alert explanations, and the usefulness of the production signals.</span></li>
+        </ul>
+      </div>
+    </section>
+    <section id="stack" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 08 — STACK<div class="caption mt-1.5" style="color:var(--fg-3)">THE TOOLS</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">
+        <div class="space-y-5">
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">ML</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Unsupervised anomaly detection</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Ensemble anomaly scoring</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Feature attribution</span></div>
+</div>
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">Data</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Oracle SQL</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Stored procedures</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">ETL pipelines</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">120+ engineered features</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Two-year behavioral history</span></div>
+</div>
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">Platform</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">SAS Viya</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">SAS VDMML</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">CAS</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">SAS AML</span></div>
+</div>
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">Operations</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Control-M automation</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Batch scoring</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Model retraining</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">False-positive suppression</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Explainability</span></div>
+</div>
+
+        </div>
+      </div>
+    </section>
+    <section id="links" class="mb-8 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 09 — LINKS<div class="caption mt-1.5" style="color:var(--fg-3)">SOURCE TRAIL</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 flex flex-wrap gap-3">
+        <a href="https://www.linkedin.com/in/alfayoumy" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] uppercase tracking-[0.16em] px-3 py-2" style="border:1px solid var(--rule);background:var(--panel-2);color:var(--fg)">LinkedIn profile</a>
+      </div>
+    </section>
+  </div>
+</article>
+</main>
+  <footer class="shell pb-10">
+    <div class="hairline mb-6"></div>
+    <div class="caption">© 2026 AMR ALFAYOUMY · PROJECT CASE STUDY</div>
+  </footer>
+  <script src="/theme-toggle.js"></script>
+</body>
+</html>

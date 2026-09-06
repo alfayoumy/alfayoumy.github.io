@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" href="/_next/static/media/70bc3e132a0a741e-s.p.15008bfb.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/8800dfc60902df36-s.p.e22d03ab.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/e41d5df559864f9e-s.p.380d09ea.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="stylesheet" href="/_next/static/chunks/193213d9c0b2e44c.css" data-precedence="next" />
+  <link rel="stylesheet" href="/overrides.css" />
+  <title>From 300M Monthly Calls to Customer Communities and Influence Maps — Amr Alfayoumy</title>
+  <meta name="description" content="A production analytics field note on replacing a SAS PROC NETWORK social network analysis model with an open-source implementation that processes 300M+ monthly calls, cuts SLA from 3 hours to 1.5 hours, and improves community cohesion." />
+  <meta name="application-name" content="Amr Alfayoumy · Portfolio" />
+  <meta name="author" content="Amr Alfayoumy" />
+  <meta name="creator" content="Amr Alfayoumy" />
+  <meta name="publisher" content="Amr Alfayoumy" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="From 300M Monthly Calls to Customer Communities and Influence Maps — Amr Alfayoumy" />
+  <meta property="og:description" content="How I replaced a proprietary SAS social network analysis workflow with an open-source production model that matched the baseline, cut runtime in half, and improved community cohesion." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://alfayoumy.github.io/blog/open-source-sna-proc-network-reimplementation/" />
+  <meta property="og:site_name" content="Amr Alfayoumy" />
+  <meta property="og:image" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta property="og:image:secure_url" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Amr Alfayoumy portfolio mark" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="From 300M Monthly Calls to Customer Communities and Influence Maps" />
+  <meta name="twitter:description" content="A production analytics lesson about replacing proprietary graph analytics at telecom scale." />
+  <meta name="twitter:image" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta name="twitter:image:alt" content="Amr Alfayoumy portfolio mark" />
+  <link rel="canonical" href="https://alfayoumy.github.io/blog/open-source-sna-proc-network-reimplementation/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "url": "https://alfayoumy.github.io/blog/open-source-sna-proc-network-reimplementation/",
+    "headline": "From 300M monthly calls to customer influence maps",
+    "datePublished": "2026-06",
+    "dateModified": "2026-08-24",
+    "author": { "@id": "https://alfayoumy.github.io/#person" },
+    "image": "https://alfayoumy.github.io/social-preview.png",
+    "keywords": ["Social Network Analysis", "Graph Analytics", "Open Source", "Telecom"]
+  }
+  </script>
+  <script>(function(){try{var t=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',t==='dark'||t==='light'?t:'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body class="instrument_serif_794b969e-module__2VhGdW__variable onest_859d3e11-module__eWePdW__variable jetbrains_mono_84d6efd-module__5Hl15a__variable">
+  <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none" style="background:var(--bg)">
+    <div class="absolute inset-0 bp-grid" style="mask-image:radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, transparent 100%);-webkit-mask-image:radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, transparent 100%)"></div>
+    <div class="absolute" style="top:-10%;right:-10%;width:60vw;height:60vw;background:radial-gradient(circle, rgba(255,74,28,0.10) 0%, rgba(255,74,28,0) 60%);filter:blur(40px)"></div>
+    <div class="absolute" style="bottom:-15%;left:-15%;width:55vw;height:55vw;background:radial-gradient(circle, rgba(200,255,94,0.05) 0%, rgba(200,255,94,0) 60%);filter:blur(50px)"></div>
+    <div class="noise"></div>
+  </div>
+  <div class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md" style="background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--rule)">
+    <div class="shell flex items-center gap-4 sm:gap-6 h-10 text-[11px] font-mono uppercase tracking-[0.16em] whitespace-nowrap overflow-hidden">
+      <a href="/" class="text-[var(--fg)] hover:text-[var(--signal)] transition-colors">AMR.ALFAYOUMY</a>
+      <a href="/projects/" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ PROJECTS</a>
+      <a href="/blog/" class="hidden sm:inline text-[var(--signal)] transition-colors">/ BLOG</a>
+      <a href="https://www.linkedin.com/in/alfayoumy" target="_blank" rel="noopener noreferrer" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ LINKEDIN</a>
+      <a href="/hire/" class="hidden md:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ HIRE</a>
+      <span class="hidden xl:inline text-[var(--fg-3)] whitespace-nowrap">/ GRAPH ANALYTICS FIELD NOTE</span>
+      <nav aria-label="Section navigation" class="hidden md:flex items-center gap-3 lg:gap-4 mx-auto">
+        <a href="#problem" data-nav-label="The Problem" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§01</a>
+        <a href="#approach" data-nav-label="The Approach" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§02</a>
+        <a href="#results" data-nav-label="The Results" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§03</a>
+        <a href="#takeaways" data-nav-label="Takeaways" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§04</a>
+      </nav>
+      <div class="ml-auto flex items-center gap-3 sm:gap-5">
+        <a href="mailto:amr.alfayoumy@outlook.com" class="hidden sm:inline-flex items-center gap-1 transition-colors" style="color:var(--fg)">
+          <span style="color:var(--signal)">→</span><span class="hover:text-[var(--signal)] transition-colors">EMAIL</span>
+        </a>
+        <span class="hidden lg:flex items-center gap-2 text-[var(--pulse)]"><span class="live-dot"></span> OPEN TO BUILD</span>
+        <button type="button" id="themeToggle" class="inline-flex font-mono text-[11px] uppercase tracking-[0.16em] transition-colors hover:text-[var(--signal)]" style="color:var(--fg-2)">◐ DARK</button>
+      </div>
+    </div>
+  </div>
+  <nav aria-label="Section navigation" class="md:hidden fixed bottom-3 left-1/2 -translate-x-1/2 z-30 flex gap-1 px-2 py-1.5 backdrop-blur-md" style="background:var(--panel);border:1px solid var(--rule)">
+    <a href="#problem" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§01</a>
+    <a href="#approach" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§02</a>
+    <a href="#results" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§03</a>
+    <a href="#takeaways" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§04</a>
+  </nav>
+  <main class="relative">
+    <article>
+      <header class="blog-article-hero">
+        <div class="shell">
+          <div class="page-breadcrumb">
+            <a href="/" class="caption hover:text-[var(--signal)] transition-colors">AMR.ALFAYOUMY</a>
+            <span class="caption" style="color:var(--fg-3)">/</span>
+            <a href="/blog/" class="caption hover:text-[var(--signal)] transition-colors">BLOG</a>
+            <span class="caption" style="color:var(--fg-3)">/</span>
+            <span class="caption-signal">GRAPH ANALYTICS</span>
+          </div>
+          <div class="grid grid-cols-12 gap-x-6 gap-y-8 items-end">
+            <div class="col-span-12 lg:col-span-8">
+              <div class="caption-signal mb-4">// CHALLENGE &amp; SOLUTION · SOCIAL NETWORK ANALYSIS</div>
+              <h1 class="font-display blog-article-title sna-article-title">From 300M monthly calls to customer communities and influence maps<span class="font-display-italic" style="color:var(--signal)">.</span></h1>
+            </div>
+            <div class="col-span-12 lg:col-span-4">
+              <p class="blog-article-subtitle">A production analytics field note on turning 300M+ monthly calls into a controllable open-source graph model with stronger cohesion and half the SLA.</p>
+              <div class="blog-article-meta mt-6">
+                <time datetime="2026-06">Published June 2026</time>
+                <span>10 min read</span>
+                <span>Graph analytics</span>
+              </div>
+            </div>
+          </div>
+          <figure class="sna-hero-process" aria-labelledby="sna-hero-process-title">
+            <div class="sna-hero-process-top">
+              <figcaption id="sna-hero-process-title" class="sna-hero-process-title">Process Overview</figcaption>
+              <div class="sna-hero-process-note">From call events to trusted business outputs</div>
+            </div>
+            <div class="sna-process-grid">
+              <div class="sna-process-step">
+                <div class="sna-process-num">01</div>
+                <div class="sna-process-name">Raw calls</div>
+                <div class="sna-process-copy">300M+ monthly voice interactions.</div>
+              </div>
+              <div class="sna-process-step">
+                <div class="sna-process-num">02</div>
+                <div class="sna-process-name">Nodes &amp; weighted links</div>
+                <div class="sna-process-copy">Customers become nodes; duration becomes relationship strength.</div>
+              </div>
+              <div class="sna-process-step">
+                <div class="sna-process-num">03</div>
+                <div class="sna-process-name">Global graph</div>
+                <div class="sna-process-copy">Build the full 30-35M node network.</div>
+              </div>
+              <div class="sna-process-step">
+                <div class="sna-process-num">04</div>
+                <div class="sna-process-name">Influencer detection</div>
+                <div class="sna-process-copy">Score who drives communication.</div>
+              </div>
+              <div class="sna-process-step">
+                <div class="sna-process-num">05</div>
+                <div class="sna-process-name">Community detection</div>
+                <div class="sna-process-copy">Find natural customer groups with PLM.</div>
+              </div>
+              <div class="sna-process-step">
+                <div class="sna-process-num">06</div>
+                <div class="sna-process-name">Recursive split</div>
+                <div class="sna-process-copy">Refine large groups while protecting dense structures.</div>
+              </div>
+              <div class="sna-process-step">
+                <div class="sna-process-num">07</div>
+                <div class="sna-process-name">Insights</div>
+                <div class="sna-process-copy">Validate cohesion, stability, influencers, and community behavior.</div>
+              </div>
+              <div class="sna-process-step">
+                <div class="sna-process-num">08</div>
+                <div class="sna-process-name">Model feed</div>
+                <div class="sna-process-copy">Send SNA outputs into downstream customer and Customer Value Management (CVM) models.</div>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </header>
+      <div class="shell"><div style="height:1px;background:linear-gradient(90deg, transparent 0%, var(--rule) 25%, var(--rule) 75%, transparent 100%)"></div></div>
+      <section class="shell grid grid-cols-12 gap-x-6 gap-y-8 py-16">
+        <aside class="col-span-12 lg:col-span-3">
+          <div class="caption-signal sticky top-14">// ARTICLE</div>
+        </aside>
+        <div class="col-span-12 lg:col-span-8 blog-article-body">
+          <p>Replacing a proprietary analytics procedure is rarely just a technology migration.</p>
+          <p>The difficult part is not proving that open-source tools can run an algorithm. The difficult part is proving that a new system can carry the same business meaning as the old one, at the same production seriousness, while materially improving the result.</p>
+          <p>That was the core challenge behind this social network analysis model.</p>
+          <p>The existing workflow used SAS PROC NETWORK to identify customer influencers and communities from local voice interactions. It was already automated and already useful. Those outputs supported customer engagement, retention, and segmentation decisions. In other words, the model was not an academic graph exercise. It was part of how the business understood who influences whom.</p>
+          <p>That is why the replacement bar was high. This was not a case of taking a manual process and making it automated. SAS had already solved a real business problem. My job was to re-implement the model in open source, preserve trust in the outputs, and improve the production characteristics enough to justify the move.</p>
+          <blockquote>The assignment was not "rewrite SAS in Python." It was "rebuild a trusted automated graph model at telecom scale, then make it faster and better."</blockquote>
+
+          <h2 id="problem">The Problem</h2>
+          <p>The organization was modernizing its AI and analytics platform, and the SNA model needed to move from SAS into a Dataiku-based production environment.</p>
+          <p>On paper, that sounds straightforward: find an open-source graph library, rebuild the model, compare the outputs, and deploy it.</p>
+          <p>In practice, social network analysis makes that much harder.</p>
+          <p>The monthly graph was massive: more than 300 million voice calls had to be reduced into a network of roughly 30-35 million customer nodes and the weighted links between them. Each link represented real communication behavior, not a synthetic relationship. At that size, small modeling choices become production decisions. A small difference in how calls are aggregated, how weights are interpreted, or how large communities are handled can change the final segmentation.</p>
+          <p>For business users, those changes show up as different influencers, different communities, and different retention actions.</p>
+          <p>So the migration had two goals that had to be held together:</p>
+          <ul>
+            <li>preserve enough fidelity to the SAS baseline that the business could trust the new outputs</li>
+            <li>improve the production result, especially runtime and community quality</li>
+          </ul>
+          <p>Matching the old model alone would not have been enough. The new system had to respect the historical baseline, but it also had to earn its place by cutting the monthly SLA from roughly 3 hours to roughly 1.5 hours and producing communities with stronger internal cohesion.</p>
+
+          <h2>The Business Meaning Of The Model</h2>
+          <p>The SNA model answers two practical questions.</p>
+          <p>First: who are the people who drive conversation?</p>
+          <p>These are customers whose outbound communication patterns make them influential within the network. They matter because their behavior can shape groups around them. Losing the right customer may affect more than one account; it may affect a local cluster of relationships.</p>
+          <p>Second: which customers naturally belong together?</p>
+          <p>Communities are groups of customers whose interactions are stronger with each other than with the outside network. For commercial teams, that can support segmentation, campaign design, retention planning, and customer value management.</p>
+          <p>The model therefore had to be technically sound, but also explainable at the level of customer relationships. A community cannot be treated as a random algorithmic label. It has to behave like a meaningful group.</p>
+
+          <h2 id="approach">The Approach</h2>
+          <p>I started by treating SAS as the behavioral baseline, not as the implementation blueprint.</p>
+          <p>That distinction mattered. The objective was to reproduce the business behavior of PROC NETWORK using open-source components, not to recreate every proprietary internal decision SAS makes behind the scenes.</p>
+          <p>I compared several graph analytics options across the criteria that mattered for this workload: Dataiku orchestration, Teradata integration, directed weighted relationships, influencer metrics, community detection, scalability, and the ability to support a monthly production SLA.</p>
+          <p>NetworKit became the best fit because it gave the project a strong graph analytics engine without locking the model back into a proprietary analytics stack. It could support weighted graph processing, large-scale community detection, and production execution inside the new platform.</p>
+          <p>But the library choice was only one part of the design. The real work was deciding where each kind of computation belonged.</p>
+          <p>I designed the model as a staged graph system. The database handled the large relational reduction first: turning 300M+ raw monthly calls into clean, weighted customer relationships. The graph engine then handled the network-native work: influence, community structure, and community quality. The orchestration layer handled repeatability, failure boundaries, scheduling, and production promotion.</p>
+          <p>That separation was deliberate. If the graph engine receives raw telecom volume, the model wastes time doing work the database can do faster. If the database is forced to act like a graph engine, the community logic becomes awkward and hard to evolve. The production design worked because each layer did the job it was naturally good at.</p>
+          <h2>How I Designed The Model</h2>
+          <p>The design had four major principles.</p>
+          <p>First, reduce the problem before graph processing. The raw monthly call volume was too large to treat casually, so the model converted 300M+ call records into a weighted relationship network before the graph algorithms ran. That protected runtime and made the graph stage focus on actual customer relationships rather than raw event noise.</p>
+          <p>Second, preserve direction where it mattered and simplify where it helped. Influencer detection depends on directional behavior: who initiates communication and how strong that outbound behavior is. Community detection, on the other hand, is about mutual structure, so the model used an undirected view of relationship strength for that stage. This was not a technical convenience; it matched the meaning of the two business questions.</p>
+          <p>Third, treat large communities as a modeling problem, not a nuisance. Large groups in a telecom graph can be real: dense stars, cliques, and highly connected local structures. Forcing every group under a size limit can create artificial fragments. The new model applied increasing resolution only when the network structure supported a meaningful split, then rejected any split that produced one-person fragments. If a dense structure could not be split cleanly, the model preserved it instead of destroying it.</p>
+          <p>Fourth, validate the model as a business system. I did not rely on one parity number. I compared influencer overlap, community size profiles, largest-community behavior, internal versus external communication, stickiness, triangle density, migration match, and month-over-month stability. That made the migration evidence-based rather than opinion-based.</p>
+
+          <h2>Solving The Community Split Problem</h2>
+          <p>The hardest part of the model was not finding communities. It was deciding when not to split them.</p>
+          <p>The SAS baseline used a maximum community size rule, so the open-source model needed to respect that behavior. But a strict size rule can create bad business output if it breaks a naturally dense group into artificial fragments.</p>
+          <p>To solve that, I designed the split logic around validity, not just size.</p>
+          <p>When a community was too large, the model tried to find a stronger internal partition. But before accepting the result, it inspected the proposed groups. If the split produced a singleton, the model rejected it. That forced the algorithm to either find a better split or keep the original community intact.</p>
+          <p>For dense stars and cliques, that choice was important. In a star, many people are genuinely organized around a central person. In a clique, the group is tightly connected across many members. Breaking those structures just to satisfy a size threshold would make the output look cleaner while making it less true.</p>
+          <p>For the business, that would be worse than leaving the community oversized. Retention and segmentation teams do not need mathematically convenient fragments. They need groups that reflect real customer behavior. Preserving an unsplittable dense community is a better business decision than manufacturing smaller groups that no longer mean anything.</p>
+          <figure class="blog-visual" aria-labelledby="sna-split-title">
+            <div class="blog-visual-top">
+              <figcaption id="sna-split-title" class="blog-visual-title">Community Split Policy</figcaption>
+              <div class="blog-visual-note">Size target with signal protection</div>
+            </div>
+            <div class="sna-decision">
+              <div class="sna-decision-step">
+                <div class="sna-decision-kicker">Oversized Community</div>
+                <div class="sna-decision-symbol">100+</div>
+                <div class="sna-decision-label">Try to find a meaningful internal partition instead of blindly cutting the group.</div>
+              </div>
+              <div class="sna-decision-step is-reject">
+                <div class="sna-decision-kicker">Reject Bad Split</div>
+                <div class="sna-decision-symbol">1x</div>
+                <div class="sna-decision-label">If any proposed subgroup becomes a singleton, reject the split and search for a better one.</div>
+              </div>
+              <div class="sna-decision-step is-keep">
+                <div class="sna-decision-kicker">Preserve Dense Signal</div>
+                <div class="sna-decision-symbol">OK</div>
+                <div class="sna-decision-label">If a star or clique cannot be split cleanly, keep it intact rather than inventing weak groups.</div>
+              </div>
+            </div>
+            <div class="blog-visual-caption">The target was not smaller communities at any cost. The target was useful customer groups, which meant preventing one-person communities and preserving dense structures when they represented real behavior.</div>
+          </figure>
+
+          <h2>Where The New Model Improved On SAS</h2>
+          <p>The open-source version was built to respect the SAS baseline, but it was not limited to being a replica.</p>
+          <p>The first major improvement was SLA.</p>
+          <p>The monthly run time moved from roughly 3 hours to roughly 1.5 hours. That matters in production because SNA is usually one part of a larger customer value workflow. A shorter SLA gives downstream teams more time to validate, activate, and use the output before the business window closes.</p>
+          <p>The SLA improvement came from three design choices working together.</p>
+          <p>First, the model reduced raw telecom volume before graph processing, so the graph engine worked on weighted relationships instead of raw call events. Second, it used Parallel Louvain for the heavy community detection step, which made the core graph algorithm fit the scale of the monthly network. Third, the expensive stages ran on controlled Kubernetes resources and the large-community refinement work was partitioned so multiple workers could process difficult communities in parallel instead of serially waiting on one long tail.</p>
+          <p>The result was not just faster code. It was a production execution plan: database reduction, graph-native parallelism, K8s resource isolation, and parallel refinement of the hard cases.</p>
+          <figure class="blog-visual" aria-labelledby="sna-exec-title">
+            <div class="blog-visual-top">
+              <figcaption id="sna-exec-title" class="blog-visual-title">Production Execution</figcaption>
+              <div class="blog-visual-note">Parallelism and resource control</div>
+            </div>
+            <div class="sna-k8s-grid">
+              <div class="sna-k8s-steps">
+                <div class="sna-k8s-step">
+                  <div class="sna-k8s-chip">In-DB</div>
+                  <div>
+                    <div class="sna-k8s-kicker">Preprocessing</div>
+                    <div class="sna-k8s-label">Aggregate raw calls into weighted links before graph processing.</div>
+                  </div>
+                </div>
+                <div class="sna-k8s-step">
+                  <div class="sna-k8s-chip">K8s Graph</div>
+                  <div>
+                    <div class="sna-k8s-kicker">PLM Community Detection</div>
+                    <div class="sna-k8s-label">Run the graph-native heavy stage with controlled CPU and memory.</div>
+                  </div>
+                </div>
+                <div class="sna-k8s-step">
+                  <div class="sna-k8s-chip">Parallel</div>
+                  <div>
+                    <div class="sna-k8s-kicker">Large Community Refinement</div>
+                    <div class="sna-k8s-label">Process difficult oversized groups across workers instead of one serial tail.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="sna-bars" aria-label="Runtime comparison from SAS baseline to open-source model">
+                <div class="sna-bar-row">
+                  <div class="sna-bar-meta"><span>SAS Baseline</span><span>~3h</span></div>
+                  <div class="sna-bar-track"><div class="sna-bar-fill" style="width:100%"></div></div>
+                </div>
+                <div class="sna-bar-row">
+                  <div class="sna-bar-meta"><span>Open-Source Model</span><span>~1.5h</span></div>
+                  <div class="sna-bar-track"><div class="sna-bar-fill is-new" style="width:50%"></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="blog-visual-caption">The runtime gain came from placing each workload in the right execution layer: relational reduction in the database, graph-native processing on controlled Kubernetes resources, and parallel refinement for the hard communities.</div>
+          </figure>
+          <p>The second major improvement was community cohesion.</p>
+          <p>Stickiness measures how much communication stays inside the communities the model creates. Higher stickiness means the groups are not just mathematically tidy; they are better aligned with actual customer interaction. Across the validation months, the new implementation produced higher stickiness than SAS, meaning more total communication duration stayed inside the assigned communities.</p>
+          <p>Triangle density improved too. A triangle is a closed communication loop: A talks to B, B talks to C, and C talks back into the same group. More triangles mean the community is not only centered around one strong link; it has a richer internal network. In the validation rows compared here, the new model identified about 14.1% more of these closed loops, which suggested stronger local cohesion rather than looser grouping.</p>
+          <p>The third improvement was model control.</p>
+          <p>With the new implementation, the logic around large communities became explicit, testable, and adjustable. The model could keep splitting oversized groups when the network supported it, but it also had guardrails against creating meaningless one-person communities just to satisfy a size target.</p>
+          <p>That matters because business needs change. If the client later wants tighter communities for campaign targeting, looser communities for retention coverage, a different tolerance for oversized groups, or a different policy for preserving dense structures, the model now has visible controls that can be tuned deliberately. The client is no longer limited to the behavior exposed by a proprietary procedure; they can decide how the model should behave as the commercial use case evolves.</p>
+          <p>The modular design also makes future rework less risky. If the client later needs to replace one component, such as the community detection method, the influencer scoring logic, the validation layer, or the export path, that component can be changed and integrated back into the rest of the pipeline without rewriting the whole model. That is an important advantage for a production analytics system whose business use cases will keep evolving.</p>
+          <p>That sounds like a small modeling choice, but it has real business value. A community of one is usually not a community in the customer-management sense. It may satisfy a technical constraint, but it weakens the output for downstream teams.</p>
+          <p>The fourth improvement was platform ownership.</p>
+          <p>The original SAS model was already automated, so the win was not simply "now it runs on a schedule." The win was that the automation became part of the modern AI platform: controlled compute, clear promotion from UAT to production, measurable resource usage, and a workflow that could be operated by the broader platform team.</p>
+          <p>The fifth improvement was observability.</p>
+          <p>Instead of treating the model as a black box that emits final tables, the new workflow measured the health of the graph across more than 20 validation metrics: total nodes, total relationship weight, community counts, size distribution, oversized groups, largest-community behavior, internal versus external communication, stickiness, triangle density, migration match, and month-over-month stability.</p>
+          <p>That gave the team a stronger answer to the most important migration question: "Are we getting the same kind of business signal?"</p>
+
+          <h2>Why The Validation Had To Be Broad</h2>
+          <p>For a migration like this, one metric can be dangerously comforting.</p>
+          <p>A model can match influencer counts while damaging communities. It can match average community size while changing the largest structures. It can improve runtime while quietly producing unstable month-to-month assignments. None of those would be acceptable for a production SNA model.</p>
+          <p>That is why the validation covered more than 20 metrics. The most important ones answered different risk questions:</p>
+          <ul>
+            <li>Influencer parity proved the model still found the same high-impact customers.</li>
+            <li>Community stickiness proved more communication stayed inside the assigned groups.</li>
+            <li>Triangle density proved the groups had stronger internal relationship loops.</li>
+            <li>Completeness showed that most SAS community structures remained intact inside the new model.</li>
+            <li>Homogeneity showed how cleanly new communities mapped back to the old SAS groupings.</li>
+            <li>Month-over-month stability showed the model was responsive without becoming volatile.</li>
+          </ul>
+          <p>The stability result was especially important. The model kept average community size around 23 nodes, median size around 16-17 nodes, and a tight spread across the validation months. As the graph grew from roughly 32.4 million to 32.8 million nodes, the number of communities scaled predictably instead of swinging unpredictably.</p>
+          <p>User stability hovered around 40%, while influencer stability was close to 60%. That balance was healthy. It meant the model could react to real monthly behavior changes, while the centers of influence were much more stable than the general population.</p>
+
+          <h2 id="results">The Results</h2>
+          <p>The new model achieved very high parity with the historical baseline for influencer detection.</p>
+          <p>Across monthly validation windows, it scanned roughly five million influencers and matched the SAS output at better than 99.9%. The remaining differences were small enough to investigate directly, and were consistent with expected numerical precision differences rather than a material business drift.</p>
+          <div class="sna-score-grid sna-results-grid" aria-label="SNA model result KPIs">
+            <div class="sna-score-card">
+              <div class="sna-score-kicker">Graph Scale</div>
+              <div class="sna-score-value">300M+</div>
+              <div class="sna-score-label">monthly calls reduced into a 30-35M node graph</div>
+            </div>
+            <div class="sna-score-card">
+              <div class="sna-score-kicker">Influencer Match</div>
+              <div class="sna-score-value">99.9%</div>
+              <div class="sna-score-label">baseline parity across roughly five million influencers</div>
+            </div>
+            <div class="sna-score-card">
+              <div class="sna-score-kicker">Community Stickiness</div>
+              <div class="sna-score-value">+0.6pp</div>
+              <div class="sna-score-label">higher inside-community call share versus SAS</div>
+            </div>
+            <div class="sna-score-card">
+              <div class="sna-score-kicker">Triangle Density</div>
+              <div class="sna-score-value">+14.1%</div>
+              <div class="sna-score-label">more closed communication loops in the compared months</div>
+            </div>
+            <div class="sna-score-card">
+              <div class="sna-score-kicker">Singletons</div>
+              <div class="sna-score-value">0%</div>
+              <div class="sna-score-label">one-person communities in the validated output</div>
+            </div>
+            <div class="sna-score-card">
+              <div class="sna-score-kicker">Runtime</div>
+              <div class="sna-score-value">50%</div>
+              <div class="sna-score-label">SLA reduction from roughly 3h to 1.5h</div>
+            </div>
+          </div>
+          <p>The community results were also stable month over month. As the graph grew from roughly 32.4 million to 32.8 million nodes, the total number of communities scaled predictably rather than jumping erratically. The largest communities remained recognizable compared with SAS, which was important because those large structures often represent real network behavior rather than random noise.</p>
+          <p>The new model also produced zero singleton communities in the validated output. That was intentional. It meant the algorithm was not breaking customer groups into isolated labels just to make a technical constraint look cleaner.</p>
+          <p>In quality terms, the Dataiku implementation showed higher community stickiness: more of the total communication duration happened inside the communities it created. It also identified materially more closed communication loops than the SAS baseline, suggesting that the new implementation was capturing cohesive local structures more effectively.</p>
+
+          <h2>Why This Was Not Just A Migration</h2>
+          <p>A migration moves a workload from one platform to another.</p>
+          <p>This project changed the delivery contract.</p>
+          <p>Before, the business depended on a proprietary automated procedure to produce a familiar output. After the rebuild, the business had an open-source graph model with comparable influencer results, stronger community cohesion, half the SLA, clearer validation metrics, and a production workflow that fit the modern AI platform.</p>
+          <p>That matters because analytical trust has two sides.</p>
+          <p>One side is statistical trust: do the outputs behave like the old trusted baseline?</p>
+          <p>The other side is operational trust: can the system run every month, under controlled resources, with clear failure boundaries and measurable output quality?</p>
+          <p>The new implementation had to satisfy both. A model that is accurate but operationally painful is not finished. A pipeline that is elegant but changes the business meaning of the output is not acceptable either.</p>
+
+          <h2>The Plain English Summary</h2>
+          <p>The simplest version is this:</p>
+          <p>The old SAS model found important customers and customer groups by looking at who called whom, how strongly they were connected, and which groups naturally formed in the network. It was automated, trusted, and already valuable.</p>
+          <p>I rebuilt that capability using open-source graph analytics inside the modern Dataiku platform.</p>
+          <p>The new model produced nearly the same influencer results as SAS, kept community behavior stable across months, improved stickiness and triangle density, avoided meaningless one-person communities, preserved dense stars and cliques when splitting would damage the signal, and cut the monthly SLA from about 3 hours to about 1.5 hours.</p>
+          <p>So the business did not just get a different technical stack. It got a model that preserved the trusted signal while becoming easier to run, validate, and evolve. More importantly, it gained finer control over the model's behavior: the ability to tune community size, split strictness, oversized-community handling, validation thresholds, and individual model components as business needs change.</p>
+
+          <h2 id="takeaways">Takeaways</h2>
+          <p>The main lesson is that replacing proprietary analytics is not only a code conversion exercise.</p>
+          <p>For a serious production model, the migration plan has to cover:</p>
+          <ul>
+            <li>the business meaning of each output</li>
+            <li>the historical baseline users already trust</li>
+            <li>the tolerance for expected differences</li>
+            <li>the operating SLA</li>
+            <li>the validation metrics that prove continuity</li>
+            <li>the new controls that let the client tune future model behavior</li>
+            <li>the modular boundaries that make future component replacement possible</li>
+          </ul>
+          <p>In this case, the open-source implementation did not win because it was open source. It won because it preserved the right behavior, exposed the right controls, and made the production system easier to own.</p>
+          <p>That is the standard I care about in platform modernization: not whether the new stack is fashionable, but whether it gives the business more confidence, more control, and less hidden dependency.</p>
+          <div class="mt-12 flex flex-wrap gap-3">
+            <a href="/blog/" class="font-mono text-[11px] uppercase tracking-[0.16em] px-4 py-3 transition-colors" style="border:1px solid var(--signal);background:var(--signal);color:var(--bg-on-signal)">Back to blog</a>
+            <a href="mailto:amr.alfayoumy@outlook.com" class="font-mono text-[11px] uppercase tracking-[0.16em] px-4 py-3 transition-colors" style="border:1px solid var(--rule);background:var(--panel-2);color:var(--fg)">Discuss this</a>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer class="shell pb-10">
+    <div class="hairline mb-6"></div>
+    <div class="caption">© 2026 AMR ALFAYOUMY · GRAPH ANALYTICS FIELD NOTE</div>
+  </footer>
+  <script src="/theme-toggle.js"></script>
+</body>
+</html>

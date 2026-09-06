@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /old-portfolio/
+
+Sitemap: https://alfayoumy.github.io/sitemap.xml

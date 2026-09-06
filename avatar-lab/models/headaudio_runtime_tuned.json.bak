@@ -1,0 +1,11 @@
+{
+  "sampleRate": 24000,
+  "speakerMeanHz": 120,
+  "voteWindow": 3,
+  "silSensitivity": 0.7,
+  "vadMode": 1,
+  "vadGateActiveDb": -40.0,
+  "vadGateActiveMs": 10.0,
+  "vadGateInactiveDb": -45.0,
+  "vadGateInactiveMs": 24.0
+}

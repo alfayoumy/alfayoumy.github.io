@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" href="/_next/static/media/70bc3e132a0a741e-s.p.15008bfb.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/8800dfc60902df36-s.p.e22d03ab.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/e41d5df559864f9e-s.p.380d09ea.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="stylesheet" href="/_next/static/chunks/193213d9c0b2e44c.css" data-precedence="next" />
+  <link rel="stylesheet" href="/overrides.css" />
+  <title>When the Same Fraud Model Gave Two Different Answers — Amr Alfayoumy</title>
+  <meta name="description" content="A production ML field note on a fraud risk model whose development and production scores diverged because NumPy/OpenBLAS selected different CPU-specific numeric execution paths." />
+  <meta name="application-name" content="Amr Alfayoumy · Portfolio" />
+  <meta name="author" content="Amr Alfayoumy" />
+  <meta name="creator" content="Amr Alfayoumy" />
+  <meta name="publisher" content="Amr Alfayoumy" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="When the Same Fraud Model Gave Two Different Answers — Amr Alfayoumy" />
+  <meta property="og:description" content="A production ML field note on reproducibility, hardware, and a CPU-level fraud scoring issue that looked like a model problem but was not." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://alfayoumy.github.io/blog/fraud-model-cpu-reproducibility/" />
+  <meta property="og:site_name" content="Amr Alfayoumy" />
+  <meta property="og:image" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta property="og:image:secure_url" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Amr Alfayoumy portfolio mark" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="When the Same Fraud Model Gave Two Different Answers" />
+  <meta name="twitter:description" content="A production ML lesson about reproducibility, hardware, and not trusting the obvious explanation." />
+  <meta name="twitter:image" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta name="twitter:image:alt" content="Amr Alfayoumy portfolio mark" />
+  <link rel="canonical" href="https://alfayoumy.github.io/blog/fraud-model-cpu-reproducibility/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "url": "https://alfayoumy.github.io/blog/fraud-model-cpu-reproducibility/",
+    "headline": "When the same fraud model gave two different answers",
+    "datePublished": "2026-06",
+    "dateModified": "2026-08-24",
+    "author": { "@id": "https://alfayoumy.github.io/#person" },
+    "image": "https://alfayoumy.github.io/social-preview.png",
+    "keywords": ["Machine Learning", "Reproducibility", "Fraud Detection", "CPU"]
+  }
+  </script>
+  <script>(function(){try{var t=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',t==='dark'||t==='light'?t:'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body class="instrument_serif_794b969e-module__2VhGdW__variable onest_859d3e11-module__eWePdW__variable jetbrains_mono_84d6efd-module__5Hl15a__variable">
+  <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none" style="background:var(--bg)">
+    <div class="absolute inset-0 bp-grid" style="mask-image:radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, transparent 100%);-webkit-mask-image:radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, transparent 100%)"></div>
+    <div class="absolute" style="top:-10%;right:-10%;width:60vw;height:60vw;background:radial-gradient(circle, rgba(255,74,28,0.10) 0%, rgba(255,74,28,0) 60%);filter:blur(40px)"></div>
+    <div class="absolute" style="bottom:-15%;left:-15%;width:55vw;height:55vw;background:radial-gradient(circle, rgba(200,255,94,0.05) 0%, rgba(200,255,94,0) 60%);filter:blur(50px)"></div>
+    <div class="noise"></div>
+  </div>
+  <div class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md" style="background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--rule)">
+    <div class="shell flex items-center gap-4 sm:gap-6 h-10 text-[11px] font-mono uppercase tracking-[0.16em] whitespace-nowrap overflow-hidden">
+      <a href="/" class="text-[var(--fg)] hover:text-[var(--signal)] transition-colors">AMR.ALFAYOUMY</a>
+      <a href="/projects/" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ PROJECTS</a>
+      <a href="/blog/" class="hidden sm:inline text-[var(--signal)] transition-colors">/ BLOG</a>
+      <a href="https://www.linkedin.com/in/alfayoumy" target="_blank" rel="noopener noreferrer" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ LINKEDIN</a>
+      <a href="/hire/" class="hidden md:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ HIRE</a>
+      <span class="hidden xl:inline text-[var(--fg-3)] whitespace-nowrap">/ PRODUCTION ML FIELD NOTE</span>
+      <nav aria-label="Section navigation" class="hidden md:flex items-center gap-3 lg:gap-4 mx-auto">
+        <a href="#symptom" data-nav-label="The Symptom" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§01</a>
+        <a href="#root-cause" data-nav-label="The Root Cause" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§02</a>
+        <a href="#fix" data-nav-label="The Fix" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§03</a>
+        <a href="#takeaways" data-nav-label="Takeaways" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§04</a>
+      </nav>
+      <div class="ml-auto flex items-center gap-3 sm:gap-5">
+        <a href="mailto:amr.alfayoumy@outlook.com" class="hidden sm:inline-flex items-center gap-1 transition-colors" style="color:var(--fg)">
+          <span style="color:var(--signal)">→</span><span class="hover:text-[var(--signal)] transition-colors">EMAIL</span>
+        </a>
+        <span class="hidden lg:flex items-center gap-2 text-[var(--pulse)]"><span class="live-dot"></span> OPEN TO BUILD</span>
+        <button type="button" id="themeToggle" class="inline-flex font-mono text-[11px] uppercase tracking-[0.16em] transition-colors hover:text-[var(--signal)]" style="color:var(--fg-2)">◐ DARK</button>
+      </div>
+    </div>
+  </div>
+  <nav aria-label="Section navigation" class="md:hidden fixed bottom-3 left-1/2 -translate-x-1/2 z-30 flex gap-1 px-2 py-1.5 backdrop-blur-md" style="background:var(--panel);border:1px solid var(--rule)">
+    <a href="#symptom" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§01</a>
+    <a href="#root-cause" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§02</a>
+    <a href="#fix" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§03</a>
+    <a href="#takeaways" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§04</a>
+  </nav>
+  <main class="relative">
+    <article>
+      <header class="blog-article-hero">
+        <div class="shell">
+          <div class="page-breadcrumb">
+            <a href="/" class="caption hover:text-[var(--signal)] transition-colors">AMR.ALFAYOUMY</a>
+            <span class="caption" style="color:var(--fg-3)">/</span>
+            <a href="/blog/" class="caption hover:text-[var(--signal)] transition-colors">BLOG</a>
+            <span class="caption" style="color:var(--fg-3)">/</span>
+            <span class="caption-signal">PRODUCTION ML</span>
+          </div>
+          <div class="grid grid-cols-12 gap-x-6 gap-y-8 items-end">
+            <div class="col-span-12 lg:col-span-8">
+              <div class="caption-signal mb-4">// CHALLENGE &amp; SOLUTION · FRAUD RISK MODEL</div>
+              <h1 class="font-display blog-article-title">When the same fraud model gave two different answers<span class="font-display-italic" style="color:var(--signal)">.</span></h1>
+            </div>
+            <div class="col-span-12 lg:col-span-4">
+              <p class="blog-article-subtitle">A production ML lesson about reproducibility, hardware, and not trusting the obvious explanation.</p>
+              <div class="blog-article-meta mt-6">
+                <time datetime="2026-06">Published June 2026</time>
+                <span>8 min read</span>
+                <span>Fraud analytics</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="shell"><div style="height:1px;background:linear-gradient(90deg, transparent 0%, var(--rule) 25%, var(--rule) 75%, transparent 100%)"></div></div>
+      <section class="shell grid grid-cols-12 gap-x-6 gap-y-8 py-16">
+        <aside class="col-span-12 lg:col-span-3">
+          <div class="caption-signal sticky top-14">// ARTICLE</div>
+        </aside>
+        <div class="col-span-12 lg:col-span-8 blog-article-body">
+          <p>In fraud detection, the worst failures are not always the loud ones.</p>
+          <p>Sometimes the model runs. The pipeline completes. The data loads. The code version looks correct. The output table is populated exactly where everyone expects it to be.</p>
+          <p>And still, the result is wrong.</p>
+          <p>This is a story about one of those failures: a fraud risk model that behaved normally in development, then produced a dramatically different volume of alerts in production. The first instinct in that situation is usually to blame the data, the threshold, the model artifact, or some hidden change in package versions.</p>
+          <p>In this case, none of those were the root cause.</p>
+          <blockquote>The issue was lower than the model. Lower than Python. Lower than the feature code. It came from the CPU.</blockquote>
+          <p>More specifically, it came from different low-level numeric execution paths being selected on two machines that were supposed to produce the same fraud scores.</p>
+          <p>That sounds esoteric, but the business impact was very concrete: the development environment detected 55 cases, while production detected 20,354. High-risk cases moved from 12 to 1,430.</p>
+          <p>For a fraud team, that is not a rounding error. That is the difference between a usable investigative queue and an operational fire.</p>
+
+          <h2 id="symptom">The Symptom</h2>
+          <p>The project involved a fraud risk model for a client environment where consistency mattered. The model was not being used as a casual experiment; it was part of a controlled scoring process where investigators, risk owners, and technical teams needed confidence that the same inputs would produce the same outputs.</p>
+          <p>The surprise appeared during parity testing between development and production.</p>
+          <p>Both environments were scoring what should have been the same data with the same model. But the alert volumes were wildly different:</p>
+          <div class="blog-article-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Metric</th>
+                  <th>Development</th>
+                  <th>Production</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Detected cases</td>
+                  <td>55</td>
+                  <td>20,354</td>
+                </tr>
+                <tr>
+                  <td>High-risk cases</td>
+                  <td>12</td>
+                  <td>1,430</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>At that point, the easy explanation would have been: production must be receiving different input data.</p>
+          <p>That is the first thing I checked.</p>
+          <p>It was also the first thing the diagnostics ruled out.</p>
+
+          <h2>What I Checked First</h2>
+          <p>When a model behaves differently across environments, I do not start by guessing. I try to narrow the problem boundary until there is only one layer left that can explain the difference.</p>
+          <p>The parity diagnostics compared development and production across the raw scoring data:</p>
+          <ul>
+            <li>raw schema</li>
+            <li>raw values</li>
+            <li>data types</li>
+            <li>null counts</li>
+            <li>feature means</li>
+            <li>package versions</li>
+            <li>model artifacts</li>
+            <li>single-thread runtime settings</li>
+          </ul>
+          <p>All of those matched.</p>
+          <p>That was important. It meant the problem was not caused by a missing column, a different source extract, a bad join, or a model file being out of sync.</p>
+          <p>The first real divergence appeared later, at the transformed feature layer:</p>
+          <pre><code>hashes.features_transformed.value_hash_unordered</code></pre>
+          <p>That detail mattered more than the alert counts.</p>
+          <p>The raw data was still identical when loaded. The difference only appeared after preprocessing transformed the raw input into the numeric feature matrix used by the model.</p>
+          <p>In plain English: both environments started with the same facts, but they did not turn those facts into model features in exactly the same way.</p>
+          <p>Once the transformed features drifted, the rest was predictable. Probability hashes diverged. Prediction hashes diverged. Risk bands diverged. The final case volumes became impossible to trust.</p>
+
+          <h2>Why This Was Strange</h2>
+          <p>Most production ML issues live in familiar places.</p>
+          <p>The data changed. A scheduled job picked up a different date range. A feature table was refreshed in one environment and stale in another. A dependency upgraded quietly. A threshold was copied incorrectly. A model artifact was replaced without the matching preprocessing artifact.</p>
+          <p>This case was frustrating because the usual suspects kept clearing themselves.</p>
+          <p>The Python versions matched. NumPy, pandas, scikit-learn, and machine learning models matched. The scoring code matched. The model artifact matched. The input data matched. Runtime threading had already been constrained to reduce nondeterminism.</p>
+          <p>But the transformed features still differed.</p>
+          <p>That pushed the investigation below the application layer and into the numeric runtime.</p>
+
+          <h2 id="root-cause">The Root Cause</h2>
+          <p>The development server and production server did not expose the same CPU capabilities.</p>
+          <p>The development machine had AVX512-capable execution paths available. Production did not.</p>
+          <p>AVX512 is a set of CPU instructions that allows processors to perform certain numeric operations in wider, faster batches. For most business users, the exact name does not matter. The useful analogy is this:</p>
+          <p>Two kitchens can follow the same recipe with the same ingredients, but use different industrial mixers. The cake is still "the same cake" in theory, but tiny differences in how the mixing happens can change the texture.</p>
+          <p>In machine learning pipelines, those tiny differences are floating-point differences. Usually they are harmless. Sometimes, especially after preprocessing, scaling, model thresholds, and risk banding, they can be amplified into very visible business differences.</p>
+          <p>In this project, development NumPy/OpenBLAS selected a <code>SkylakeX</code> execution path with <code>X86_V4</code> / <code>AVX512_ICL</code> available. Production selected a <code>Haswell</code> path with only <code>X86_V3</code> available.</p>
+          <p>So even with the same Python code and the same library versions, the numeric engine underneath the code was not doing exactly the same work in exactly the same way.</p>
+          <p>That was the actual gap.</p>
+          <p>Not the data.</p>
+          <p>Not the model.</p>
+          <p>Not the threshold.</p>
+          <p>The CPU-specific numeric path changed the transformed features, and the feature drift propagated into the fraud scores.</p>
+
+          <h2>Why Small Numeric Differences Can Become Big Risk Differences</h2>
+          <p>It is reasonable to ask: how can a tiny floating-point difference create thousands of extra alerts?</p>
+          <p>The answer is that fraud models are often full of boundary decisions.</p>
+          <p>A transaction is not just scored once and forgotten. It passes through transformations, scaling, model inference, probability or anomaly-score generation, thresholds, risk bands, and sometimes queue-routing rules.</p>
+          <p>If many transactions sit near a decision boundary, a small numerical shift can push a large population from one side of the line to the other.</p>
+          <p>That is especially dangerous in fraud because alert capacity is finite. A model that generates too few cases misses risk. A model that generates too many cases overwhelms investigators and makes the signal harder to use.</p>
+          <p>So the real requirement is not just model accuracy. It is operational reproducibility.</p>
+          <p>The organization needs to know that when the model says "high risk," that label came from controlled data, controlled features, controlled scoring logic, and a controlled runtime environment.</p>
+
+          <h2 id="fix">The Fix</h2>
+          <p>The fix was to make the scoring environment deterministic at the level where the problem actually lived.</p>
+          <p>I containerized the fraud pipeline and forced both training and scoring to run under the same effective CPU instruction-set profile.</p>
+          <p>The important part was not merely "use Docker." Containerization alone does not automatically solve CPU-level numeric differences, because containers still run on the host CPU. If the numeric libraries are allowed to dispatch to whatever CPU instructions are available, two containers can still behave differently on two machines.</p>
+          <p>So the workaround had to cap the numeric execution path itself.</p>
+          <p>The Docker image was built from a fixed base:</p>
+          <pre><code>python:3.12.13-slim-bookworm</code></pre>
+          <p>Then I pinned the runtime controls that commonly affect reproducibility:</p>
+          <pre><code>ENV OMP_NUM_THREADS=1
+ENV OPENBLAS_NUM_THREADS=1
+ENV MKL_NUM_THREADS=1
+ENV NUMEXPR_NUM_THREADS=1
+ENV PYTHONHASHSEED=0
+ENV TZ=UTC</code></pre>
+          <p>The bigger move was excluding AVX512-related NumPy CPU features and building NumPy from source with a capped CPU dispatch profile:</p>
+          <pre><code>ENV NPY_DISABLE_CPU_FEATURES="AVX512F,X86_V4,..."</code></pre>
+          <p>And:</p>
+          <pre><code>python -m pip install --no-binary=numpy \
+  --config-settings=setup-args=-Dcpu-baseline=min \
+  --config-settings=setup-args=-Dcpu-dispatch=max,-X86_V4,-AVX512F \
+  numpy==2.4.4</code></pre>
+          <p>That matters because AVX512 was excluded at build time, not only hidden at runtime.</p>
+          <p>In practical terms, I stopped the numeric stack from choosing a faster but different execution path on the development server. Both environments now had to operate under the same CPU dispatch ceiling.</p>
+          <p>Training, diagnostics, and production scoring were then run inside the same Docker image, with the same package versions, same threading model, same timezone behavior, same hash behavior, and same numeric instruction-set ceiling.</p>
+
+          <h2>Why This Workaround Was Bulletproof</h2>
+          <p>The workaround was not just a patch for one machine.</p>
+          <p>It changed the deployment contract.</p>
+          <p>Before the fix, the contract already covered the normal things a production ML owner should control:</p>
+          <ul>
+            <li>the same scoring code</li>
+            <li>the same input data</li>
+            <li>the same preprocessing logic</li>
+            <li>the same persisted preprocessing parameters</li>
+            <li>the same model artifact</li>
+            <li>the same package versions</li>
+            <li>constrained runtime threading</li>
+          </ul>
+          <p>That was why the issue was so hard to diagnose. The obvious ML reproducibility controls were already in place. What was still missing was control over the numeric execution path underneath those controls.</p>
+          <p>After the fix, the contract became stronger:</p>
+          <blockquote>"Run the same controlled scoring image, with the same data contract, preprocessing artifacts, model artifact, threading model, numeric stack, and CPU dispatch ceiling."</blockquote>
+          <p>That last part was the difference. The model was no longer only reproducible at the Python and artifact level; it was reproducible at the effective math-engine level too.</p>
+          <p>It also removed a dangerous hidden dependency: the assumption that two servers with the same Python packages will produce identical numeric behavior. In most enterprise ML environments, that assumption is not strong enough.</p>
+          <p>The final setup made the fraud model reproducible across a development server with AVX512 support and a production server without it.</p>
+          <p>The model no longer depended on whatever optimized SIMD path the host machine happened to expose.</p>
+
+          <h2>The Lesson</h2>
+          <p>The technical lesson is about CPU dispatch and floating-point determinism.</p>
+          <p>The delivery lesson is broader: production machine learning needs evidence, not confidence.</p>
+          <p>When a scoring pipeline fails, a senior engineer should be able to show where the systems match, where they first diverge, and why that layer is the correct one to fix. Without that evidence chain, teams tend to argue from intuition:</p>
+          <ul>
+            <li>"It must be the data."</li>
+            <li>"It must be the model."</li>
+            <li>"It must be the threshold."</li>
+            <li>"It must be a package version."</li>
+          </ul>
+          <p>Any of those could have been true. In this case, none of them were.</p>
+          <p>The useful move was to keep shrinking the problem:</p>
+          <ol>
+            <li>Prove the raw inputs match.</li>
+            <li>Prove the schema and distributions match.</li>
+            <li>Prove the model artifacts match.</li>
+            <li>Locate the first divergent hash.</li>
+            <li>Investigate the runtime below the feature transformation layer.</li>
+            <li>Fix the actual source of nondeterminism.</li>
+            <li>Make the fix repeatable, not tribal knowledge.</li>
+          </ol>
+          <p>That is the difference between debugging and production ownership.</p>
+          <p>Debugging finds the bug. Ownership changes the system so the same class of issue is less likely to return.</p>
+
+          <h2>The Plain English Summary</h2>
+          <p>The simplest explanation is this:</p>
+          <p>The model was not "changing its mind." The two environments were doing the model's math differently because their processors supported different low-level shortcuts.</p>
+          <p>The inputs were the same. The model was the same. But the machine-level math path was not the same, and that was enough to change the transformed features and risk scores.</p>
+          <p>The fix was to put the model inside a controlled production image and prevent the numeric libraries from using CPU-specific shortcuts that were available in one environment but not the other.</p>
+          <p>After that, development and production used the same effective math engine.</p>
+          <p>For a fraud program, that is the part that matters: the risk team can trust that a score means the same thing wherever it is produced.</p>
+
+          <h2 id="takeaways">Takeaways</h2>
+          <p>The main lesson is simple: reproducibility is not only about code.</p>
+          <p>For production ML, reproducibility includes:</p>
+          <ul>
+            <li>the source data</li>
+            <li>the feature transformation logic</li>
+            <li>the preprocessing artifacts</li>
+            <li>the model artifact</li>
+            <li>dependency versions</li>
+            <li>threading behavior</li>
+            <li>timezone and hash behavior</li>
+            <li>CPU instruction dispatch</li>
+            <li>the container or runtime contract</li>
+          </ul>
+          <p>Most teams check the first five.</p>
+          <p>The painful cases often live in the last four.</p>
+          <p>This issue was a reminder that mature ML delivery is not just about building a good model. It is about making sure the model can be trusted under real production constraints, on real infrastructure, with real operational consequences.</p>
+          <p>That is where engineering discipline becomes part of the model.</p>
+          <div class="mt-12 flex flex-wrap gap-3">
+            <a href="/blog/" class="font-mono text-[11px] uppercase tracking-[0.16em] px-4 py-3 transition-colors" style="border:1px solid var(--signal);background:var(--signal);color:var(--bg-on-signal)">Back to blog</a>
+            <a href="mailto:amr.alfayoumy@outlook.com" class="font-mono text-[11px] uppercase tracking-[0.16em] px-4 py-3 transition-colors" style="border:1px solid var(--rule);background:var(--panel-2);color:var(--fg)">Discuss this</a>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer class="shell pb-10">
+    <div class="hairline mb-6"></div>
+    <div class="caption">© 2026 AMR ALFAYOUMY · PRODUCTION ML FIELD NOTE</div>
+  </footer>
+  <script src="/theme-toggle.js"></script>
+</body>
+</html>

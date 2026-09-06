@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" href="/_next/static/media/70bc3e132a0a741e-s.p.15008bfb.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/8800dfc60902df36-s.p.e22d03ab.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/e41d5df559864f9e-s.p.380d09ea.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="stylesheet" href="/_next/static/chunks/193213d9c0b2e44c.css" data-precedence="next" />
+  <link rel="stylesheet" href="/overrides.css" />
+  <title>Real-Time AI Does Not Always Need a GPU — Amr Alfayoumy</title>
+  <meta name="description" content="How ONNX Runtime, OpenVINO, quantization, streaming, and disciplined CPU serving cut inference cost while meeting a real-time production SLO." />
+  <meta name="application-name" content="Amr Alfayoumy · Portfolio" />
+  <meta name="author" content="Amr Alfayoumy" />
+  <meta name="creator" content="Amr Alfayoumy" />
+  <meta name="publisher" content="Amr Alfayoumy" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Real-Time AI Does Not Always Need a GPU — Amr Alfayoumy" />
+  <meta property="og:description" content="A CPU-first inference case study covering ONNX Runtime, OpenVINO, production latency, concurrency, and Azure CPU-versus-GPU economics." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://alfayoumy.github.io/blog/cpu-first-inference-onnx-openvino/" />
+  <meta property="og:site_name" content="Amr Alfayoumy" />
+  <meta property="og:image" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta property="og:image:secure_url" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Amr Alfayoumy portfolio mark" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Real-Time AI Does Not Always Need a GPU" />
+  <meta name="twitter:description" content="How a CPU-first serving stack met a sub-four-second production SLO and saved $1,096.83 per month against a full-A10 Azure GPU alternative." />
+  <meta name="twitter:image" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta name="twitter:image:alt" content="Amr Alfayoumy portfolio mark" />
+  <link rel="canonical" href="https://alfayoumy.github.io/blog/cpu-first-inference-onnx-openvino/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "url": "https://alfayoumy.github.io/blog/cpu-first-inference-onnx-openvino/",
+    "headline": "Real-time AI does not always need a GPU",
+    "datePublished": "2026-08",
+    "dateModified": "2026-08-24",
+    "author": { "@id": "https://alfayoumy.github.io/#person" },
+    "image": "https://alfayoumy.github.io/social-preview.png",
+    "keywords": ["ONNX Runtime", "OpenVINO", "CPU Inference", "Model Optimization"]
+  }
+  </script>
+  <script>(function(){try{var t=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',t==='dark'||t==='light'?t:'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body class="instrument_serif_794b969e-module__2VhGdW__variable onest_859d3e11-module__eWePdW__variable jetbrains_mono_84d6efd-module__5Hl15a__variable">
+  <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none" style="background:var(--bg)">
+    <div class="absolute inset-0 bp-grid" style="mask-image:radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, transparent 100%);-webkit-mask-image:radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, transparent 100%)"></div>
+    <div class="absolute" style="top:-10%;right:-10%;width:60vw;height:60vw;background:radial-gradient(circle, rgba(255,74,28,0.10) 0%, rgba(255,74,28,0) 60%);filter:blur(40px)"></div>
+    <div class="absolute" style="bottom:-15%;left:-15%;width:55vw;height:55vw;background:radial-gradient(circle, rgba(200,255,94,0.05) 0%, rgba(200,255,94,0) 60%);filter:blur(50px)"></div>
+    <div class="noise"></div>
+  </div>
+  <div class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md" style="background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--rule)">
+    <div class="shell flex items-center gap-4 sm:gap-6 h-10 text-[11px] font-mono uppercase tracking-[0.16em] whitespace-nowrap overflow-hidden">
+      <a href="/" class="text-[var(--fg)] hover:text-[var(--signal)] transition-colors">AMR.ALFAYOUMY</a>
+      <a href="/projects/" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ PROJECTS</a>
+      <a href="/blog/" class="hidden sm:inline text-[var(--signal)] transition-colors">/ BLOG</a>
+      <a href="https://www.linkedin.com/in/alfayoumy" target="_blank" rel="noopener noreferrer" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ LINKEDIN</a>
+      <a href="/hire/" class="hidden md:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ HIRE</a>
+      <span class="hidden xl:inline text-[var(--fg-3)] whitespace-nowrap">/ CPU INFERENCE FIELD NOTE</span>
+      <nav aria-label="Section navigation" class="hidden md:flex items-center gap-3 lg:gap-4 mx-auto">
+        <a href="#strategy" data-nav-label="Strategy &amp; Levers" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§01</a>
+        <a href="#implementation" data-nav-label="Using ONNX &amp; OpenVINO" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§02</a>
+        <a href="#cost" data-nav-label="Cost Savings" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§03</a>
+        <a href="#lessons" data-nav-label="What I Learned" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§04</a>
+      </nav>
+      <div class="ml-auto flex items-center gap-3 sm:gap-5">
+        <a href="mailto:amr.alfayoumy@outlook.com" class="hidden sm:inline-flex items-center gap-1 transition-colors" style="color:var(--fg)">
+          <span style="color:var(--signal)">→</span><span class="hover:text-[var(--signal)] transition-colors">EMAIL</span>
+        </a>
+        <span class="hidden lg:flex items-center gap-2 text-[var(--pulse)]"><span class="live-dot"></span> OPEN TO BUILD</span>
+        <button type="button" id="themeToggle" class="inline-flex font-mono text-[11px] uppercase tracking-[0.16em] transition-colors hover:text-[var(--signal)]" style="color:var(--fg-2)">◐ DARK</button>
+      </div>
+    </div>
+  </div>
+  <nav aria-label="Section navigation" class="md:hidden fixed bottom-3 left-1/2 -translate-x-1/2 z-30 flex gap-1 px-2 py-1.5 backdrop-blur-md" style="background:var(--panel);border:1px solid var(--rule)">
+    <a href="#strategy" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§01</a>
+    <a href="#implementation" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§02</a>
+    <a href="#cost" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§03</a>
+    <a href="#lessons" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§04</a>
+  </nav>
+  <main class="relative">
+    <article>
+      <header class="blog-article-hero">
+        <div class="shell">
+          <div class="page-breadcrumb">
+            <a href="/" class="caption hover:text-[var(--signal)] transition-colors">AMR.ALFAYOUMY</a>
+            <span class="caption" style="color:var(--fg-3)">/</span>
+            <a href="/blog/" class="caption hover:text-[var(--signal)] transition-colors">BLOG</a>
+            <span class="caption" style="color:var(--fg-3)">/</span>
+            <span class="caption-signal">PRODUCTION ML</span>
+          </div>
+          <div class="grid grid-cols-12 gap-x-6 gap-y-8 items-end">
+            <div class="col-span-12 lg:col-span-8">
+              <div class="caption-signal mb-4">// CASE STUDY · CPU-FIRST INFERENCE</div>
+              <h1 class="font-display blog-article-title">Real-time AI does not always need a GPU<span class="font-display-italic" style="color:var(--signal)">.</span></h1>
+            </div>
+            <div class="col-span-12 lg:col-span-4">
+              <p class="blog-article-subtitle">How ONNX Runtime, OpenVINO, quantization, streaming, and disciplined CPU serving cut inference costs.</p>
+              <div class="blog-article-meta mt-6">
+                <time datetime="2026-08">Published August 2026</time>
+                <span>15 min read</span>
+                <span>CPU inference</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="shell"><div style="height:1px;background:linear-gradient(90deg, transparent 0%, var(--rule) 25%, var(--rule) 75%, transparent 100%)"></div></div>
+      <section class="shell grid grid-cols-12 gap-x-6 gap-y-8 py-16">
+        <aside class="col-span-12 lg:col-span-3">
+          <div class="caption-signal sticky top-14">// ARTICLE</div>
+        </aside>
+        <div class="col-span-12 lg:col-span-8 blog-article-body">
+          <p>There is a recurring assumption in production AI: if the experience has a strict real-time requirement, the model belongs on a GPU.</p>
+          <p>Sometimes that is true. Often it is an expensive shortcut.</p>
+          <p>The better question is not, "Is a GPU faster?" It is, "What is the least expensive serving design that can meet the production target and service-level objective under realistic load?"</p>
+          <p>I had to answer that question while building <a href="/projects/ead-mynd/">EAD Mynd</a>, a multilingual conversational avatar for Environment Agency - Abu Dhabi. The platform combined grounded retrieval, Arabic and English text-to-speech, zero-shot response classification, speech alignment, and lip-sync timing in a public-facing experience. It ultimately served more than 3,700 launch interactions, maintained 99.9% uptime, and delivered a time-to-first-byte below four seconds.</p>
+          <p>LLM response generation used a separate serving path; the CPU optimization discussed here applied to response classification and speech alignment.</p>
+          <p>The infrastructure was deliberately CPU-oriented. That meant the inference path could not depend on keeping an expensive GPU available for every live session. I used two complementary runtime strategies: ONNX Runtime for the zero-shot response classifier and OpenVINO for the speech-alignment models. Around them, I added quantized model variants, warm starts, bounded concurrency, caching, chunking, and streaming.</p>
+          <p>The result was not one magical optimization. It was a stack of small decisions that removed enough work, made the remaining work cheaper, and delivered useful output early enough for the avatar to still feel live.</p>
+          <h2 id="metric">Start With The Metric, Not The Runtime</h2>
+          <p>Inference optimization becomes confused when "faster" is treated as one number.</p>
+          <p>For an offline batch job, throughput may be the priority: finish the largest number of inputs per second. For a live avatar, the user experiences latency. More specifically, the user notices how long the system appears silent before something useful arrives.</p>
+          <p>That makes at least four measurements important:</p>
+          <ul>
+<li>cold-start latency: the first request after a process or model starts</li>
+<li>warm p50 latency: the normal middle of the distribution</li>
+<li>p95 and p99 latency: the slow requests that determine whether the experience is dependable</li>
+<li>time-to-first-byte: how soon the application can begin returning a useful response</li>
+</ul>
+          <p>Throughput still matters because concurrent users share the same CPU. Cost matters because a fast design that requires an underutilized GPU for every replica may not be economically attractive. Accuracy matters because a model that is fast but changes the product's behavior is not an optimization; it is a different model.</p>
+          <p>So the target I optimize is not minimum kernel time in isolation. It is an operating envelope:</p>
+          <pre><code>Meet the quality threshold
++ meet the tail-latency target
++ sustain expected concurrency
++ minimize cost per successful request</code></pre>
+          <p>That framing is what made CPU inference a real option for this project.</p>
+          <h2 id="strategy">The Main Inference Optimization Levers</h2>
+          <p>ONNX and OpenVINO are important, but they sit inside a larger toolbox. In practice, I think about inference optimization in layers.</p>
+          <div class="blog-article-table">
+<table>
+<thead><tr><th>Layer</th><th>Techniques</th><th>What They Buy</th><th>Main Risk</th></tr></thead>
+<tbody>
+<tr><td>Product path</td><td>caching, request deduplication, routing, cascades, early exits</td><td>avoid inference completely</td><td>stale or incorrectly reused results</td></tr>
+<tr><td>Model</td><td>distillation, pruning, smaller architecture</td><td>fewer operations and parameters</td><td>quality loss or retraining effort</td></tr>
+<tr><td>Precision</td><td>BF16, FP16, INT8, INT4; PTQ or QAT</td><td>less memory traffic and faster supported kernels</td><td>accuracy loss and hardware dependence</td></tr>
+<tr><td>Graph</td><td>constant folding, dead-node removal, operator fusion, layout changes</td><td>less runtime overhead and better kernels</td><td>export and operator compatibility</td></tr>
+<tr><td>Runtime</td><td>ONNX Runtime, OpenVINO, TensorRT, framework compilation</td><td>hardware-aware execution</td><td>platform lock-in and version sensitivity</td></tr>
+<tr><td>Scheduling</td><td>batching, thread limits, worker sizing, CPU pinning, NUMA awareness</td><td>higher utilization and steadier tail latency</td><td>oversubscription and queueing</td></tr>
+<tr><td>Delivery</td><td>warmup, compiled-model cache, streaming, parallel independent work</td><td>lower cold-start cost and earlier output</td><td>more lifecycle complexity</td></tr>
+</tbody>
+</table>
+</div>
+          <p>The order matters. The cheapest inference is the inference that never runs, which is why cache design and request routing can beat a low-level kernel improvement. The next best move is often reducing the amount of data or model work. Runtime conversion should be part of the solution, not the entire performance strategy.</p>
+          <h3>Graph optimization</h3>
+          <p>A training framework needs flexibility for gradients, debugging, dynamic control flow, and research. A serving runtime can make stronger assumptions. Once a model is exported, it can fold constants, remove redundant nodes, fuse compatible operations, and choose layouts or kernels suited to the target hardware.</p>
+          <p><a href="https://onnxruntime.ai/docs/performance/model-optimizations/graph-optimizations.html" target="_blank" rel="noopener noreferrer">ONNX Runtime's graph optimizer</a> includes basic, extended, and layout transformations. These range from eliminating identity and dropout nodes to fusing patterns such as matrix multiplication plus addition, GELU, attention, and layer normalization.</p>
+          <p>This is why exporting the same learned weights can improve inference even before quantization. The model's behavior is intended to stay the same, but the execution plan becomes leaner.</p>
+          <h3>Reduced precision and quantization</h3>
+          <p>FP32 is a safe default, not a universal production requirement. Lower-precision representations reduce model size and memory bandwidth, and supported processors can execute them more efficiently.</p>
+          <p>There are several different choices hiding behind the word quantization:</p>
+          <ul>
+<li>post-training quantization applies lower precision after training</li>
+<li>dynamic quantization calculates activation parameters during inference</li>
+<li>static quantization calculates them ahead of time from representative calibration data</li>
+<li>quantization-aware training exposes the model to quantization effects during training</li>
+<li>mixed precision keeps sensitive operations at higher precision while reducing the rest</li>
+</ul>
+          <p><a href="https://onnxruntime.ai/docs/performance/model-optimizations/quantization.html" target="_blank" rel="noopener noreferrer">ONNX Runtime's quantization guide</a> recommends evaluating method choice by model type and hardware. Its general guidance favors dynamic quantization for transformer and RNN workloads and static quantization for CNNs, but the benchmark and accuracy check on the target machine remain decisive. <a href="https://docs.openvino.ai/2026/openvino-workflow/model-optimization-guide/quantizing-models-post-training.html" target="_blank" rel="noopener noreferrer">OpenVINO's NNCF workflow</a> similarly uses representative calibration data for post-training INT8 quantization and supports an accuracy-aware path when a simple conversion loses too much quality.</p>
+          <p>Quantization is not free speed. Unsupported kernels, quantize/dequantize transitions, old CPU instruction sets, or a poorly calibrated dataset can make the result slower or less accurate. I treat every precision change as a new artifact that must pass the same functional evaluation as the original model.</p>
+          <h3>Smaller models, pruning, and distillation</h3>
+          <p>If runtime optimization is not enough, change the amount of model being served.</p>
+          <p>Pruning removes parameters or structures with limited contribution. Distillation trains a smaller student to reproduce the behavior of a larger teacher. Architecture replacement is simpler still: if a smaller model meets the business quality threshold, serving the larger one is often waste.</p>
+          <p>These techniques can produce bigger gains than runtime tuning because they reduce the work at its source. Their cost is that they move the problem back toward training and evaluation. For a production system already approaching launch, exporting and optimizing an accepted model may carry less delivery risk than training a replacement.</p>
+          <h3>Batching, concurrency, and threading</h3>
+          <p>Batching improves throughput by amortizing overhead and feeding larger operations to the hardware. It can also damage an interactive SLO if the service waits to fill a batch. Dynamic batching helps, but it still introduces a queueing tradeoff.</p>
+          <p>Threading has a similar trap. More threads do not automatically mean more throughput. A web server may have worker processes, the inference runtime may have its own thread pool, and BLAS or OpenMP may create more threads underneath that. Multiplying all three can oversubscribe the CPU, increase context switching, inflate memory use, and make p99 latency worse.</p>
+          <p>The right unit of tuning is the whole serving process: number of replicas, processes per replica, runtime threads per process, request concurrency, and memory per loaded model.</p>
+          <h3>Caching, warmup, and streaming</h3>
+          <p>Caching skips repeated work. Warmup moves one-time compilation, allocation, and kernel selection out of the first live request. Streaming does not necessarily make the full computation finish sooner, but it changes perceived latency by returning useful partial output before the entire job completes.</p>
+          <p>For conversational products, that last distinction is crucial. A response that begins in two seconds and finishes in six often feels faster than one that arrives all at once after five.</p>
+          <h2 id="runtimes">ONNX, ONNX Runtime, And OpenVINO Are Different Things</h2>
+          <p>The names are often used interchangeably, but they solve different parts of the deployment problem.</p>
+          <p><a href="https://onnx.ai/about" target="_blank" rel="noopener noreferrer">ONNX</a> is an open model representation: a portable computation graph, operator definitions, standard data types, weights, and metadata. It is the artifact and interoperability layer.</p>
+          <p><a href="https://onnxruntime.ai/docs/" target="_blank" rel="noopener noreferrer">ONNX Runtime</a> is an execution engine for ONNX models. It optimizes the graph and assigns supported subgraphs to execution providers such as CPU, CUDA, TensorRT, OpenVINO, and other hardware-specific backends. The execution provider is what connects the portable graph to a concrete device implementation.</p>
+          <p>OpenVINO is a model optimization and inference toolkit with strong CPU support and device-aware compilation. It can consume models from several ecosystems, compile them for a selected device, apply performance hints, and work with lower-precision artifacts. OpenVINO's <a href="https://docs.openvino.ai/nightly/openvino-workflow/running-inference/inference-devices-and-modes/cpu-device/performance-hint-and-thread-scheduling.html" target="_blank" rel="noopener noreferrer"><code>LATENCY</code> and <code>THROUGHPUT</code> hints</a> express two different serving goals; its documentation recommends treating thread count, stream count, core type, hyper-threading, and pinning as coordinated scheduling controls rather than isolated knobs.</p>
+          <p><a href="https://docs.nvidia.com/deeplearning/tensorrt/latest/" target="_blank" rel="noopener noreferrer">TensorRT</a> occupies a similar hardware-specific role for NVIDIA GPUs. It is the natural candidate when the selected deployment target is NVIDIA and GPU cost is justified by model size, concurrency, or latency. It was not the right default for a CPU-first deployment.</p>
+          <p>The practical selection is:</p>
+          <pre><code>Training framework
+        |
+        v
+Portable/exported graph (for example ONNX)
+        |
+        +--&gt; ONNX Runtime + CPUExecutionProvider
+        +--&gt; ONNX Runtime + CUDA/TensorRT/OpenVINO provider
+        +--&gt; OpenVINO Runtime on CPU/GPU/NPU
+        +--&gt; TensorRT engine on NVIDIA GPU</code></pre>
+          <p>ONNX is therefore not a synonym for quantization, and exporting to ONNX does not by itself turn FP32 weights into INT8. This distinction mattered in this project because I used ONNX export for one service and separately preferred quantized OpenVINO artifacts in another.</p>
+          <h2 id="implementation">How I Used ONNX</h2>
+          <p>One of the avatar pipeline's small but latency-sensitive services classified generated responses into behavioral categories such as greeting, explanation, listing, limitation, and affirmation. The implementation used a multilingual zero-shot classifier.</p>
+          <p>The baseline path loaded the model through Transformers and PyTorch on CPU. I then exported the sequence-classification model with Hugging Face Optimum's <a href="https://huggingface.co/docs/optimum-onnx/en/onnxruntime/package_reference/modeling" target="_blank" rel="noopener noreferrer"><code>ORTModelForSequenceClassification</code></a>, explicitly selecting ONNX Runtime's <code>CPUExecutionProvider</code>. I saved the exported model and tokenizer together so production workers could load a ready serving artifact instead of performing conversion during startup.</p>
+          <p>In simplified form, the conversion looked like this:</p>
+          <pre><code>from optimum.onnxruntime import ORTModelForSequenceClassification
+
+onnx_model = ORTModelForSequenceClassification.from_pretrained(
+    model_name,
+    export=True,
+    provider="CPUExecutionProvider",
+)
+
+onnx_model.save_pretrained(output_dir)
+tokenizer.save_pretrained(output_dir)</code></pre>
+          <p>The production API then loaded that directory directly with the same CPU provider and placed the model behind a normal Transformers zero-shot pipeline. That kept the application-facing classification contract familiar while replacing the underlying execution path.</p>
+          <p>The production engineering around the model mattered as much as the export:</p>
+          <ul>
+<li>each worker loaded a clean ONNX Runtime model after process creation instead of inheriting runtime state across a fork</li>
+<li>model warmup ran representative classifications before serving normal traffic</li>
+<li>Gunicorn used synchronous, single-thread workers for the CPU-bound endpoint</li>
+<li>OpenMP, MKL, and OpenBLAS thread counts were capped to prevent nested thread pools from oversubscribing the machine</li>
+<li>the API exposed warm latency, p95, p99, throughput, and batch measurements rather than relying on one timing sample</li>
+<li>the classifier's application-level executor was bounded instead of growing with request volume</li>
+</ul>
+          <p>This is an important detail: the classifier optimization in the production branch is an ONNX export and ONNX Runtime CPU-serving path. It should not be described as INT8 merely because quantization was one of the broader experiments. Conversion, graph optimization, and quantization are separate steps, and production documentation should say which ones actually happened.</p>
+          <h2>Where OpenVINO Fit</h2>
+          <p>The speech-alignment service had a different workload. It used separate Arabic and English acoustic alignment models to turn synthesized speech into the character timing needed for avatar lip-sync.</p>
+          <p>For this service I used OpenVINO IR models and compiled them for CPU inference. The production path:</p>
+          <ul>
+<li>loaded separate Arabic and English processors and alignment models</li>
+<li>preferred quantized OpenVINO model artifacts when available</li>
+<li>fell back to FP32 artifacts if a quantized model could not be loaded</li>
+<li>allowed dynamic audio lengths instead of forcing every request into one fixed shape</li>
+<li>enabled CPU pinning and a compiled-model cache</li>
+<li>warmed each language model with one-, two-, and three-second dummy inputs</li>
+<li>kept audio preprocessing minimal and passed contiguous NumPy arrays into inference</li>
+</ul>
+          <p>The fallback was part of the optimization design, not an admission of failure. Lower precision should be preferred only when it remains operationally and functionally valid. A known-good FP32 path provides a safe recovery option if a quantized artifact is missing or incompatible.</p>
+          <p>OpenVINO also made the latency-versus-throughput choice explicit. A single interactive request benefits from latency-oriented scheduling, while a shared alignment service under concurrent avatar sessions may benefit from multiple inference streams. The correct configuration comes from load testing the real concurrency pattern, not from setting every performance flag to its largest value.</p>
+          <h2>The End-To-End Optimizations Around The Models</h2>
+          <p>Neither runtime operated alone. The full speech path was designed to get work off the critical path and expose partial results early.</p>
+          <p>Long answers were split into short, language-aware chunks, normally capped around 80 characters and broken at natural sentence boundaries. Each chunk could be synthesized, aligned, encoded, and emitted as newline-delimited JSON without waiting for the entire answer.</p>
+          <p>When both alignment and response classification were required, those independent operations were submitted in parallel for the current chunk. The Azure speech synthesizer was reused behind a lock so the service did not rebuild its client and connection state for every request. A startup warmup exercised the SDK before live traffic.</p>
+          <p>Redis cached completed requests using the text and relevant synthesis options as part of the key. Repeated content could therefore bypass TTS, alignment, and classification rather than merely running them faster. A separate raw-audio path skipped decoding, fades, silence insertion, re-encoding, and alignment when the caller explicitly did not need those features.</p>
+          <p>These choices attacked different portions of latency:</p>
+          <figure class="blog-visual" aria-labelledby="inference-latency-title">
+            <div class="blog-visual-top">
+              <figcaption id="inference-latency-title" class="blog-visual-title">CPU-First Latency Reduction Stack</figcaption>
+              <div class="blog-visual-note">Model execution + serving-path controls</div>
+            </div>
+            <svg role="img" aria-labelledby="inference-latency-svg-title inference-latency-svg-desc" viewBox="0 0 1000 700" style="display:block;width:100%;height:auto;color:var(--fg);font-family:var(--font-jetbrains-mono),ui-monospace,monospace">
+              <title id="inference-latency-svg-title">How eight inference optimizations combine to meet the production response-time SLO</title>
+              <desc id="inference-latency-svg-desc">Three model execution optimizations and five serving-path controls converge on a CPU-first response path that meets a production target below four seconds time-to-first-byte.</desc>
+              <defs>
+                <marker id="inference-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" style="fill:var(--signal,#ff4a1c)" />
+                </marker>
+                <style>
+                  .inf-panel { fill:var(--panel-2,#f2eee6); stroke:var(--rule,#c9c2b8); stroke-width:1; }
+                  .inf-card { fill:var(--bg,#faf8f3); stroke:var(--rule,#c9c2b8); stroke-width:1; }
+                  .inf-card-accent { fill:var(--bg,#faf8f3); stroke:var(--signal,#ff4a1c); stroke-width:1.25; }
+                  .inf-card-pulse { fill:var(--bg,#faf8f3); stroke:var(--pulse,#7ea629); stroke-width:1.25; }
+                  .inf-guide { fill:none; stroke:var(--rule,#c9c2b8); stroke-width:1; stroke-dasharray:4 6; }
+                  .inf-arrow { fill:none; stroke:var(--signal,#ff4a1c); stroke-width:1.5; marker-end:url(#inference-arrow); }
+                  .inf-kicker { fill:var(--fg-3,#77716a); font-size:10px; font-weight:600; letter-spacing:1.8px; }
+                  .inf-title { fill:var(--fg,#1b1917); font-size:16px; font-weight:700; letter-spacing:-0.2px; }
+                  .inf-copy { fill:var(--fg-2,#514c46); font-size:11.5px; }
+                  .inf-num { fill:var(--signal,#ff4a1c); font-size:11px; font-weight:700; letter-spacing:1px; }
+                  .inf-outcome { fill:var(--fg,#1b1917); font-size:22px; font-weight:700; letter-spacing:-0.4px; }
+                  .inf-slo { fill:var(--pulse,#7ea629); font-size:13px; font-weight:700; letter-spacing:1.6px; }
+                </style>
+              </defs>
+
+              <rect class="inf-panel" x="28" y="52" width="444" height="442" />
+              <rect class="inf-panel" x="528" y="52" width="444" height="442" />
+              <text class="inf-kicker" x="52" y="82">01 / MODEL EXECUTION</text>
+              <text class="inf-kicker" x="552" y="82">02 / SERVING PATH</text>
+              <line class="inf-guide" x1="500" y1="36" x2="500" y2="508" />
+
+              <g aria-label="ONNX Runtime makes response classification cheaper on CPU">
+                <rect class="inf-card-accent" x="52" y="104" width="396" height="104" />
+                <text class="inf-num" x="72" y="130">01</text>
+                <text class="inf-title" x="112" y="130">ONNX Runtime</text>
+                <text class="inf-copy" x="72" y="158">
+                  <tspan x="72" dy="0">Cheaper response classification</tspan>
+                  <tspan x="72" dy="18">through the CPU execution provider.</tspan>
+                </text>
+              </g>
+
+              <g aria-label="OpenVINO optimizes speech alignment on CPU">
+                <rect class="inf-card-accent" x="52" y="226" width="396" height="104" />
+                <text class="inf-num" x="72" y="252">02</text>
+                <text class="inf-title" x="112" y="252">OpenVINO</text>
+                <text class="inf-copy" x="72" y="280">
+                  <tspan x="72" dy="0">Optimized speech alignment</tspan>
+                  <tspan x="72" dy="18">for the available CPU hardware.</tspan>
+                </text>
+              </g>
+
+              <g aria-label="Quantized OpenVINO IR lowers alignment cost after validation">
+                <rect class="inf-card-pulse" x="52" y="348" width="396" height="104" />
+                <text class="inf-num" x="72" y="374">03</text>
+                <text class="inf-title" x="112" y="374">Quantized IR</text>
+                <text class="inf-copy" x="72" y="402">
+                  <tspan x="72" dy="0">Lower-cost alignment when the</tspan>
+                  <tspan x="72" dy="18">reduced-precision artifact validates.</tspan>
+                </text>
+              </g>
+
+              <g aria-label="Warmup and caching remove startup and repeated work">
+                <rect class="inf-card" x="552" y="104" width="396" height="66" />
+                <text class="inf-num" x="572" y="130">04</text>
+                <text class="inf-title" x="612" y="130">Warmup + cache</text>
+                <text class="inf-copy" x="612" y="151">Remove startup and repeated work.</text>
+              </g>
+
+              <g aria-label="Bounded workers prevent CPU oversubscription">
+                <rect class="inf-card" x="552" y="182" width="396" height="66" />
+                <text class="inf-num" x="572" y="208">05</text>
+                <text class="inf-title" x="612" y="208">Bounded workers</text>
+                <text class="inf-copy" x="612" y="229">Protect the CPU from oversubscription.</text>
+              </g>
+
+              <g aria-label="Parallel branches overlap independent per-chunk work">
+                <rect class="inf-card" x="552" y="260" width="396" height="66" />
+                <text class="inf-num" x="572" y="286">06</text>
+                <text class="inf-title" x="612" y="286">Parallel branches</text>
+                <text class="inf-copy" x="612" y="307">Overlap independent per-chunk work.</text>
+              </g>
+
+              <g aria-label="Chunked streaming reduces time to first useful payload">
+                <rect class="inf-card" x="552" y="338" width="396" height="66" />
+                <text class="inf-num" x="572" y="364">07</text>
+                <text class="inf-title" x="612" y="364">Chunked streaming</text>
+                <text class="inf-copy" x="612" y="385">Return the first useful payload earlier.</text>
+              </g>
+
+              <g aria-label="Fast paths skip features that a request disabled">
+                <rect class="inf-card-pulse" x="552" y="416" width="396" height="66" />
+                <text class="inf-num" x="572" y="442">08</text>
+                <text class="inf-title" x="612" y="442">Fast paths</text>
+                <text class="inf-copy" x="612" y="463">Do not pay for disabled features.</text>
+              </g>
+
+              <path class="inf-arrow" d="M250 494 C250 528 350 526 382 552" />
+              <path class="inf-arrow" d="M750 494 C750 528 650 526 618 552" />
+
+              <g aria-label="CPU-first response path meeting the production SLO">
+                <rect class="inf-card-accent" x="218" y="558" width="564" height="110" />
+                <text class="inf-kicker" x="500" y="586" text-anchor="middle">OUTCOME / END-TO-END RESPONSE PATH</text>
+                <text class="inf-outcome" x="500" y="621" text-anchor="middle">CPU-FIRST SERVING</text>
+                <text class="inf-slo" x="500" y="648" text-anchor="middle">PRODUCTION SLO · &lt;4S TIME-TO-FIRST-BYTE</text>
+              </g>
+            </svg>
+            <div class="blog-visual-caption">The latency result came from coordinating model execution with the serving path. Runtime conversion reduced model cost, while warmup, caching, concurrency control, parallel work, streaming, and request-specific fast paths protected the end-to-end production SLO.</div>
+          </figure>
+          <p>That combination is how CPU-first inference supported the product requirement. The documented result is an end-to-end time-to-first-byte below four seconds for the live avatar, not a claim that one ONNX call took four seconds or that ONNX alone met the production SLO.</p>
+          <h2 id="cost">What The CPU Decision Saved</h2>
+          <p>The infrastructure decision was not only technically viable; it had a measurable cost consequence. Using UAE North rates retrieved from <a href="https://learn.microsoft.com/en-us/rest/api/cost-management/retail-prices/azure-retail-prices" target="_blank" rel="noopener noreferrer">Microsoft's Azure Retail Prices API</a>, a one-year savings plan prices a 64-vCPU VM at approximately $2.30656 per hour and one NVIDIA A10 VM at approximately $3.8090624 per hour.</p>
+          <p>At 730 operating hours per month:</p>
+          <pre><code>64-vCPU CPU VM
+= $2.30656 × 730
+= $1,683.79 per month
+
+Full-A10 GPU VM
+= $3.8090624 × 730
+= $2,780.62 per month
+
+Monthly saving
+= $2,780.62 - $1,683.79
+= $1,096.83</code></pre>
+          <p>The CPU configuration therefore cost about 60% of the full-A10 alternative and reduced the monthly compute bill by approximately 40%. That is about $13,161.92 in annualized compute savings for each continuously running instance.</p>
+          <p>The saving did not come from accepting a lower production target. The optimized CPU deployment met the required peak throughput, peak concurrent-load envelope, and sub-four-second time-to-first-byte SLO. Once those requirements were satisfied, paying for the full dedicated A10 would have bought unused acceleration rather than a better production outcome.</p>
+          <p>This comparison uses current public Azure retail pricing as a normalized reference, not a reconstruction of a confidential client invoice. It excludes storage, networking, managed services, support, tax, and migration engineering, all of which would need to be held constant in a formal total-cost-of-ownership comparison.</p>
+          <h2 id="benchmark">How I Would Benchmark The Decision</h2>
+          <p>A credible CPU-versus-GPU decision needs a reproducible benchmark matrix. I would record at least:</p>
+          <div class="blog-article-table">
+<table>
+<thead><tr><th>Dimension</th><th>What To Measure</th></tr></thead>
+<tbody>
+<tr><td>Correctness</td><td>task metric, label agreement, confidence drift, alignment quality</td></tr>
+<tr><td>Latency</td><td>cold start, warm p50, p95, p99, time-to-first-byte, full-response time</td></tr>
+<tr><td>Capacity</td><td>requests per second at 1, 2, 4, and expected peak concurrency</td></tr>
+<tr><td>Resources</td><td>resident memory, CPU utilization, GPU utilization, model load time</td></tr>
+<tr><td>Economics</td><td>hourly replica cost, minimum replicas, cost per 1,000 successful requests</td></tr>
+<tr><td>Operations</td><td>failure rate, startup reliability, fallback behavior, deployment size</td></tr>
+</tbody>
+</table>
+</div>
+          <p>The inputs should reflect production lengths and languages. Warmup requests must be excluded from warm latency but reported separately as cold-start cost. CPU and GPU runs need the same correctness suite and the same response contract. Tail latency should be collected under sustained load, because an impressive single-request measurement can hide queueing and thread contention.</p>
+          <p>The final comparison is not "CPU milliseconds versus GPU milliseconds." It is:</p>
+          <pre><code>monthly serving cost
+--------------------
+successful requests meeting quality and latency targets</code></pre>
+          <p>For this project, the CPU path met the product's real-time response target and removed the need for a GPU-heavy serving design. That made it materially cheaper at the infrastructure level while keeping the system deployable on the available environment. I would only publish an exact percentage saving if the GPU baseline, utilization assumptions, cloud SKU, traffic profile, and measurement period were available alongside it.</p>
+          <h2 id="gpu">When I Would Still Choose A GPU</h2>
+          <p>CPU-first should not become another dogma.</p>
+          <p>I would move toward a GPU runtime when the model cannot meet its tail-latency target after responsible optimization, when concurrency is high enough to keep batching efficient, when the workload is dominated by large matrix multiplications, or when model size and generation length make memory bandwidth decisive. Large generative models often sit in this category.</p>
+          <p>I would favor ONNX Runtime on CPU when portability matters, the exported operators are well supported, and I want to preserve a familiar Transformers-style application interface. I would favor OpenVINO when CPU or Intel device optimization, compiled artifacts, quantization workflows, and detailed scheduling controls are central to the deployment. I would favor TensorRT when NVIDIA GPUs are already the chosen target and their utilization can justify the additional cost and build complexity.</p>
+          <p>The runtime follows the workload and hardware. It should not decide them in advance.</p>
+          <h2 id="lessons">What I Learned</h2>
+          <p>The strongest lesson from this project was that inference optimization is a systems problem.</p>
+          <p>Exporting a model can help. Quantizing it can help more. But either gain can disappear if every web worker creates a large runtime thread pool, if cold processes receive live traffic before warmup, if the application waits for a full response before streaming, or if it recomputes identical work that should have been cached.</p>
+          <p>The production sequence I trust is:</p>
+          <ol>
+<li>Define the end-to-end quality, p95/p99 latency, concurrency, and cost targets.</li>
+<li>Profile the whole request and locate the critical path.</li>
+<li>Remove unnecessary work and add safe cache or fast paths.</li>
+<li>Export to a serving graph and validate output parity.</li>
+<li>Test reduced precision with representative calibration and evaluation data.</li>
+<li>Tune processes, runtime threads, pinning, and batching together.</li>
+<li>Warm the real shapes and cache compiled artifacts where appropriate.</li>
+<li>Stream useful output as early as the product permits.</li>
+<li>Load-test the target hardware and compare cost per successful SLO-compliant request.</li>
+</ol>
+          <p>GPUs are extraordinary inference devices. They are also not a substitute for architecture.</p>
+          <p>For this project, ONNX Runtime and OpenVINO made CPU execution capable enough. The surrounding decisions made it production-ready. Together they let the avatar remain responsive while avoiding a GPU dependency that the workload did not require.</p>
+          <div class="mt-12 flex flex-wrap gap-3">
+            <a href="/blog/" class="font-mono text-[11px] uppercase tracking-[0.16em] px-4 py-3 transition-colors" style="border:1px solid var(--signal);background:var(--signal);color:var(--bg-on-signal)">Back to blog</a>
+            <a href="mailto:amr.alfayoumy@outlook.com" class="font-mono text-[11px] uppercase tracking-[0.16em] px-4 py-3 transition-colors" style="border:1px solid var(--rule);background:var(--panel-2);color:var(--fg)">Discuss this</a>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer class="shell pb-10">
+    <div class="hairline mb-6"></div>
+    <div class="caption">© 2026 AMR ALFAYOUMY · CPU INFERENCE FIELD NOTE</div>
+  </footer>
+  <script src="/theme-toggle.js"></script>
+</body>
+</html>

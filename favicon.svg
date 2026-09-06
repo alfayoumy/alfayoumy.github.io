@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Amr Alfayoumy portfolio mark</title>
+  <rect width="64" height="64" fill="#faf7f0"/>
+  <rect x="6" y="6" width="52" height="52" fill="none" stroke="#d63b0e" stroke-width="2"/>
+  <path d="M18 45 29 19h6l11 26h-6l-2.4-6.2H26.4L24 45h-6Zm10.2-11h7.6L32 24.1 28.2 34Z" fill="#0b0a07"/>
+  <circle cx="48" cy="17" r="4" fill="#2f7a1a"/>
+</svg>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preload" href="/_next/static/media/70bc3e132a0a741e-s.p.15008bfb.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/7ebf22b5a21034f8-s.p.d8bad3ab.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/8800dfc60902df36-s.p.e22d03ab.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="preload" href="/_next/static/media/e41d5df559864f9e-s.p.380d09ea.woff2" as="font" crossorigin type="font/woff2" />
+  <link rel="stylesheet" href="/_next/static/chunks/193213d9c0b2e44c.css" data-precedence="next" />
+  <link rel="stylesheet" href="/overrides.css" />
+  <title>EAD Mynd - Avatar Conversational AI — Amr Alfayoumy</title>
+  <meta name="description" content="A production multilingual avatar platform for Environment Agency - Abu Dhabi, built as a microservice and multi-agent conversational AI system with grounded retrieval, real-time speech, viseme synchronization, and enterprise-grade operations." />
+  <meta name="application-name" content="Amr Alfayoumy · Portfolio" />
+  <meta name="author" content="Amr Alfayoumy" />
+  <meta name="creator" content="Amr Alfayoumy" />
+  <meta name="publisher" content="Amr Alfayoumy" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="EAD Mynd - Avatar Conversational AI — Amr Alfayoumy" />
+  <meta property="og:description" content="A production multilingual avatar platform for Environment Agency - Abu Dhabi, built as a microservice and multi-agent conversational AI system with grounded retrieval, real-time speech, viseme synchronization, and enterprise-grade operations." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alfayoumy.github.io/projects/ead-mynd/" />
+  <meta property="og:site_name" content="Amr Alfayoumy" />
+  <meta property="og:image" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta property="og:image:secure_url" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Amr Alfayoumy portfolio mark" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EAD Mynd - Avatar Conversational AI — Amr Alfayoumy" />
+  <meta name="twitter:description" content="A production multilingual avatar platform for Environment Agency - Abu Dhabi, built as a microservice and multi-agent conversational AI system with grounded retrieval, real-time speech, viseme synchronization, and enterprise-grade operations." />
+  <meta name="twitter:image" content="https://alfayoumy.github.io/social-preview.png" />
+  <meta name="twitter:image:alt" content="Amr Alfayoumy portfolio mark" />
+  <link rel="canonical" href="https://alfayoumy.github.io/projects/ead-mynd/" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "url": "https://alfayoumy.github.io/projects/ead-mynd/",
+    "name": "EAD Mynd: Avatar Conversational AI",
+    "description": "A production multilingual avatar conversational AI platform with Arabic and English support.",
+    "creator": { "@id": "https://alfayoumy.github.io/#person" },
+    "keywords": ["Conversational AI", "RAG", "Multilingual AI", "Avatar AI"]
+  }
+  </script>
+  <script>(function(){try{var t=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',t==='dark'||t==='light'?t:'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body class="instrument_serif_794b969e-module__2VhGdW__variable onest_859d3e11-module__eWePdW__variable jetbrains_mono_84d6efd-module__5Hl15a__variable">
+  <div aria-hidden="true" class="fixed inset-0 -z-10 pointer-events-none" style="background:var(--bg)">
+    <div class="absolute inset-0 bp-grid" style="mask-image:radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, transparent 100%);-webkit-mask-image:radial-gradient(ellipse at 50% 35%, rgba(0,0,0,1) 0%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0.2) 75%, transparent 100%)"></div>
+    <div class="absolute" style="top:-10%;right:-10%;width:60vw;height:60vw;background:radial-gradient(circle, rgba(255,74,28,0.10) 0%, rgba(255,74,28,0) 60%);filter:blur(40px)"></div>
+    <div class="absolute" style="bottom:-15%;left:-15%;width:55vw;height:55vw;background:radial-gradient(circle, rgba(200,255,94,0.05) 0%, rgba(200,255,94,0) 60%);filter:blur(50px)"></div>
+    <div class="noise"></div>
+  </div>
+  <div class="fixed top-0 left-0 right-0 z-40 backdrop-blur-md" style="background:color-mix(in srgb, var(--bg) 70%, transparent);border-bottom:1px solid var(--rule)">
+    <div class="shell flex items-center gap-4 sm:gap-6 h-10 text-[11px] font-mono uppercase tracking-[0.16em] whitespace-nowrap overflow-hidden">
+      <a href="/" class="text-[var(--fg)] hover:text-[var(--signal)] transition-colors">AMR.ALFAYOUMY</a>
+      <a href="/projects/" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ PROJECTS</a>
+      <a href="/blog/" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ BLOG</a>
+      <a href="https://www.linkedin.com/in/alfayoumy" target="_blank" rel="noopener noreferrer" class="hidden sm:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ LINKEDIN</a>
+      <a href="/hire/" class="hidden md:inline text-[var(--fg-2)] hover:text-[var(--signal)] transition-colors">/ HIRE</a>
+      <span class="hidden 2xl:inline text-[var(--fg-3)] whitespace-nowrap">/ Multilingual avatar systems</span>
+      <nav aria-label="Section navigation" class="hidden md:flex items-center gap-3 lg:gap-4 mx-auto">
+        <a href="#summary" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§01</a><a href="#challenge" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§02</a><a href="#approach" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§03</a><a href="#key-decisions" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§04</a><a href="#architecture" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§05</a><a href="#highlights" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§06</a><a href="#outcomes" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§07</a><a href="#stack" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§08</a><a href="#links" class="transition-colors" style="color:var(--fg-3);text-decoration:none;text-underline-offset:4px;text-decoration-thickness:1px">§09</a>
+      </nav>
+      <div class="ml-auto flex items-center gap-3 sm:gap-5">
+        <a href="mailto:amr.alfayoumy@outlook.com" class="hidden sm:inline-flex items-center gap-1 transition-colors" style="color:var(--fg)">
+          <span style="color:var(--signal)">→</span><span class="hover:text-[var(--signal)] transition-colors">EMAIL</span>
+        </a>
+        <span class="hidden lg:flex items-center gap-2 text-[var(--pulse)]"><span class="live-dot"></span> OPEN TO BUILD</span>
+        <button type="button" id="themeToggle" class="inline-flex font-mono text-[11px] uppercase tracking-[0.16em] transition-colors hover:text-[var(--signal)]" style="color:var(--fg-2)">◐ DARK</button>
+      </div>
+    </div>
+  </div>
+  <nav aria-label="Section navigation" class="md:hidden fixed bottom-3 left-1/2 -translate-x-1/2 z-30 flex gap-1 max-w-[calc(100vw-1rem)] overflow-x-auto px-2 py-1.5 backdrop-blur-md" style="background:var(--panel);border:1px solid var(--rule)">
+    <a href="#summary" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§01</a><a href="#challenge" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§02</a><a href="#approach" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§03</a><a href="#key-decisions" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§04</a><a href="#architecture" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§05</a><a href="#highlights" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§06</a><a href="#outcomes" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§07</a><a href="#stack" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§08</a><a href="#links" class="px-2 py-1 font-mono text-[10px] tracking-[0.16em]" style="color:var(--fg-3)">§09</a>
+  </nav>
+<main class="relative">
+<article class="pt-28 pb-24">
+  <div class="shell">
+    <div class="caption mb-6 flex flex-wrap items-center gap-3">
+      <a class="hover:text-[var(--signal)] transition-colors" href="/">← HOME</a>
+      <span class="text-[var(--fg-4)]">/</span>
+      <a class="hover:text-[var(--signal)] transition-colors" href="/projects/">PROJECTS</a>
+      <span class="text-[var(--fg-4)]">/</span>
+      <span class="text-[var(--fg-2)]">EAD MYND - AVATAR CONVERSATIONAL AI</span>
+    </div>
+    <header id="summary" class="grid grid-cols-12 gap-x-6 gap-y-6 mb-16 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-9">
+        <div class="caption-signal mb-3" style="color:var(--pulse)">PRODUCTION · 2024-2025 · Multilingual conversational AI</div>
+        <h1 class="font-display" style="font-size:clamp(3rem, 8vw, 6rem);line-height:0.95;letter-spacing:-0.035em">EAD Mynd - Avatar Conversational AI<span class="font-display-italic" style="color:var(--signal)">.</span></h1>
+      </div>
+      <div class="col-span-12 lg:col-span-3 text-[var(--fg-3)] font-mono uppercase tracking-[0.12em]" style="font-size:11px;line-height:1.8">
+        Data Scientist &amp; AI/ML Engineer<br/>
+        Cairo, Egypt<br/>
+        Source: project brief + year-end review 2025
+      </div>
+      <div class="col-span-12 lg:col-span-8">
+        <p class="font-display-italic text-[var(--fg-2)]" style="font-size:clamp(1.35rem, 2vw, 1.9rem);line-height:1.4">A production multilingual avatar platform for Environment Agency - Abu Dhabi, where I owned the backend architecture, grounded retrieval stack, speech-to-avatar pipeline, and production engineering needed to launch a real-time public experience.</p>
+      </div>
+      <div class="col-span-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Interactions</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">3,700+</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Served successfully on launch</div>
+</div>
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Knowledge Base</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">141,922</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Indexed chunks from 1,600+ documents</div>
+</div>
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Latency</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">&lt;4s</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Time-to-first-byte for live avatar responses</div>
+</div>
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Reliability</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">99.9%</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Uptime with zero post-launch production errors</div>
+</div>
+
+<div style="border:1px solid var(--rule);background:var(--panel-2);padding:1.25rem">
+  <div class="caption mb-2">Architecture</div>
+  <div class="font-display" style="font-size:clamp(1.8rem, 3vw, 2.6rem);line-height:1">9 agents</div>
+  <div class="text-[var(--fg-3)] mt-2" style="font-size:0.95rem;line-height:1.6">Specialized orchestration across RAG, speech, and avatar control</div>
+</div>
+
+        </div>
+      </div>
+    </header>
+    <section id="challenge" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 02 — CHALLENGE<div class="caption mt-1.5" style="color:var(--fg-3)">WHY IT MATTERED</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+        <div class="space-y-5">
+          <p>The platform had to deliver fact-grounded conversations in both Arabic and English for a public-facing launch, while staying fast enough to feel live and polished as an avatar experience rather than a delayed chatbot.</p>
+          <p>The hard part was not only answer quality. The system had to synchronize grounded retrieval, session memory, speech-to-text, text-to-speech, lip-sync timing, and avatar behavior under concurrent usage, with enough reliability to survive a national exhibition without operator intervention.</p>
+          <p>Infrastructure constraints made the engineering bar higher. I had to design for CPU-oriented deployment, security controls, and maintainable operations from day one, so the solution could run economically without sacrificing latency, safety, or production resilience.</p>
+        </div>
+      </div>
+    </section>
+    <section id="approach" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 03 — APPROACH<div class="caption mt-1.5" style="color:var(--fg-3)">HOW I BUILT IT</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+        <div class="space-y-5">
+          <p>I owned the backend architecture end to end: microservices, session management, retrieval, knowledge-base operations, specialized agents, speech processing, avatar-alignment services, deployment, observability, and production hardening.</p>
+          <p>At the core, I built a parallelized, memory-enabled RAG system with dynamic source selection, chat-history integration, integrity validation, response regeneration, and a full knowledge-base management API for document ingestion, OCR extraction, vectorization, search, deletion, rebuilds, and health monitoring.</p>
+          <p>I then designed the real-time agent chain around the avatar experience itself: query contextualization and routing, structured-data extraction, OCR correction, separate QA behavior for avatar and chatbot modes, Arabic and English TTS text preparation, SSML generation, translation, answer classification, and streaming viseme alignment for lip-sync.</p>
+          <p>To make that design production-safe, I combined CPU-first inference optimization with explicit security engineering: prompt-injection testing, Azure content filtering on both queries and responses, request validation, abuse simulation, IP-restricted admin endpoints, TLS-secured traffic, and centralized logging, so the system could launch confidently and remain operable after handover.</p>
+        </div>
+      </div>
+    </section>
+    <section id="key-decisions" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-8 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 04 — KEY DECISIONS<div class="caption mt-1.5" style="color:var(--fg-3)">WHAT I CHOSE &amp; WHY</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 01</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Build around specialized agents, not one overloaded prompt</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">I separated contextualization, retrieval preparation, OCR correction, QA behavior, TTS formatting, SSML generation, answer classification, and viseme alignment into focused services because the product had multiple real-time jobs to do at once. That kept the system debuggable, tunable, and easier to harden for production.</p>
+          </article>
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 02</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Make grounded retrieval a controllable infrastructure layer</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">I treated the knowledge base as an operational system, not a one-time embedding script. The platform supports ingestion, OCR, correction, vectorstore rebuilds, origin selection, health checks, and hash validation so the team can trust what the avatar says and maintain it after launch.</p>
+          </article>
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 03</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Optimize for CPU-first streaming instead of depending on GPUs</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">Rather than treating infrastructure limits as a blocker, I reworked the serving path around quantized models, async chunking, warm starts, dual Redis caches, OpenVINO and ONNX-style runtimes, and careful Nginx tuning. That decision made the system materially cheaper while still hitting real-time interaction targets.</p>
+          </article>
+          <article style="border-left:1px solid var(--signal);padding-left:1.4rem">
+            <div class="font-mono uppercase mb-3" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.24em">Decision · 04</div>
+            <h2 class="font-display mb-3 text-[var(--fg)]" style="font-size:clamp(1.55rem, 2.3vw, 2.1rem);line-height:1.05">Treat model safety and endpoint security as launch blockers</h2>
+            <p class="text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">Because this was a public-facing assistant, I did not leave safety as a policy footnote. I added prompt-injection testing, query and response content filtering, strict request validation, integrity hashing, IP-restricted admin routes, and abuse simulation so unsafe or malformed traffic was filtered before it could become a production incident.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="architecture" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 05 — ARCHITECTURE<div class="caption mt-1.5" style="color:var(--fg-3)">HOW IT FITS TOGETHER</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+        <p class="mb-8">The production flow starts with multilingual user input and agency knowledge sources, routes through OCR and structured-data preparation into a memory-enabled retrieval layer, then hands context to specialized QA and speech agents that generate grounded text, SSML, audio alignment, viseme events, and response-classification signals. Around that core, I built the operational scaffolding: secure session state, hash-validated exchanges, content filtering, restricted admin surfaces, cache layers, deployment workflows, monitoring, backups, and restartable services.</p>
+        <div class="flex items-center justify-between mb-4">
+          <div class="caption" style="color:var(--fg-3)">// FIG. SYSTEM DIAGRAM</div>
+          <div class="caption" style="color:var(--fg-3)">SCALE 1:N</div>
+        </div>
+        <div class="overflow-x-auto" style="border:1px solid var(--rule);background:var(--panel-2);position:relative">
+          <div aria-hidden="true" style="position:absolute;inset:-1px;pointer-events:none">
+            <span style="position:absolute;top:-1px;left:-1px;width:8px;height:8px;border-top:1px solid var(--signal);border-left:1px solid var(--signal)"></span>
+            <span style="position:absolute;top:-1px;right:-1px;width:8px;height:8px;border-top:1px solid var(--signal);border-right:1px solid var(--signal)"></span>
+            <span style="position:absolute;bottom:-1px;left:-1px;width:8px;height:8px;border-bottom:1px solid var(--signal);border-left:1px solid var(--signal)"></span>
+            <span style="position:absolute;bottom:-1px;right:-1px;width:8px;height:8px;border-bottom:1px solid var(--signal);border-right:1px solid var(--signal)"></span>
+          </div>
+          <svg role="img" aria-labelledby="eadArchTitle eadArchDesc" viewBox="0 0 1120 620" style="min-width:980px;width:100%;height:auto;display:block;color:var(--fg);font-family:var(--font-jetbrains-mono),ui-monospace,monospace">
+            <title id="eadArchTitle">EAD Mynd avatar conversational AI high-level architecture</title>
+            <desc id="eadArchDesc">User speech and knowledge sources feed ingestion, grounded retrieval, specialized agents, speech and viseme generation, and production operations services.</desc>
+            <defs>
+              <pattern id="eadGrid" width="36" height="36" patternUnits="userSpaceOnUse">
+                <path d="M36 0H0V36" fill="none" stroke="var(--grid)" stroke-width="1"/>
+              </pattern>
+              <marker id="eadArrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                <path d="M0,0 L8,4 L0,8 Z" fill="var(--signal)"/>
+              </marker>
+              <style>
+                .ead-lane{fill:var(--fg-3);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase}
+                .ead-kicker{fill:var(--signal);font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+                .ead-title{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase}
+                .ead-small{fill:var(--fg-3);font-size:9.5px}
+                .ead-dash{stroke:var(--rule);stroke-width:1;stroke-dasharray:2 5}
+                .ead-flow{stroke:var(--signal);stroke-width:1.25;fill:none;marker-end:url(#eadArrow)}
+                .ead-control{stroke:var(--fg-4);stroke-width:1;fill:none;stroke-dasharray:3 5;marker-end:url(#eadArrow)}
+                .ead-source{fill:var(--panel-2);stroke:var(--rule);stroke-width:1}
+                .ead-source-title{fill:var(--fg)}
+                .ead-ingest{fill:var(--signal-soft);stroke:var(--signal);stroke-width:1.3}
+                .ead-ingest-title{fill:var(--signal)}
+                .ead-rag{fill:var(--pulse-soft);stroke:var(--pulse);stroke-width:1.3}
+                .ead-rag-title{fill:var(--pulse)}
+                .ead-agent{fill:rgba(255,74,28,.08);stroke:#b8681c;stroke-width:1.3}
+                .ead-agent-title{fill:#b8681c}
+                .ead-speech{fill:rgba(92,77,142,.08);stroke:#6f639b;stroke-width:1.3}
+                .ead-speech-title{fill:#6f639b}
+                .ead-exp{fill:rgba(47,122,26,.08);stroke:#5d8f2b;stroke-width:1.25}
+                .ead-exp-title{fill:#5d8f2b}
+                .ead-ops{fill:rgba(11,10,7,.04);stroke:var(--fg-3);stroke-width:1.2}
+                .ead-ops-title{fill:var(--fg-2);font-size:11px;letter-spacing:.1em}
+              </style>
+            </defs>
+            <rect x="0" y="0" width="1120" height="620" fill="var(--bg)" opacity=".12"/>
+            <rect x="220" y="28" width="850" height="560" fill="url(#eadGrid)" opacity=".85"/>
+            <line x1="240" y1="96" x2="1048" y2="96" class="ead-dash"/>
+            <line x1="240" y1="174" x2="1048" y2="174" class="ead-dash"/>
+            <line x1="240" y1="264" x2="1048" y2="264" class="ead-dash"/>
+            <line x1="240" y1="354" x2="1048" y2="354" class="ead-dash"/>
+            <line x1="240" y1="454" x2="1048" y2="454" class="ead-dash"/>
+            <text x="38" y="66" class="ead-lane">INPUTS + SOURCES</text>
+            <text x="38" y="144" class="ead-lane">INGESTION</text>
+            <text x="38" y="234" class="ead-lane">RETRIEVAL + MEMORY</text>
+            <text x="38" y="324" class="ead-lane">SPECIALIZED AGENTS</text>
+            <text x="38" y="424" class="ead-lane">SPEECH + AVATAR</text>
+            <text x="38" y="534" class="ead-lane">PRODUCTION OPS</text>
+
+            <rect x="270" y="50" width="280" height="50" class="ead-source" rx="2"/>
+            <text x="410" y="73" text-anchor="middle" class="ead-title ead-source-title">USER VOICE / TEXT QUERY</text>
+            <text x="410" y="88" text-anchor="middle" class="ead-small">Arabic and English live user turns</text>
+            <path d="M410 100V110H250V343H266" class="ead-flow"/>
+            <text x="425" y="116" class="ead-kicker">live query path</text>
+
+            <rect x="590" y="50" width="396" height="50" class="ead-source" rx="2"/>
+            <text x="788" y="73" text-anchor="middle" class="ead-title ead-source-title">DOCUMENT + DATA SOURCES</text>
+            <text x="788" y="88" text-anchor="middle" class="ead-small">PDFs, DOCX, TXT · internal and public data origins</text>
+            <path d="M788 100V119H633V120" class="ead-flow"/>
+            <text x="710.5" y="114" text-anchor="middle" class="ead-kicker">knowledge ingestion</text>
+
+            <rect x="318" y="124" width="630" height="58" class="ead-ingest" rx="2"/>
+            <text x="633" y="150" text-anchor="middle" class="ead-title ead-ingest-title">OCR, TEXT EXTRACTION, OCR CORRECTION, KB MANAGEMENT API</text>
+            <text x="633" y="166" text-anchor="middle" class="ead-small">upload · processing · vectorization · search · deletion · rebuilds · integrity checks</text>
+            <path d="M633 182V212" class="ead-flow"/>
+            <text x="648" y="205" class="ead-kicker">grounded context prep</text>
+
+            <rect x="300" y="216" width="666" height="62" class="ead-rag" rx="2"/>
+            <text x="633" y="242" text-anchor="middle" class="ead-title ead-rag-title">MEMORY-ENABLED RAG + DYNAMIC ORIGIN SELECTION</text>
+            <text x="633" y="258" text-anchor="middle" class="ead-small">FAISS retrieval · chat history · recency and semantic ranking · response regeneration · hash validation</text>
+            <path d="M633 278V304" class="ead-flow"/>
+
+            <rect x="270" y="308" width="240" height="70" class="ead-agent" rx="2"/>
+            <text x="390" y="336" text-anchor="middle" class="ead-title ead-agent-title">QUERY ROUTING AGENTS</text>
+            <text x="390" y="352" text-anchor="middle" class="ead-small">contextualization · intent · sanitization</text>
+            <text x="390" y="366" text-anchor="middle" class="ead-small">structured-data injection</text>
+
+            <rect x="530" y="308" width="206" height="70" class="ead-agent" rx="2"/>
+            <text x="633" y="336" text-anchor="middle" class="ead-title ead-agent-title">QA AGENTS</text>
+            <text x="633" y="352" text-anchor="middle" class="ead-small">avatar mode · chatbot mode</text>
+            <text x="633" y="366" text-anchor="middle" class="ead-small">Arabic and English answers</text>
+
+            <rect x="756" y="308" width="180" height="70" class="ead-agent" rx="2"/>
+            <text x="846" y="336" text-anchor="middle" class="ead-title ead-agent-title">CONTROL AGENTS</text>
+            <text x="846" y="352" text-anchor="middle" class="ead-small">translation · classification</text>
+            <text x="846" y="366" text-anchor="middle" class="ead-small">answer · behavior selection</text>
+
+            <path d="M510 343H526" class="ead-flow"/>
+            <path d="M736 343H752" class="ead-flow"/>
+            <path d="M633 378V392H380V406" class="ead-flow"/>
+            <path d="M846 378V392H881V406" class="ead-control"/>
+
+            <rect x="270" y="410" width="220" height="64" class="ead-speech" rx="2"/>
+            <text x="380" y="436" text-anchor="middle" class="ead-title ead-speech-title">TTS TEXT AGENT</text>
+            <text x="380" y="452" text-anchor="middle" class="ead-small">diacritization · number normalization</text>
+            <text x="380" y="466" text-anchor="middle" class="ead-small">chunking for streaming</text>
+
+            <rect x="510" y="410" width="246" height="64" class="ead-speech" rx="2"/>
+            <text x="633" y="436" text-anchor="middle" class="ead-title ead-speech-title">SSML + TTS + ALIGNMENT</text>
+            <text x="633" y="452" text-anchor="middle" class="ead-small">prosody control · audio generation</text>
+            <text x="633" y="466" text-anchor="middle" class="ead-small">word and phoneme timestamps</text>
+
+            <rect x="776" y="410" width="210" height="64" class="ead-exp" rx="2"/>
+            <text x="881" y="436" text-anchor="middle" class="ead-title ead-exp-title">VISEME EVENTS</text>
+            <text x="881" y="452" text-anchor="middle" class="ead-small">streaming lip-sync</text>
+            <text x="881" y="466" text-anchor="middle" class="ead-small">avatar behavior timing</text>
+
+            <path d="M490 442H510" class="ead-flow"/>
+            <path d="M756 442H776" class="ead-flow"/>
+
+            <rect x="272" y="492" width="220" height="84" class="ead-ops" rx="2"/>
+            <text x="382" y="516" text-anchor="middle" class="ead-title ead-ops-title">SERVING + CACHE</text>
+            <text x="382" y="543" text-anchor="middle" class="ead-small">Nginx · dual Redis</text>
+            <text x="382" y="558" text-anchor="middle" class="ead-small">session state</text>
+
+            <rect x="510" y="492" width="246" height="84" class="ead-ops" rx="2"/>
+            <text x="633" y="516" text-anchor="middle" class="ead-title ead-ops-title">DEPLOYMENT + SECURITY</text>
+            <text x="633" y="535" text-anchor="middle" class="ead-small">GitHub workflows · TLS</text>
+            <text x="633" y="550" text-anchor="middle" class="ead-small">prompt-injection safety</text>
+            <text x="633" y="565" text-anchor="middle" class="ead-small">restricted admin endpoints</text>
+
+            <rect x="774" y="492" width="212" height="84" class="ead-ops" rx="2"/>
+            <text x="880" y="516" text-anchor="middle" class="ead-title ead-ops-title">OBSERVABILITY + RECOVERY</text>
+            <text x="880" y="543" text-anchor="middle" class="ead-small">logs · health checks</text>
+            <text x="880" y="558" text-anchor="middle" class="ead-small">backups · restart-on-failure</text>
+
+            <path d="M382 492V482" class="ead-control"/>
+            <path d="M633 492V482" class="ead-control"/>
+            <path d="M880 492V482" class="ead-control"/>
+
+            <rect x="956" y="308" width="112" height="70" class="ead-source" rx="2"/>
+            <text x="1012" y="336" text-anchor="middle" class="ead-title ead-source-title">CI/CD</text>
+            <text x="1012" y="352" text-anchor="middle" class="ead-small">stage · stable</text>
+            <text x="1012" y="366" text-anchor="middle" class="ead-small">prod release flow</text>
+            <path d="M1012 378V484H633V488" class="ead-control"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+    <section id="highlights" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 06 — HIGHLIGHTS<div class="caption mt-1.5" style="color:var(--fg-3)">KEY TAKEAWAYS</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ END-TO-END PLATFORM OWNERSHIP</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Owned the system beyond model prompting: backend services, RAG, knowledge infrastructure, speech processing, avatar timing, deployment, logging, backups, and handover readiness.</p>
+          </article>
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ PUBLIC LAUNCH UNDER REAL LOAD</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">The platform successfully served 100% of more than 3,700 avatar interactions during the ADIHEX exhibition, with no post-launch production failures.</p>
+          </article>
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ LARGE-SCALE GROUNDED KNOWLEDGE LAYER</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Built and tuned the retrieval stack behind 141,922 indexed chunks from 1,600+ documents, with document lifecycle controls instead of a one-off ingestion script.</p>
+          </article>
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ ARABIC-FIRST SPEECH QUALITY WORK</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Added Arabic diacritization, spoken-number normalization, SSML shaping, and alignment-aware timing so the avatar felt natural rather than merely translated.</p>
+          </article>
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ CPU-OPTIMIZED PRODUCTION ENGINEERING</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Quantization, streaming inference, dual caching, and runtime optimization delivered real-time behavior on CPU-oriented infrastructure while reducing serving cost relative to GPU-heavy designs.</p>
+          </article>
+          <article style="border:1px solid var(--rule);background:color-mix(in srgb, var(--signal) 2%, var(--bg));padding:1.15rem 1.1rem">
+            <div class="font-mono uppercase mb-2" style="color:var(--signal);font-size:11px;line-height:1.6;letter-spacing:0.14em">▸ EXPLICIT MODEL AND API SAFETY CONTROLS</div>
+            <p class="text-[var(--fg-2)]" style="font-size:0.92rem;line-height:1.6">Production hardening included prompt-injection testing, Azure content filters on both input and output, abuse simulation, integrity hashing, and locked-down administrative endpoints.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="outcomes" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 07 — OUTCOMES<div class="caption mt-1.5" style="color:var(--fg-3)">RESULTS AND LESSONS</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9">
+        <ul class="space-y-3 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.8">
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Delivered a fully multimodal Arabic and English avatar experience that combined grounded answers, speech synthesis, and live lip-sync in one production pipeline.</span></li>
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Hit real-time response expectations with sub-4-second time-to-first-byte and 99.9% uptime under production conditions.</span></li>
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Made the knowledge layer maintainable by shipping upload, search, count, delete, rebuild, backup, and vectorstore health capabilities as operational APIs.</span></li>
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Reduced operational and security risk through CI/CD gating, prompt-injection testing, abuse simulation, secure endpoint controls, content filtering, integrity validation, health checks, and disaster-recovery-friendly backups.</span></li>
+          <li class="grid grid-cols-[1.1rem_1fr] gap-3 leading-relaxed"><span class="font-mono text-[12px] pt-1.5" style="color:var(--signal)">→</span><span>Left the project in a sustainable state with full service documentation, handover material, and onboarding support for the engineer taking over the stack.</span></li>
+        </ul>
+      </div>
+    </section>
+    <section id="stack" class="mb-16 lg:mb-20 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 08 — STACK<div class="caption mt-1.5" style="color:var(--fg-3)">THE TOOLS</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 text-[var(--fg-2)]" style="font-size:1.02rem;line-height:1.7">
+        <div class="space-y-5">
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">LLM</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Azure OpenAI</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Agent orchestration</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Prompt engineering</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Response classification</span></div>
+</div>
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">Retrieval</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">RAG</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">FAISS</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">OCR pipelines</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Structured data ETL</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Knowledge-base APIs</span></div>
+</div>
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">Speech</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">STT</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">TTS</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">SSML</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Arabic diacritization</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Viseme alignment</span></div>
+</div>
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">Runtime</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Python</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Redis</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Nginx</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">CPU-optimized inference</span></div>
+</div>
+
+<div class="grid grid-cols-[8rem_1fr] gap-4 items-baseline">
+  <span class="caption">Ops</span>
+  <div class="flex flex-wrap gap-x-3 gap-y-1.5"><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">GitHub Actions</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Multi-branch releases</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Structured logging</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Prompt-injection testing</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Health checks</span><span class="font-mono text-[11.5px] text-[var(--fg)]" style="border-bottom:1px dotted var(--rule)">Backups</span></div>
+</div>
+
+        </div>
+      </div>
+    </section>
+    <section id="links" class="mb-8 grid grid-cols-12 gap-x-6 gap-y-4 scroll-mt-20">
+      <div class="col-span-12 lg:col-span-3">
+        <div class="caption-signal sticky top-14">// 09 — LINKS<div class="caption mt-1.5" style="color:var(--fg-3)">SOURCE TRAIL</div></div>
+      </div>
+      <div class="col-span-12 lg:col-span-9 flex flex-wrap gap-3">
+        <a href="https://www.linkedin.com/posts/alfayoumy_adihex-activity-7370364114105274368-oH1j" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] uppercase tracking-[0.16em] px-3 py-2" style="border:1px solid var(--rule);background:var(--panel-2);color:var(--fg)">LinkedIn launch post</a><a href="https://www.linkedin.com/in/alfayoumy" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] uppercase tracking-[0.16em] px-3 py-2" style="border:1px solid var(--rule);background:var(--panel-2);color:var(--fg)">LinkedIn profile</a>
+      </div>
+    </section>
+  </div>
+</article>
+</main>
+  <footer class="shell pb-10">
+    <div class="hairline mb-6"></div>
+    <div class="caption">
+      Rewritten around the portfolio project-page system using details from the internal EAD Avatar project brief,
+      year-end review notes, and supporting public portfolio materials.
+    </div>
+  </footer>
+  <script src="/theme-toggle.js"></script>
+</body>
+</html>
